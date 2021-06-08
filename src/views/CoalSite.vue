@@ -39,7 +39,7 @@ export default {
   },
   mounted() {
     this.$store.commit('updateCartFromLocalStorage')
-    console.log(firebase);
+    // console.log(firebase);
   },
   methods: {
     updateCart(product) {

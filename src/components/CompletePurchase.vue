@@ -51,7 +51,7 @@
 
 <div class="field is-grouped">
   <div class="control">
-    <button class="button is-link" @click="shootTwo">Make Payment</button>
+    <button class="button is-link" @click="firebaseTest">Make Payment</button>
     
   </div>
 </div>
@@ -60,12 +60,16 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
+import { createTest } from '@/firebase'
 
 export default {
   data() {
     return {
-      articleId: ''
+      articleId: '',
+      test: {
+        time: '200',
+      }
     };
   },
   computed: {
@@ -101,24 +105,25 @@ export default {
     cartinputname2(event) {
       this.$store.commit('cartinputname2', event.target.value)
     },
-    shoot() {
-      // POST request using axios with error handling
-      console.log('Shoot');
-      const article = { title: "Vue POST Request Example" };
-      axios.post("https://reqres.in/invalid-url", article)
-        .then(response => this.articleId = response.data.id)
-        .catch(error => {
-          this.errorMessage = error.message;
-          console.error("There was an error!", error);
-      });
-    },
-    shootTwo() {
-      // Simple POST request with a JSON body using axios
-      const article = { title: "Vue POST Request Example" };
-      axios.post("https://reqres.in/api/articles", article)
-        .then(response => this.articleId = response.data.id);
-        console.log(this.articleID);
-    }
+  firebaseTest() {
+    // const { serverTimestamp } = firebase.firestore.FieldValue;
+    // theTime = serverTimestamp();
+    // this.time = theTime;
+    createTest({
+    //   createdAt: serverTimestamp(),
+      mobile: this.test.time,
+    //   cartTotal: this.cartTotal,
+    });
+    // const db = firebase.firestore();
+    // const testRef = db.collection('test');
+    // console.log('Firebase')
+
+    // testRef.add({
+    //   createdAt: serverTimestamp(),
+    //   mobile: this.mobile,
+    //   cartTotal: this.cartTotal,
+    // })
+  }
     // runPaystack() {
     //   this.$store.commit('runPaystack');
     //   console.log('Start');
