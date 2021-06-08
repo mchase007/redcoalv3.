@@ -51,8 +51,18 @@
 
 <div class="field is-grouped">
   <div class="control">
-    <button class="button is-link" @click="shootTwo">Make Payment</button>
-    
+    <button class="button is-link" @click="runPaystack">Make Payment</button>
+    <!-- <Paystack           
+            :amount="parseInt(total * 100)"
+            :email='mail'
+            :paystackkey="key"
+            :reference="reference"
+            :callback="runPaystack"
+            class="button is-link"
+          >
+            PayStack
+          </Paystack> -->
+
   </div>
 </div>
     </div>
@@ -60,12 +70,23 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
+import { createTest } from '@/firebase'
+// import Paystack from 'vue-paystack'
 
 export default {
+  components: {
+    // Paystack  
+  }, 
   data() {
     return {
-      articleId: ''
+      articleId: '',
+      total: 10000,
+      mail: '01234567890@mail.com',
+      key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d',
+      test: {
+        time: '200',
+      }
     };
   },
   computed: {
@@ -84,8 +105,16 @@ export default {
     lastName(){
       return this.$store.state.lastName
     },
-    reference(){
+    reference1(){
       return this.$store.getters.reference
+    },
+    reference() {
+      let text = "";
+      let possible =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      for (let i = 0; i < 10; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+      return text;
     }
   },
   methods: {
@@ -101,28 +130,55 @@ export default {
     cartinputname2(event) {
       this.$store.commit('cartinputname2', event.target.value)
     },
-    shoot() {
-      // POST request using axios with error handling
-      console.log('Shoot');
-      const article = { title: "Vue POST Request Example" };
-      axios.post("https://reqres.in/invalid-url", article)
-        .then(response => this.articleId = response.data.id)
-        .catch(error => {
-          this.errorMessage = error.message;
-          console.error("There was an error!", error);
-      });
+    firebaseTest() {
+    // const { serverTimestamp } = firebase.firestore.FieldValue;
+    // theTime = serverTimestamp();
+    // this.time = theTime;
+    createTest({
+    //   createdAt: serverTimestamp(),
+      mobile: this.test.time,
+    //   cartTotal: this.cartTotal,
+    });
+    // const db = firebase.firestore();
+    // const testRef = db.collection('test');
+    // console.log('Firebase')
+
+    // testRef.add({
+    //   createdAt: serverTimestamp(),
+    //   mobile: this.mobile,
+    //   cartTotal: this.cartTotal,
+    // })
     },
-    shootTwo() {
-      // Simple POST request with a JSON body using axios
-      const article = { title: "Vue POST Request Example" };
-      axios.post("https://reqres.in/api/articles", article)
-        .then(response => this.articleId = response.data.id);
-        console.log(this.articleID);
+    runPaystack() {
+      // this.$store.commit('runPaystack');
+      console.log('Start');
+      var handler = PaystackPop.setup({
+
+          key: this.key, // Replace with your public key
+          email: this.mail,
+          amount: this.total * 100, // the amount value is multiplied by 100 to convert to the lowest currency unit
+          currency: 'GHS', // Use GHS for Ghana Cedis or USD for US Dollars
+
+          callback: function(response) {
+
+          //this happens after the payment is completed successfully
+
+          var reference = response.reference;
+
+          alert('Payment complete! Reference: ' + reference);
+
+    },
+
+    onClose: function() {
+
+      alert('Transaction was not completed, window closed.');
+
+    },
+
+  });
+
+  handler.openIframe();
     }
-    // runPaystack() {
-    //   this.$store.commit('runPaystack');
-    //   console.log('Start');
-    // }
 
   },
 }
@@ -149,10 +205,3 @@ export default {
   }
 
 </style>
-
-processPayment: () => {
-      window.alert("Payment recieved")
-    },
-    close: () => {
-     console.log("You closed checkout page")
-    }
