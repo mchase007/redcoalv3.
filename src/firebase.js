@@ -1,9 +1,9 @@
-import firebase from 'firebase'
-// import firebase-firestore from 'firebase'
-// import { ref, onUnmounted } from 'vue'
+import 'firebase/app';
+import 'firebase/firestore';
+import firebase from 'firebase/app';
+
 
 const config = {
-  // Firebase config here
   apiKey: "AIzaSyD5F2KooUgE4PLsA9TJjjyphyni-jS6zWM",
   authDomain: "redcoalv3.firebaseapp.com",
   projectId: "redcoalv3",

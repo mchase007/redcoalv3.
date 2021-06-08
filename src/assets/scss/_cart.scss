@@ -1,0 +1,33 @@
+.drawer {
+  width: 100%;
+  height: 100vh;
+  background-color: cornflowerblue;
+  position: fixed;
+  top: 0;
+  right: -105vw;
+  transition: left 2s;
+  z-index: 101;
+  // overflow-y: scroll;
+  transition: right 1s;
+
+  &.open {
+    // display: block;
+    right: 0;
+  }
+}
+
+// .drawer-background {
+  //   border: 2px solid blueviolet;
+  //   width: 100%;
+  //   height: 100vh;
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   z-index: 100;
+  //   display: none;
+  //   transition: display 2s;
+
+  //   &.show {
+  //     display: block;
+  //   }
+  // }
