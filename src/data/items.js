@@ -6,6 +6,7 @@ const items = [
     productImage: "Image",
     productQuantity: 1,
     totalPrice: 15,
+    spice: true,
   },
   {
     productName: "Chicken",
@@ -14,6 +15,7 @@ const items = [
     productImage: "Image",
     productQuantity: 1,
     totalPrice: 15,
+    spice: true,
   },
   {
     productName: "Beef",
@@ -22,6 +24,7 @@ const items = [
     productImage: "Image",
     productQuantity: 1,
     totalPrice: 15,
+    spice: true,
   }
 ]
 

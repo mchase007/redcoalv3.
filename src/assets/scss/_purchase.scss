@@ -1,0 +1,16 @@
+.checkout-box {
+  width: 100%;
+  height: 100vh;
+  background-color: cornflowerblue;
+  position: fixed;
+  top: 0;
+  right: -105vw;
+  transition: left 2s;
+  z-index: 101;
+  overflow-y: scroll;
+  transition: right 1s;
+
+  &.checkout {
+    right: 0;
+  }
+}

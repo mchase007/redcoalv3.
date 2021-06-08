@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import items from '@/data/items.js'
+import { createTest } from '@/firebase'
 
 function updateLocalStorage(cart) {
   console.log("added");
@@ -14,30 +15,30 @@ export default createStore({
     checkout: false,
     total: null,
     mobile: '',
-    firstName: '',
-    lastName: '',
+    fullName: '',
+    address: '',
+    transactionRef: '',
+    userNetwork: '',
+    // cartTotal,
     key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d',
   },
   getters: {
     cartTotal: state => {
       return state.cart.reduce((a, b) => a + b.totalPrice, 0)
     },
-    // reference() {
-    //   let text = "";
-    //   let possible =
-    //     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    //   for (let i = 0; i < 10; i++)
-    //     text += possible.charAt(Math.floor(Math.random() * possible.length));
-    //   console.log(text);
-    //   return text;
-    // },
+    reference() {
+      let text = "";
+      let possible =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      for (let i = 0; i < 10; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+      console.log(text);
+      return text;
+    },
     email() {
       let email = `{{state.mobile}}@redcoal.com`
       return email
     },
-    // amount() {
-    //   return state.total * 100
-    // },
 
   },
   mutations: {
@@ -45,7 +46,6 @@ export default createStore({
       let item = state.cart.find(i => i.productID === payload.productID)
 
       if (item) {
-        // console.log('Present');
         item.productQuantity++
         item.totalPrice = item.productQuantity * item.productPrice
       } else {
@@ -57,7 +57,6 @@ export default createStore({
       let item = state.cart.find(i => i.productID === payload.productID)
 
       if (item.productQuantity > 1) {
-        // console.log('removed');
         item.productQuantity--
         item.totalPrice = item.productQuantity * item.productPrice
       } else {
@@ -65,74 +64,63 @@ export default createStore({
       }
       updateLocalStorage(state.cart)
     },
+    deleteFromCart(state, payload) {
+      state.cart = state.cart.filter(i => i.productID !== payload.productID);
+      updateLocalStorage(state.cart)
+    },
     openCartTask(state) {
       state.open = true;
-      console.log(`Open: ${state.open}`);
     },
     closeCartTask(state) {
       state.open = false;
-      console.log(`Open: ${state.open}`);
     },
     updateCartFromLocalStorage(state) {
       const cart = localStorage.getItem('cart')
 
       if (cart) {
-        console.log('cart restored');
         state.cart = JSON.parse(cart)
       }
     },
     openCheckout(state) {
       state.checkout = true;
       state.open = false;
-      console.log(`Checkout: ${state.checkout}`);
     },
     returnToCart(state) {
       state.checkout = false;
       state.open = true;
-      console.log(`Checkout: ${state.checkout}`);
     },
-    cartinputnum(state, payload) {
+    userMobile(state, payload) {
       state.mobile = payload
-      console.log(state.mobile);
     },
-    cartinputname1(state, payload) {
-      state.firstName = payload
-      console.log(state.firstName);
+    userFullName(state, payload) {
+      state.fullName = payload
     },
-    cartinputname2(state, payload) {
-      state.lastName = payload
-      console.log(state.lastName);
+    userAddress(state, payload) {
+      state.address = payload
     },
-    // runPaystack(state) {
-    //   console.log('Started');
-    //   let handler = PaystackPop.setup({
-    //     key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d',
-    //     email: `{{state.mobile}}@redcoal.com`,
-    //     amount: state.cartTotal * 100,
-    //     currency: 'GHS',
-
-    //     onClose: function(){
-    //       alert('Window closed.');
-    //     },
-
-    //     callback: function(response){
-    //       let message = 'Payment complete! Reference: ' + response.reference;
-    //       alert(message);
-
-    //       var reference = response.reference;
-    //       alert('Payment complete! Reference: ' + reference);
-    //     }
-    //   });
+    userNetwork(state, payload) {
+      state.userNetwork = payload
+    },
+    transactionRef(state, payload) {
+      state.transactionRef = payload
+    },
+    firebaseTest(state){
+      console.log('shoot');
+      createTest({
+          userName: state.fullName,
+          mobile: state.mobile,
+          address: state.address,
+          network: state.userNetwork,
+          cart: state.cart,
+          // total: state.cartTotal,
+        });
+        console.log('clear');
+      localStorage.clear();
+      state.cart = [];
+      state.checkout = false
+      state.open = false
       
-      // handler.openIframe();
-    // },
-    processPayment: () => {
-      window.alert("Payment recieved")
-    },
-    close: () => {
-      console.log("You closed checkout page")
-    },
-
+    }   
   },
   actions: {
   },
