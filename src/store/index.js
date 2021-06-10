@@ -13,18 +13,18 @@ export default createStore({
     cart: [],
     open: false,
     checkout: false,
+    meal: {},
     total: null,
     mobile: '',
     fullName: '',
     address: '',
     transactionRef: '',
     userNetwork: '',
-    // cartTotal,
     key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d',
   },
   getters: {
     cartTotal: state => {
-      return state.cart.reduce((a, b) => a + b.totalPrice, 0)
+      return state.cart.reduce((a, b) => a + b.productPrice, 0)
     },
     reference() {
       let text = "";
@@ -39,18 +39,21 @@ export default createStore({
       let email = `{{state.mobile}}@redcoal.com`
       return email
     },
-
   },
   mutations: {
+    selectMeal(state, payload) {
+      state.meal = payload;
+    },
     addToCart(state, payload) {
-      let item = state.cart.find(i => i.productID === payload.productID)
+      // let item = state.cart.find(i => i.productQuantity === payload.productQuantity)
+      state.cart.push(payload);
 
-      if (item) {
-        item.productQuantity++
-        item.totalPrice = item.productQuantity * item.productPrice
-      } else {
-        state.cart.push(payload);
-      }
+      // if (item) {
+      //   item.productQuantity2++
+      //   console.log(item.productQuantity2);
+      //   // item.totalPrice = item.productQuantity * item.productPrice
+      // } else {
+      // }
       updateLocalStorage(state.cart)
     },
     removeFromCart(state, payload) {
@@ -74,6 +77,9 @@ export default createStore({
     closeCartTask(state) {
       state.open = false;
     },
+    closeProductTask(state) {
+      state.productView = false;
+    },
     updateCartFromLocalStorage(state) {
       const cart = localStorage.getItem('cart')
 
@@ -82,8 +88,29 @@ export default createStore({
       }
     },
     openCheckout(state) {
-      state.checkout = true;
       state.open = false;
+      state.checkout = true;
+    },
+    increaseQuantity(state) {
+      state.meal.productQuantity++;
+    },
+    userAddOn(state) {
+      state.meal.productQuantity++;
+    },
+    increasePrice(state) {
+      let price = (state.meal.productPrice + 3);
+      state.meal.productPrice = price;
+    },
+    decreaseQuantity(state) {
+      if (state.meal.productQuantity > 2) {
+        state.meal.productQuantity--;
+      } else {
+        console.log('Two or more');
+      }
+    },
+    decreasePrice(state) {
+      let price = (state.meal.productPrice - 3);
+      state.meal.productPrice = price;
     },
     returnToCart(state) {
       state.checkout = false;
