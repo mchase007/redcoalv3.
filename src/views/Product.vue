@@ -5,7 +5,8 @@
       <Cart/>
       <!-- <CompletePurchase/> -->
     </div>
-    <div class="hero-body">
+    <div class="hero-body flex flex-fd-c">
+      <ProductList></ProductList>
       <!-- <Hero></Hero> -->
       <ProductItem></ProductItem>
     </div> 
@@ -19,12 +20,14 @@
 import Header from '@/components/Header.vue'
 import Cart from '@/components/Cart.vue'
 import ProductItem from '@/components/ProductItem.vue'
+import ProductList from '@/components/ProductList.vue'
 
 export default {
   components: {
     Header,
     Cart,
     ProductItem,
+    ProductList,
   },
 }
 </script>

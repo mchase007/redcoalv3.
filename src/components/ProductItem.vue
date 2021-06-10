@@ -1,28 +1,34 @@
 <template>
   <div class="productView" :class="{view : view}">
-    <ProductList></ProductList>
+    
     <CompletePurchase/>
     <div class="product">
-      <p>product: {{userMeal.productName}}</p>
+      <div class="box">
+        <p>{{userMeal.productName}}</p>
+        <p>GHS {{userMeal.productPrice}}.00</p>
 
-      <p>price: {{userMeal.productPrice}}</p>
-      <button @click="decreaseQuantity">-</button>
-      <p>quantity: {{userMeal.productQuantity}}</p>
-      <button @click="increaseQuantity">+</button>
-      <p>{{userMeal.productImage}}</p>
+        <div class="flex flex-jc-c flex-ai-c">
+        <button class="button" @click="decreaseQuantity">-</button>
+        <p>{{userMeal.productQuantity}}</p>
+        <button class="button" @click="increaseQuantity">+</button>
+        </div>
 
-      <form action="">
-        <label>Banku + Pepper GHS 5</label>
-        <input @input="userAddOn" type="checkbox">
-      </form>
+        <button class="button is-primary" @click="updateCart(userMeal)">Add to Cart</button>
 
-      <button @click="updateCart(userMeal)">Add to Cart</button>
+  <div class="field flex">
+    <div class="control">
+      <input class="" type="checkbox">
+    </div>
+    <label class="label">Banku + Pepper</label>
+  </div>
+
+</div>
     </div>
   </div>
 </template>
 
 <script>
-import ProductList from '@/components/ProductList.vue'
+
 import CompletePurchase from '@/components/CompletePurchase.vue'
 
 export default {
@@ -32,7 +38,7 @@ export default {
     }
   },
   components: {
-    ProductList,
+    
     CompletePurchase,
   },
   computed: {

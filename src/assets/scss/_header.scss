@@ -8,41 +8,6 @@ nav {
   }
 }
 
-.header-hamburger {
-
-  // img {
-  //   width: 28px;
-  //   // color: $coalRed;
-  // }
-
-  span {
-    display: block;
-    width: 1.32rem;
-    height: 0.12rem;
-    background-color: $coalRed;
-    transition: all 250ms ease-in-out;
-    transform-origin: 2px 1px;
-
-    &:not(:last-child) {
-      margin-bottom: 4px;
-    }
-  }
-
-  &.open {
-    span:first-child {
-      transform: rotate(45deg);
-    }
-
-    span:nth-child(2) {
-      opacity: 0;
-    }
-
-    span:last-child {
-      transform: rotate(-45deg);
-    }
-  }
-}
-
 .mobile-menu {
   // border: 2px solid $coalRed;
   position: absolute;

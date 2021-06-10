@@ -7,9 +7,9 @@
           <!-- <div class="content is-medium">
             <button class="button is-primary is-light is-outlined" @click="selectMeal(product)">{{product.productName}}</button>
           </div> -->
-      <div>
+      <button class="button is-primary is-light is-outlined">
         <router-link :to="{ name:'Product', params: { id: product.productID}}" @click="selectMeal(product)">{{product.productName}}</router-link>
-      </div>
+      </button>
         </div>
       </div>
 
