@@ -11,6 +11,7 @@ export default createStore({
   state: {
     products: items,
     cart: [],
+    // cartLength: '',
     open: false,
     checkout: false,
     meal: {},
@@ -39,6 +40,11 @@ export default createStore({
       let email = `{{state.mobile}}@redcoal.com`
       return email
     },
+    cartLength(state) {
+      let itemNum = state.cart.length
+      return itemNum
+
+    }
   },
   mutations: {
     selectMeal(state, payload) {
@@ -47,7 +53,6 @@ export default createStore({
     addToCart(state, payload) {
       // let item = state.cart.find(i => i.productQuantity === payload.productQuantity)
       state.cart.push(payload);
-
       // if (item) {
       //   item.productQuantity2++
       //   console.log(item.productQuantity2);

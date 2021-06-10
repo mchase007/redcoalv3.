@@ -23,8 +23,8 @@
 
       
       <div class="header_cart" @click="openCart">
-          <img class="cart" src="../assets/shopping-cart.svg" alt="cart">
-          <span class="snipcart-items-count"></span>
+          <i class="gg-shopping-cart"></i>
+          <p>{{cartItemNum}}</p>
       </div>
     </div>  
   </nav>  
@@ -39,6 +39,11 @@ export default {
       open: false,
       addressLink: '../assets/menu.svg' 
     }  
+  },
+  computed: {
+    cartItemNum() {
+      return this.$store.getters.cartLength
+    }
   },
   methods: {
     displayMenu(event) {
