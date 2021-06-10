@@ -3,9 +3,8 @@
     <div class="container flex flex-jc-sb flex-ai-c">
       <div>
         <div @click="displayMenu" class="header-hamburger" :class="{open: open}">
-          <span></span>
-          <span></span>
-          <span></span>
+          <i v-if="open" class="gg-close"></i>
+          <i v-if="!open" class="gg-menu"></i>
         </div>
 
         <div class="mobile-menu" :class="{open: open}">
