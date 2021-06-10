@@ -1,11 +1,24 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import CoalSite from '../views/CoalSite.vue'
+import Product from '../views/Product.vue'
+import NotFound from '../views/NotFound.vue'
 
 const routes = [
   {
     path: '/',
     name: 'CoalSite',
     component: CoalSite
+  },
+  {
+    path: '/meal/:id',
+    name: 'Product',
+    component: Product,
+    props: true
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: NotFound,
   },
   
 ]

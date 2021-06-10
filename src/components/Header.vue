@@ -3,11 +3,9 @@
     <div class="container flex flex-jc-sb flex-ai-c">
       <div>
         <div @click="displayMenu" class="header-hamburger" :class="{open: open}">
-          <!-- <span></span>
           <span></span>
-          <span></span> -->
-          <img v-if="!open" class="menuOpen" src="../assets/menu.svg" alt="">
-          <img v-if="open" class="menuClose" src="../assets/x.svg" alt="">
+          <span></span>
+          <span></span>
         </div>
 
         <div class="mobile-menu" :class="{open: open}">

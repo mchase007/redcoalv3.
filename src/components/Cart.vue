@@ -11,24 +11,11 @@
               <div class="box">
                 <div>
                   <p>{{ product.productName }}</p>
-                  <p>GHS {{ product.totalPrice }}</p>
+                  <p>GHS {{ product.productPrice }}</p>
+                  <p>{{product.addOn}}</p>
                 </div>
-
-                <div class="field">
-                  <label class="label">Pepper</label>
-                   <div class="control">
-                    <label class="radio">
-                      <input type="checkbox">
-                        Spice
-                      </label>
-                </div>
-            </div>
 
                 <div>
-                  <button @click="$store.commit('removeFromCart',product)">Remove</button>
-                  <span>{{ product.productQuantity }}</span>
-                  <button @click="$store.commit('addToCart', product)">Add</button>
-                  
                   <button @click="$store.commit('deleteFromCart', product)">Delete</button>
                   
                 </div>
@@ -40,7 +27,7 @@
     </div>
 
     <div class="box">
-      <p>{{cartTotal}}</p>
+      <p>GHS {{cartTotal}}</p>
       <button class="button is-primary" @click="openCheckout">Complete Purchase</button>
     </div>
   </div>
@@ -55,7 +42,7 @@ export default {
     }
   },
   computed: {
-    isOpen() {
+    isOpen() { 
       return this.$store.state.open
     },
     cart() {
@@ -71,9 +58,6 @@ export default {
     },
     openCheckout() {
       this.$store.commit('openCheckout');
-    },
-    spiceChoice() {
-      this.$store.commit('spiceChoice');
     },
   },
 }

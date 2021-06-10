@@ -2,29 +2,29 @@ const items = [
   {
     productName: "Sausage",
     productID: "sausage",
-    productPrice: 15,
+    productPrice: 10,
     productImage: "Image",
-    productQuantity: 1,
+    productQuantity: 2,
     totalPrice: 15,
-    spice: true,
+    addOn: '',
   },
   {
     productName: "Chicken",
     productID: "chicken",
-    productPrice: 15,
+    productPrice: 8,
     productImage: "Image",
-    productQuantity: 1,
+    productQuantity: 2,
     totalPrice: 15,
-    spice: true,
+    addOn: '',
   },
   {
     productName: "Beef",
     productID: "beef",
-    productPrice: 15,
+    productPrice: 8,
     productImage: "Image",
-    productQuantity: 1,
+    productQuantity: 2,
     totalPrice: 15,
-    spice: true,
+    addOn: '',
   }
 ]
 
