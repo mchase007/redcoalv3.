@@ -102,8 +102,14 @@ export default createStore({
       state.meal.productQuantity++;
     },
     increasePrice(state) {
-      let price = (state.meal.productPrice + 3);
-      state.meal.productPrice = price;
+      if (state.meal.productName === 'Sausage') {
+        let price = (state.meal.productPrice + 3);
+        state.meal.productPrice = price;  
+      } else {
+        let price = (state.meal.productPrice + 2);
+        state.meal.productPrice = price;
+        
+      }
     },
     decreaseQuantity(state) {
       if (state.meal.productQuantity > 2) {
@@ -113,13 +119,21 @@ export default createStore({
       }
     },
     decreasePrice(state) {
-      if (state.meal.productQuantity > 2) {
-        let price = (state.meal.productPrice - 3);
-        state.meal.productPrice = price;
-      } else {
-        console.log('Two or more');
-      }
-      
+      if (state.meal.productName === 'Sausage') {
+        if (state.meal.productQuantity > 2 ) {
+          let price = (state.meal.productPrice - 3);
+          state.meal.productPrice = price;
+        } else if (state.meal.productQuantity === 2 ) {
+          state.meal.productPrice = 10;
+        }
+      } else if (state.meal.productName === 'Beef' || state.meal.productName === 'Chicken'){
+        if (state.meal.productQuantity > 2 ) {
+          let price = (state.meal.productPrice - 2);
+          state.meal.productPrice = price;
+        } else if (state.meal.productQuantity === 2 ) {
+          state.meal.productPrice = 8;
+        }
+      } 
     },
     returnToCart(state) {
       state.checkout = false;

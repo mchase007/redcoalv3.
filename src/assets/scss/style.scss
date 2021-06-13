@@ -8,9 +8,7 @@
 @import "shoppingcart";
 @import "menu";
 @import "close";
-
-
-// @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
-// $family-sans-serif: "Josefin Sans", sans-serif;
-
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 @import "~bulma/bulma";
+
+$family-sans-serif: "Josefin Sans", sans-serif;
