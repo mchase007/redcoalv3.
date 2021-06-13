@@ -1,30 +1,28 @@
 <template>
-  <div class="productView" :class="{view : view}">
-    
-    <CompletePurchase/>
-    <div class="product">
-      <div class="box">
-        <p>{{userMeal.productName}}</p>
-        <p>GHS {{userMeal.productPrice}}.00</p>
+  <div class="productView" >
+    <div class="">
+      <p>{{userMeal.productName}}</p>
+      <p>GHS {{userMeal.productPrice}}.00</p>
 
-        <div class="flex flex-jc-c flex-ai-c">
+      <div class="">
         <button class="button" @click="decreaseQuantity">-</button>
         <p>{{userMeal.productQuantity}}</p>
         <button class="button" @click="increaseQuantity">+</button>
+      </div>
+
+      <button class="button is-primary" @click="updateCart(userMeal)">Add to Cart</button>
+
+      <div class="field flex">
+        <div class="control">
+          <input class="" type="checkbox">
         </div>
-
-        <button class="button is-primary" @click="updateCart(userMeal)">Add to Cart</button>
-
-  <div class="field flex">
-    <div class="control">
-      <input class="" type="checkbox">
-    </div>
-    <label class="label">Banku + Pepper</label>
-  </div>
-
-</div>
+        
+        <label class="label">Banku + Pepper</label>
+      </div>
     </div>
   </div>
+  
+  <CompletePurchase/>
 </template>
 
 <script>
@@ -38,7 +36,6 @@ export default {
     }
   },
   components: {
-    
     CompletePurchase,
   },
   computed: {
@@ -64,7 +61,7 @@ export default {
     },
     decreaseQuantity() {
       this.$store.commit('decreaseQuantity');
-      this.$store.commit('decreasePrice')
+      this.$store.commit('decreasePrice');
     },
     increaseQuantity() {
       this.$store.commit('increaseQuantity');
@@ -78,6 +75,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang='scss'>
 
 </style>

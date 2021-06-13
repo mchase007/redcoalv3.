@@ -11,7 +11,6 @@ export default createStore({
   state: {
     products: items,
     cart: [],
-    // cartLength: '',
     open: false,
     checkout: false,
     meal: {},
@@ -114,8 +113,13 @@ export default createStore({
       }
     },
     decreasePrice(state) {
-      let price = (state.meal.productPrice - 3);
-      state.meal.productPrice = price;
+      if (state.meal.productQuantity > 2) {
+        let price = (state.meal.productPrice - 3);
+        state.meal.productPrice = price;
+      } else {
+        console.log('Two or more');
+      }
+      
     },
     returnToCart(state) {
       state.checkout = false;

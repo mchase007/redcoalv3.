@@ -8,7 +8,7 @@
   transition: left 2s;
   z-index: 102;
   overflow-y: scroll;
-  transition: right 1s;
+  transition: right 0.3s;
 
   &.checkout {
     right: 0;

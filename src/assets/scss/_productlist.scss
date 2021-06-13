@@ -1,25 +1,12 @@
-.productNav {
+.mealList {
+  // border: 2px solid gray;
+  max-width: 500px;
   margin: 0 auto;
- 
-  span {
-    color: $coalRed;
-  }
+  display: flex;
+  justify-content: space-between;
 }
 
-.mobile {
-  // flex-wrap: wrap;
-  text-align: left;
-  
-}
-
-.mealbox {
-  margin-bottom: 20px;
-}
-
-@media only screen and (min-width: 630px) {  
-  .mealbox {
-    width: 30%;
-    margin-bottom: 0;
-    margin-right: 20px;
-  }
+.mealItem {
+  border: 2px solid gray;
+  width: 30%;
 }
