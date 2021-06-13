@@ -3,7 +3,7 @@
     <div class="hero-head">
       <Header></Header>
       <Cart/>
-      
+      <CompletePurchase></CompletePurchase>
     </div>
     <div class="hero-body">
       <Hero></Hero>
@@ -21,7 +21,7 @@
   import ProductList from '@/components/ProductList.vue'
   // import ProductItem from '@/components/ProductItem.vue'
   import Cart from '@/components/Cart.vue'
-  // import CompletePurchase from '@/components/CompletePurchase.vue'
+  import CompletePurchase from '@/components/CompletePurchase.vue'
 
 export default {
   name: "CoalSite",
@@ -31,7 +31,7 @@ export default {
     ProductList,
     // ProductItem,
     Cart,
-    // CompletePurchase,
+    CompletePurchase,
   },
   data() {
     return {

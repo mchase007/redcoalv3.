@@ -1,30 +1,47 @@
 <template>
-  <div class="productView" :class="{view : view}">
-    
-    <CompletePurchase/>
-    <div class="product">
-      <div class="box">
-        <p>{{userMeal.productName}}</p>
-        <p>GHS {{userMeal.productPrice}}.00</p>
+  <div class="productView" >
+    <div class="content is-medium">
+      <h3>Charcoal Grilled {{userMeal.productName}}</h3>
+      <h4>GHS {{userMeal.productPrice}}.00</h4>
+      
+      <p>{{userMeal.productDescription}}</p>
 
-        <div class="flex flex-jc-c flex-ai-c">
+      <p>What you get</p>
+
+      <ol type="1">
+        <li>
+          Grilled {{userMeal.productName}} neatly wrapped in foil and packaging paper
+        </li>
+        <li>
+          1 Bottled water to cool down afterwards
+        </li>
+        <li>
+          Free delivery for KNUST students (in KNUST area)
+        </li>
+        <li>
+          Tissue to wipe you clean
+        </li>
+      </ol>
+
+      <div class="">
         <button class="button" @click="decreaseQuantity">-</button>
         <p>{{userMeal.productQuantity}}</p>
         <button class="button" @click="increaseQuantity">+</button>
+      </div>
+
+      <button class="button is-primary" @click="updateCart(userMeal)">Add to Cart</button>
+
+      <!-- <div class="field flex">
+        <div class="control">
+          <input class="" type="checkbox">
         </div>
-
-        <button class="button is-primary" @click="updateCart(userMeal)">Add to Cart</button>
-
-  <div class="field flex">
-    <div class="control">
-      <input class="" type="checkbox">
-    </div>
-    <label class="label">Banku + Pepper</label>
-  </div>
-
-</div>
+        
+        <label class="label">Banku + Pepper</label>
+      </div> -->
     </div>
   </div>
+  
+  <CompletePurchase/>
 </template>
 
 <script>
@@ -38,7 +55,6 @@ export default {
     }
   },
   components: {
-    
     CompletePurchase,
   },
   computed: {
@@ -64,7 +80,7 @@ export default {
     },
     decreaseQuantity() {
       this.$store.commit('decreaseQuantity');
-      this.$store.commit('decreasePrice')
+      this.$store.commit('decreasePrice');
     },
     increaseQuantity() {
       this.$store.commit('increaseQuantity');
@@ -78,6 +94,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang='scss'>
 
 </style>

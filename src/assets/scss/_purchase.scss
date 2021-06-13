@@ -4,13 +4,12 @@
   background-color: cornflowerblue;
   position: fixed;
   top: 0;
-  right: -105vw;
-  transition: left 2s;
+  display: none;
   z-index: 102;
   overflow-y: scroll;
-  transition: right 1s;
+  transition: display 0.3s;
 
   &.checkout {
-    right: 0;
+    display: block;
   }
 }
