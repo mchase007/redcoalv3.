@@ -1,14 +1,14 @@
 <template>
   <div class="productView" >
-    <div class="content">
-      <p>Charcoal Grilled {{userMeal.productName}}</p>
-      <p>GHS {{userMeal.productPrice}}.00</p>
+    <div class="content is-medium">
+      <h3>Charcoal Grilled {{userMeal.productName}}</h3>
+      <h4>GHS {{userMeal.productPrice}}.00</h4>
       
       <p>{{userMeal.productDescription}}</p>
 
       <p>What you get</p>
 
-      <ul>
+      <ol type="1">
         <li>
           Grilled {{userMeal.productName}} neatly wrapped in foil and packaging paper
         </li>
@@ -21,7 +21,7 @@
         <li>
           Tissue to wipe you clean
         </li>
-      </ul>
+      </ol>
 
       <div class="">
         <button class="button" @click="decreaseQuantity">-</button>
