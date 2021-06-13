@@ -1,10 +1,24 @@
-// .productView {
-  // border: 2px solid gray;
-  // width: 90%;
-  // margin: 0 auto;
-  // margin-top: -200px;
-// } 
-
 .content {
   text-align: left;
+  max-width: 800px;
+
+  // &.more {
+  //   display: block;
+  // }
 }
+
+.controlSet {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  
+  .quantity {
+    border: 1px solid gray;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+  }
+}
+
+
