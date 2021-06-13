@@ -31,8 +31,5 @@ export default {
 </script>
 
 <style lang="scss">
-.hero-body {
-  border: 2px solid gray;
-}
 
 </style>

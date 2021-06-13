@@ -1,8 +1,27 @@
 <template>
   <div class="productView" >
-    <div class="">
-      <p>{{userMeal.productName}}</p>
+    <div class="content">
+      <p>Charcoal Grilled {{userMeal.productName}}</p>
       <p>GHS {{userMeal.productPrice}}.00</p>
+      
+      <p>{{userMeal.productDescription}}</p>
+
+      <p>What you get</p>
+
+      <ul>
+        <li>
+          Grilled {{userMeal.productName}} neatly wrapped in foil and packaging paper
+        </li>
+        <li>
+          1 Bottled water to cool down afterwards
+        </li>
+        <li>
+          Free delivery for KNUST students (in KNUST area)
+        </li>
+        <li>
+          Tissue to wipe you clean
+        </li>
+      </ul>
 
       <div class="">
         <button class="button" @click="decreaseQuantity">-</button>
@@ -12,13 +31,13 @@
 
       <button class="button is-primary" @click="updateCart(userMeal)">Add to Cart</button>
 
-      <div class="field flex">
+      <!-- <div class="field flex">
         <div class="control">
           <input class="" type="checkbox">
         </div>
         
         <label class="label">Banku + Pepper</label>
-      </div>
+      </div> -->
     </div>
   </div>
   
