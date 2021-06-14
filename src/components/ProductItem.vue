@@ -5,7 +5,7 @@
        
       <p>{{userMeal.productDescription}}</p>
 
-      <div class="clicker button is outlined" @click="viewPack">What you get</div>
+      <div class="clicker button is-outlined" @click="viewPack">What you get</div>
       <div class="more" :class="{pack: pack}">
       <ol type="1">
         <li>
