@@ -2,33 +2,34 @@
   <div class="productView container" >
     <div class="content is-medium">
       <h3>Charcoal Grilled {{userMeal.productName}}</h3>
-       
-      <p>{{userMeal.productDescription}}</p>
 
-      <div class="clicker button is-outlined" @click="viewPack">What you get</div>
-      <div class="more" :class="{pack: pack}">
-      <ol type="1">
-        <li>
-          Grilled {{userMeal.productName}} neatly wrapped in foil and packaging paper
-        </li>
-        <li>
-          A bottle of water.
-        </li>
-        <li>
-          Mint to freshen breathe.
-        </li>
-      </ol>
-      </div>
 
       <div class="bill">
-      <h4>GHS {{userMeal.productPrice}}.00</h4>
-      <p>Delivery Fee: GHS 1.00</p>
+      <h5>GHS {{userMeal.productPrice}}.00</h5>
+      <p>+ Delivery Fee: GHS 1.00</p>
       </div>
       <p class="is-small">Free delivery for KNUST students</p>
       <div class="controlSet">
         <button class="button" @click="decreaseQuantity">-</button>
         <p class="quantity">{{userMeal.productQuantity}}</p>
         <button class="button" @click="increaseQuantity">+</button>
+      </div>
+
+      <p>{{userMeal.productDescription}}</p>
+      <div class="clicker button is-outlined" @click="viewPack">What you get</div>
+
+       <div class="more" :class="{pack: pack}">
+        <ol type="1">
+          <li>
+            Grilled {{userMeal.productName}} neatly wrapped in foil and packaging paper
+          </li>
+          <li>
+            A bottle of water.
+          </li>
+          <li>
+            Mint to freshen breathe.
+          </li>
+        </ol>
       </div>
 
       <CompletePurchase/>
