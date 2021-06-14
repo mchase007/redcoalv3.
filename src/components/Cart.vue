@@ -4,22 +4,15 @@
 
     <div v-if="cart">
       <div v-for="product in cart">
-        <div class="">
-          <div class="card-content">
-            <div class="" >
-
-              <div class="box">
-                <div>
-                  <p>{{ product.productName }}</p>
-                  <p>GHS {{ product.productPrice }}</p>
-                  <p>{{product.addOn}}</p>
-                </div>
-
-                <div>
-                  <button @click="$store.commit('deleteFromCart', product)">Delete</button>
-                  
-                </div>
-              </div>
+        <div class="card-content">
+          <div class="box">
+            <div>
+              <p>{{ product.productName }}</p>
+              <p>GHS {{ product.productPrice }}</p>
+              <p>{{product.addOn}}</p>
+            </div>
+            <div>
+            <button @click="$store.commit('deleteFromCart', product)">Delete</button>
             </div>
           </div>
         </div> 
@@ -50,6 +43,9 @@ export default {
     },
     cartTotal() {
       return this.$store.getters.cartTotal
+    },
+    isRemoved() {
+      return this.$store.state.remove
     }
   },
   methods: {

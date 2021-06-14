@@ -3,8 +3,8 @@
     <div class="container">    
       <div class="">
         <div class="mealList" >
-          <div class="mealItem" v-for="product in products" :key="product.id">
-            <router-link  :to="{ name:'Product', params: { id: product.productID}}" @click="selectMeal(product)">{{product.productName}}</router-link>
+          <div class="mealItem button is-outlined" ref="link" v-for="product in products" :key="product.id">
+            <router-link :to="{ name:'Product', params: { id: product.productID}}" @click="selectMeal(product)">{{product.productName}}</router-link>
           </div>
         </div>
       </div>
@@ -18,7 +18,10 @@ export default {
   name: "ProductList",
   data() {
     return {
+      
     }
+  },
+  mounted() {
   },
   computed: {
     products() {
@@ -37,3 +40,5 @@ export default {
 
 
 </style>
+
+:class="{isPrimary: $refs.link.$els.classList.contains('router-link-active')}"

@@ -2,41 +2,40 @@
   <div class="productView container" >
     <div class="content is-medium">
       <h3>Charcoal Grilled {{userMeal.productName}}</h3>
-      
+       
       <p>{{userMeal.productDescription}}</p>
 
-      <p>What you get</p>
-      <div class="more">
+      <div class="clicker button is outlined" @click="viewPack">What you get</div>
+      <div class="more" :class="{pack: pack}">
       <ol type="1">
         <li>
           Grilled {{userMeal.productName}} neatly wrapped in foil and packaging paper
         </li>
         <li>
-          1 Bottled water to cool down afterwards
+          A bottle of water.
         </li>
         <li>
-          Free delivery for KNUST students (in KNUST area)
-        </li>
-        <li>
-          Tissue to wipe you clean
+          Mint to freshen breathe.
         </li>
       </ol>
       </div>
 
-
+      <div class="bill">
       <h4>GHS {{userMeal.productPrice}}.00</h4>
+      <p>Delivery Fee: GHS 1.00</p>
+      </div>
+      <p class="is-small">Free delivery for KNUST students</p>
       <div class="controlSet">
         <button class="button" @click="decreaseQuantity">-</button>
         <p class="quantity">{{userMeal.productQuantity}}</p>
         <button class="button" @click="increaseQuantity">+</button>
       </div>
 
-      <button class="button is-primary is-medium" @click="updateCart(userMeal)">Add to Cart</button>
+      <CompletePurchase/>
 
     </div>
-  </div>
-  
-  <CompletePurchase/>
+      <button class="is-primary next" @click="updateCart(userMeal)">Buy Now</button>
+    </div>
 </template>
 
 <script>
@@ -46,7 +45,7 @@ import CompletePurchase from '@/components/CompletePurchase.vue'
 export default {
   data() {
     return {
-      
+      pack: false,
     }
   },
   components: {
@@ -84,6 +83,10 @@ export default {
     userAddOn(event) {
       this.$store.commit('userAddOn', event.target.value)
     },
+    viewPack() {
+      console.log('View Pack')
+      this.pack = !this.pack 
+     },
   },
 
 }
