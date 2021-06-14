@@ -3,7 +3,7 @@
     <div class="container">    
       <div class="">
         <div class="mealList" >
-          <div class="mealItem button is-outlined" ref="link" v-for="product in products" :key="product.id">
+          <div class="mealItem button is-outlined" v-for="product in products" :key="product.id">
             <router-link :to="{ name:'Product', params: { id: product.productID}}" @click="selectMeal(product)">{{product.productName}}</router-link>
           </div>
         </div>

@@ -1,4 +1,5 @@
 <template>
+
   <div class="drawer" :class="{open : isOpen}">
     <button class="drawer-close button is-outlined is-light" @click="closeCart">Back to shopping</button>
 
@@ -24,11 +25,16 @@
       <button class="button is-primary" @click="openCheckout">Complete Purchase</button>
     </div>
   </div>
+  <CompletePurchase></CompletePurchase>
 </template>
 
 <script>
+import CompletePurchase from '@/components/CompletePurchase.vue'
 
 export default {
+  components: {
+    CompletePurchase,
+  },
   data() {
     return {
 

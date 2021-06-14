@@ -8,6 +8,20 @@ nav {
   }
 }
 
+.header_cart{
+  display: flex;
+  justify-content: space-between;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid gray;
+  width: 50px;
+
+  p {
+    color: $coalRed;
+  }
+}
+
 .mobile-menu {
   position: absolute;
   width: 100%;
