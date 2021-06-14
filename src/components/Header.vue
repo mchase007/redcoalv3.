@@ -5,7 +5,7 @@
         <div @click="displayMenu" class="header-hamburger" :class="{open: open}">
           <i v-if="open" class="gg-close"></i>
           <i v-if="!open" class="gg-menu"></i>
-        </div>
+        </div> 
 
         <div class="mobile-menu" :class="{open: open}">
           <span>

@@ -1,16 +1,10 @@
 .content {
   text-align: left;
   max-width: 800px;
-
-  // &.more {
-  //   display: block;
-  // }
 }
 
 .controlSet {
   display: flex;
-  margin-top: 20px;
-  margin-bottom: 40px;
   
   .quantity {
     border: 1px solid gray;
@@ -21,4 +15,62 @@
   }
 }
 
+// .clicker {
+//   border: 1px solid #731739;
+//   width: 40%;
+// }
 
+.more {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-top: 1px solid #731739;
+  border-bottom: 1px solid #731739;
+  padding-bottom: 20px;
+  visibility: hidden;
+  transition: visibility 5ms ease-in-out;
+
+  &.pack {
+    visibility: visible;
+  }
+}
+
+.is-small {
+  margin-top: -12px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  color: darkcyan;
+  padding-left: 1px;
+  padding-right: 1px;
+}
+
+.bill {
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-size: 12px;
+    border: 1px solid gray;
+    color: gray;
+    border-radius: 4px;
+    padding: 1px 2px 1px 2px;
+    margin-top: -20px;
+    margin-left: 10px;
+  }
+  
+}
+
+.next {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  border: 1px solid #731739;
+  background-color: #731739;
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding-bottom: calc(0.5em - 1px);
+  padding-top: calc(0.5em - 1px);
+  white-space: nowrap;
+}

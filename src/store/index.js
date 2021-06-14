@@ -3,7 +3,7 @@ import items from '@/data/items.js'
 import { createTest } from '@/firebase'
 
 function updateLocalStorage(cart) {
-  console.log("added");
+  console.log("local updated");
   localStorage.setItem("cart", JSON.stringify(cart))
 }
 
@@ -13,6 +13,7 @@ export default createStore({
     cart: [],
     open: false,
     checkout: false,
+    remove: false,
     meal: {},
     total: null,
     mobile: '',
@@ -50,8 +51,13 @@ export default createStore({
       state.meal = payload;
     },
     addToCart(state, payload) {
+      console.log('One'+payload.uniqueID);
+      let randomId = Math.floor(Math.random() * 100)
+      payload.uniqueID = randomId
+      console.log('Two'+payload.uniqueID);
       // let item = state.cart.find(i => i.productQuantity === payload.productQuantity)
       state.cart.push(payload);
+      console.log('Loaded');
       // if (item) {
       //   item.productQuantity2++
       //   console.log(item.productQuantity2);
@@ -60,19 +66,27 @@ export default createStore({
       // }
       updateLocalStorage(state.cart)
     },
-    removeFromCart(state, payload) {
-      let item = state.cart.find(i => i.productID === payload.productID)
+    // removeFromCart(state, payload) {
+    //   let item = state.cart.find(i => i.productID === payload.productID)
 
-      if (item.productQuantity > 1) {
-        item.productQuantity--
-        item.totalPrice = item.productQuantity * item.productPrice
-      } else {
-        state.cart = state.cart.filter(i => i.productID !== payload.productID);
-      }
-      updateLocalStorage(state.cart)
-    },
+    //   if (item.productQuantity > 1) {
+    //     item.productQuantity--
+    //     item.totalPrice = item.productQuantity * item.productPrice
+    //   } else {
+    //     state.cart = state.cart.filter(i => i.productID !== payload.productID);
+    //   }
+    //   updateLocalStorage(state.cart)
+    // },
     deleteFromCart(state, payload) {
-      state.cart = state.cart.filter(i => i.productID !== payload.productID);
+      console.log(payload.uniqueID);
+      // for (let i = 0; i < state.cart.length; i++) {
+      //   if (i.uniqueID === payload.uniqueID) {
+      //     let removed = state.cart.splice(i, 1)
+      //     console.log(removed);
+      //   }
+        
+      // }
+      state.cart = state.cart.filter(i => i.uniqueID !== payload.uniqueID);
       updateLocalStorage(state.cart)
     },
     openCartTask(state) {
@@ -83,7 +97,7 @@ export default createStore({
     },
     closeProductTask(state) {
       state.productView = false;
-    },
+    }, 
     updateCartFromLocalStorage(state) {
       const cart = localStorage.getItem('cart')
 
