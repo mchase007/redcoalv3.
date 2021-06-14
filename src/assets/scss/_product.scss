@@ -61,7 +61,13 @@
 
 .clicker {
   padding: 5px 0;
-  border-top: 2.8px solid #731739;
-  border-bottom: 2.8px solid #731739;
+  // border-top: 2.8px solid #731739;
+  // border-bottom: 2.8px solid #731739;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  i{
+    margin-left: 10px;
+  }
 }

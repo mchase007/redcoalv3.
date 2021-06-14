@@ -15,8 +15,20 @@
         <button class="button" @click="increaseQuantity">+</button>
       </div>
 
+      <div class="field">
+        <div class="control">
+          <label class="">
+            <input type="checkbox">
+            Banku with Pepper - GHS 5.00
+          </label>
+        </div>
+      </div>
+
       <p class="is-size-5">{{userMeal.productDescription}}</p>
-      <div class="clicker is-size-5" @click="viewPack">What you get</div>
+      <div class="clicker is-size-5" @click="viewPack">
+        What you get 
+        <i class="gg-arrow-right-o"></i> 
+        </div>
 
        <div class="more is-size-5" :class="{pack: pack}">
         <ol type="1">
@@ -65,8 +77,8 @@ export default {
   methods: {
     updateCart(product) {
       this.$store.commit('addToCart', product);
-      this.$store.commit('closeProductTask');
-      this.$store.commit('openCartTask');
+      // this.$store.commit('closeProductTask');
+      // this.$store.commit('openCartTask');
       console.log('cart open');
     },
     closeProductView() {
