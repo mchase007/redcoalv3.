@@ -3,7 +3,6 @@
     <div class="hero-head">
       <Header></Header>
       <Cart/>
-      <CompletePurchase/>
       <ProductList></ProductList>
     </div>
     <div class="hero-body">
@@ -17,7 +16,7 @@ import Header from '@/components/Header.vue'
 import Cart from '@/components/Cart.vue'
 import ProductItem from '@/components/ProductItem.vue'
 import ProductList from '@/components/ProductList.vue'
-import CompletePurchase from '@/components/CompletePurchase.vue'
+
 
 export default {
   components: {
@@ -25,7 +24,6 @@ export default {
     Cart,
     ProductItem,
     ProductList,
-    CompletePurchase,
   },
 }
 </script>

@@ -1,3 +1,6 @@
+@import "~bulma/bulma";
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
 @import "variables";
 @import "globals";
 @import "header";
@@ -8,7 +11,8 @@
 @import "shoppingcart";
 @import "menu";
 @import "close";
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
-@import "~bulma/bulma";
+@import "hero";
+
+
 
 $family-sans-serif: "Josefin Sans", sans-serif;

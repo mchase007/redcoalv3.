@@ -1,24 +1,24 @@
 <template>
   <div class="productView container" >
-    <div class="content is-medium">
-      <h3>Charcoal Grilled {{userMeal.productName}}</h3>
+    <div class="content">
+      <h4 class="is-size-4 is-size-3-tablet">Charcoal Grilled {{userMeal.productName}}</h4>
 
 
       <div class="bill">
-      <h5>GHS {{userMeal.productPrice}}.00</h5>
-      <p>+ Delivery Fee: GHS 1.00</p>
+      <h5 class="is-size-5 is-size-4-tablet" >GHS {{userMeal.productPrice}}.00</h5>
+      <p class="is-small">+ Delivery Fee: GHS 1.00</p>
       </div>
-      <p class="is-small">Free delivery for KNUST students</p>
+      <li class="promo is-small">Free delivery for KNUST students</li>
       <div class="controlSet">
         <button class="button" @click="decreaseQuantity">-</button>
         <p class="quantity">{{userMeal.productQuantity}}</p>
         <button class="button" @click="increaseQuantity">+</button>
       </div>
 
-      <p>{{userMeal.productDescription}}</p>
-      <div class="clicker button is-outlined" @click="viewPack">What you get</div>
+      <p class="is-size-5">{{userMeal.productDescription}}</p>
+      <div class="clicker is-size-5" @click="viewPack">What you get</div>
 
-       <div class="more" :class="{pack: pack}">
+       <div class="more is-size-5" :class="{pack: pack}">
         <ol type="1">
           <li>
             Grilled {{userMeal.productName}} neatly wrapped in foil and packaging paper
@@ -27,7 +27,7 @@
             A bottle of water.
           </li>
           <li>
-            Mint to freshen breathe.
+            Mint.
           </li>
         </ol>
       </div>
