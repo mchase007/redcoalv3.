@@ -89,6 +89,10 @@ export default createStore({
       state.cart = state.cart.filter(i => i.uniqueID !== payload.uniqueID);
       updateLocalStorage(state.cart)
     },
+    increaseCartQuantity(state, payload) {
+      payload.productQuantity++
+      // state.meal.productQuantity++;
+    },
     openCartTask(state) {
       state.open = true;
     },
@@ -110,9 +114,6 @@ export default createStore({
       state.checkout = true;
     },
     increaseQuantity(state) {
-      state.meal.productQuantity++;
-    },
-    userAddOn(state) {
       state.meal.productQuantity++;
     },
     increasePrice(state) {

@@ -3,7 +3,6 @@
     <div class="content">
       <h4 class="is-size-4 is-size-3-tablet">Charcoal Grilled {{userMeal.productName}}</h4>
 
-
       <div class="bill">
       <h5 class="is-size-5 is-size-4-tablet" >GHS {{userMeal.productPrice}}.00</h5>
       <p class="is-size-7 is-size-6-tablet">+ Delivery Fee: GHS 1.00</p>
@@ -44,16 +43,12 @@
         </ol>
       </div>
 
-      <CompletePurchase/>
-
     </div>
       <button class="is-primary next" @click="updateCart(userMeal)">Buy Now</button>
     </div>
 </template>
 
 <script>
-
-import CompletePurchase from '@/components/CompletePurchase.vue'
 
 export default {
   data() {
@@ -62,7 +57,7 @@ export default {
     }
   },
   components: {
-    CompletePurchase,
+
   },
   computed: {
     view() {
@@ -92,7 +87,7 @@ export default {
     increaseQuantity() {
       this.$store.commit('increaseQuantity');
       this.$store.commit('increasePrice')
-    },
+    }, 
     userAddOn(event) {
       this.$store.commit('userAddOn', event.target.value)
     },
