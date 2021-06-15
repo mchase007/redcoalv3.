@@ -5,7 +5,7 @@
     <div>
       Basket items: {{cartItemLength}}
     </div>
-    <div v-if="cart">
+    <div v-if="cart.length > 0">
       <div v-for="product in cart">
         <div class="card-content cartProduct">
           <div class="box">
@@ -30,6 +30,9 @@
           </div>
         </div> 
       </div>
+    </div>
+    <div v-if="cart.length === 0">
+      <p>There are no items in cart</p>
     </div>
 
     <div class="box">

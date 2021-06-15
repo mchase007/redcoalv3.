@@ -27,20 +27,15 @@
   }
 }
 
-.promo {
-  color: darkcyan;
-  width: 241px;
-  margin-bottom: 20px;
-}
-
 .bill {
   display: flex;
   align-items: center;
 
-  p {
-    color: gray;
-    margin-top: -20px;
-    margin-left: 10px;
+  .promo {
+      color: darkcyan;
+      width: 241px;
+      margin-top: -20px;
+      margin-left: 10px;
   }
   
 }
