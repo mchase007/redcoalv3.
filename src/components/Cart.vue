@@ -1,19 +1,31 @@
 <template>
-
   <div class="drawer" :class="{open : isOpen}">
-    <button class="drawer-close button is-outlined is-light" @click="closeCart">Back to shopping</button>
+    <button class="drawer-close button is-outlined is-primary" @click="closeCart">Back to shopping</button>
 
+    <div>
+      Basket items: {{cartItemLength}}
+    </div>
     <div v-if="cart">
       <div v-for="product in cart">
-        <div class="card-content">
+        <div class="card-content cartProduct">
           <div class="box">
-            <div>
-              <p>{{ product.productName }}</p>
-              <p>GHS {{ product.productPrice }}</p>
-              <p>{{product.addOn}}</p>
-            </div>
-            <div>
-            <button @click="$store.commit('deleteFromCart', product)">Delete</button>
+            <div class="flex flex-jc-sb">
+                <p>Image</p>
+                <p>{{ product.productName }}</p>
+                
+                <div>
+                  <p>GHS {{ product.productPrice }}</p>
+                  <!-- <div class="controlSet">
+                    <button class="button" @click="decreaseQuantity">-</button>
+                    <p class="quantity">{{product.productQuantity}}</p>
+                    <button class="button" @click="increaseCartQuantity(product)">+</button>
+                  </div> -->
+                  <p>Quantity: {{product.productQuantity}}</p>
+                </div> 
+                <!-- <p>{{product.addOn}}</p> -->
+                <div>
+                  <button @click="$store.commit('deleteFromCart', product)">Delete</button>
+                </div>
             </div>
           </div>
         </div> 
@@ -30,10 +42,12 @@
 
 <script>
 import CompletePurchase from '@/components/CompletePurchase.vue'
+import Header from '@/components/Header.vue'
 
 export default {
   components: {
     CompletePurchase,
+    Header,
   },
   data() {
     return {
@@ -52,6 +66,9 @@ export default {
     },
     isRemoved() {
       return this.$store.state.remove
+    },
+    cartItemLength() {
+      return this.$store.getters.cartLength
     }
   },
   methods: {
@@ -60,6 +77,15 @@ export default {
     },
     openCheckout() {
       this.$store.commit('openCheckout');
+    },
+    decreaseQuantity() {
+      this.$store.commit('decreaseQuantity');
+      this.$store.commit('decreasePrice');
+    },
+    increaseCartQuantity(product) {
+      // this.$store.commit('increaseCartQuantity', product);
+      // this.$store.commit('increaseQuantity');
+      // this.$store.commit('increasePrice')
     },
   },
 }
