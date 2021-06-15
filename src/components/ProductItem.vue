@@ -5,9 +5,9 @@
 
       <div class="bill">
       <h5 class="is-size-5 is-size-4-tablet" >GHS {{userMeal.productPrice}}.00</h5>
-      <p class="is-size-7 is-size-6-tablet">+ Delivery Fee: GHS 1.00</p>
+      <p class="promo is-size-7 is-size-6-tablet">+ FREE Delivery</p>
       </div>
-      <p class="promo is-size-7 is-size-6-tablet">Free delivery for KNUST students</p>
+      <!-- <p class="promo is-size-7 is-size-6-tablet">FREE Delivery</p> -->
       <div class="controlSet">
         <button class="button" @click="decreaseQuantity">-</button>
         <p class="quantity">{{userMeal.productQuantity}}</p>
