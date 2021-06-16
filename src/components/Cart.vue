@@ -1,10 +1,13 @@
 <template>
   <div class="drawer" :class="{open : isOpen}">
-    <button class="drawer-close button is-outlined is-primary" @click="closeCart">Back to shopping</button>
-
-    <div>
-      Basket items: {{cartItemLength}}
+    
+    <div class="cart-control">
+      <button class="drawer-close button is-outlined is-primary" @click="closeCart">Back to shopping</button>
+      <div>
+        Basket items: {{cartItemLength}}
+      </div>
     </div>
+
     <div v-if="cart.length > 0">
       <div v-for="product in cart">
         <div class="card-content cartProduct">
