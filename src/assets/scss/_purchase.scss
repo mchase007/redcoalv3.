@@ -1,7 +1,7 @@
 .checkout-box {
   width: 100%;
   height: 100vh;
-  background-color: cornflowerblue;
+  background-color: whitesmoke;
   position: fixed;
   top: 0;
   display: none;
@@ -12,4 +12,21 @@
   &.checkout {
     display: block;
   }
+
+  .label,
+  .help {
+    text-align: left;
+  }
+}
+
+.orderForm {
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.cartRoute {
+  padding-top: 20px;
+  margin-bottom: 50px;
+  display: flex;
 }

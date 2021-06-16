@@ -29,15 +29,15 @@
 
 .bill {
   display: flex;
-  align-items: center;
+  align-items: baseline;
+  width: 350px;
+}
 
-  .promo {
-      color: darkcyan;
-      width: 241px;
-      margin-top: -20px;
-      margin-left: 10px;
-  }
-  
+.promo {
+  color: darkcyan;
+  width: 241px;
+  margin-top: -20px;
+  margin-left: 10px;
 }
 
 .next {

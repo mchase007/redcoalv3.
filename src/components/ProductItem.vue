@@ -2,10 +2,13 @@
   <div class="productView container" >
     <div class="content">
       <h4 class="is-size-4 is-size-3-tablet">Charcoal Grilled {{userMeal.productName}}</h4>
-
       <div class="bill">
-      <h5 class="is-size-5 is-size-4-tablet" >GHS {{userMeal.productPrice}}.00</h5>
-      <p class="promo is-size-7 is-size-6-tablet">+ FREE Delivery</p>
+        <div>
+          <h5 class="is-size-5 is-size-4-tablet" >GHS {{userMeal.productPrice}}.00</h5>
+        </div>
+        <div>
+          <p class="promo is-size-7 is-size-6-tablet">+ FREE Delivery</p>
+        </div>
       </div>
       <!-- <p class="promo is-size-7 is-size-6-tablet">FREE Delivery</p> -->
       <div class="controlSet">

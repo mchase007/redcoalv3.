@@ -1,33 +1,43 @@
 <template> 
   <div class="checkout-box" :class="{checkout : isCheckout}">
-    <button class="button is-outlined is-light" @click="returnToCart">Back to cart</button>
-    <div class="box">
-      
+    
+    <div class="orderForm">
+    <div class="cartRoute">
+    <button class="button is-outlined is-info" @click="returnToCart">Back to cart</button>
     </div>
-    <div>
+    
       <div class="field">
         <label class="label">Full Name</label>
         <div class="control">
           <input @input="userFullName" ref="name" class="input" type="text" placeholder="Kofi Grills Chills">
         </div>
+        <p class="help">Kofi Grills</p>
       </div>
 
       <div class="field">
-        <label class="label">Mobile Number</label>
+        <label class="label">Contact Number</label>
         <div class="control">
           <input @input="userMobile" ref="number" class="input" type="number" placeholder="021-123-1234">
         </div>
-        <p class="help">This should be the number to make payment from</p>
+        <p class="help">021-123-1234</p>
       </div>
 
       <div class="field">
-        <label class="label">Address</label>
+        <label class="label">GPS Number</label>
         <div class="control">
           <input @input="userAddress" ref="address" class="input" type="text" placeholder="">
         </div>
+        <p class="help">ABC-123</p>
+      </div>
+
+      <div class="field">
+        <label class="label">Special Instructions</label>
+        <div class="control">
+          <textarea @input="userAddress" ref="address" class="textarea" placeholder="Textarea"></textarea>
+        </div>
       </div>
       
-      <div class="field">
+      <!-- <div class="field">
         <label class="label">Payment Method</label>
         <div class="control">
         <div class="select">
@@ -37,14 +47,15 @@
           </select>
         </div>
       </div>
-    </div>
+    </div> -->
 
-  <div class="field is-grouped">
+      <div class="field is-grouped">
     <div class="control">
       <button class="button is-link" @click="firebaseTest">Submit Order</button>
       <button class="button is-link" @click="runPaystack">Pay Order</button>
     </div>
-  </div>
+      </div>
+
     </div>
   </div>
 </template>
