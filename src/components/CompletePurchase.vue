@@ -25,7 +25,7 @@
       <div class="field">
         <label class="label">GPS Number</label>
         <div class="control">
-          <input @input="userAddress" ref="address" class="input" type="text" placeholder="">
+          <input @input="userAddress" ref="gpsAddress" class="input" type="text" placeholder="">
         </div>
         <p class="help">ABC-123</p>
       </div>
@@ -33,7 +33,7 @@
       <div class="field">
         <label class="label">Special Instructions</label>
         <div class="control">
-          <textarea @input="userAddress" ref="address" class="textarea" placeholder="Textarea"></textarea>
+          <textarea @input="plusInfor" ref="plusInfor" class="textarea" placeholder="Textarea"></textarea>
         </div>
       </div>
       
@@ -49,7 +49,7 @@
       </div>
     </div> -->
 
-      <div class="field is-grouped">
+      <div class="field checkout-button is-grouped">
     <div class="control">
       <button class="button is-link" @click="firebaseTest">Submit Order</button>
       <button class="button is-link" @click="runPaystack">Pay Order</button>
@@ -104,8 +104,8 @@ export default {
     userAddress(event) {
       this.$store.commit('userAddress', event.target.value)
     },
-    userNetwork(event) {
-      this.$store.commit('userNetwork', event.target.value)
+    plusInfor(event) {
+      this.$store.commit('plusInfor', event.target.value)
     },
     transactionRef(ref) {
       this.$store.commit('transactionRef', ref)
@@ -115,7 +115,8 @@ export default {
       this.$store.commit('firebaseTest')
       this.$refs['name'].value = ''
       this.$refs['number'].value = ''
-      this.$refs['address'].value = ''
+      this.$refs['gpsAddress'].value = ''
+      this.$refs['plusInfor'].value = ''
       console.log('shot fired');
 
       

@@ -18,9 +18,9 @@ export default createStore({
     total: null,
     mobile: '',
     fullName: '',
-    address: '',
+    gpsAddress: '',
     transactionRef: '',
-    userNetwork: '',
+    plusInfor: '',
     key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d',
   },
   getters: {
@@ -161,10 +161,10 @@ export default createStore({
       state.fullName = payload
     },
     userAddress(state, payload) {
-      state.address = payload
+      state.gpsAddress = payload
     },
-    userNetwork(state, payload) {
-      state.userNetwork = payload
+    plusInfor(state, payload) {
+      state.plusInfor = payload
     },
     transactionRef(state, payload) {
       state.transactionRef = payload
@@ -174,8 +174,8 @@ export default createStore({
       createTest({
           userName: state.fullName,
           mobile: state.mobile,
-          address: state.address,
-          network: state.userNetwork,
+          gpsAddress: state.gpsAddress,
+          plusInfor: state.plusInfor,
           cart: state.cart,
           // total: state.cartTotal,
         });
