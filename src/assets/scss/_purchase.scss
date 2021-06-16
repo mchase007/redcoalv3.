@@ -1,5 +1,5 @@
 .checkout-box {
-  width: 100%;
+  width: 100%; 
   height: 100vh;
   background-color: whitesmoke;
   position: fixed;
@@ -23,6 +23,10 @@
   width: 80%;
   max-width: 500px;
   margin: 0 auto;
+}
+
+.checkout-button {
+  margin-top: 40px;
 }
 
 .cartRoute {
