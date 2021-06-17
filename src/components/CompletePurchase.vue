@@ -5,7 +5,7 @@
     <div class="cartRoute">
     <button class="button is-outlined is-info" @click="returnToCart">Back to cart</button>
     </div>
-    
+
       <div class="field">
         <label class="label">Full Name</label>
         <div class="control">
@@ -48,6 +48,24 @@
         </div>
       </div>
     </div> -->
+      
+      <div class="card-content cartProduct">
+      
+      <div class="box flex flex-jc-sb total content">
+        <div>
+          <p>Total Price:</p>
+          <p>Delivery:</p>
+          <p>Total:</p>
+        </div>
+        <div>
+          <p> GHS {{cartTotal}}</p>
+        <p> Free</p>
+        <strong>
+        <p> GHS {{cartTotal}}</p>
+        </strong>
+        </div>
+      </div>
+      </div>
 
       <div class="field checkout-button is-grouped">
     <div class="control">
