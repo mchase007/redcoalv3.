@@ -2,7 +2,6 @@
   <section class="hero is-fullheight is-medium">
     <div class="hero-head">
       <Header></Header>
-      <Cart/>
     </div>
     <div class="hero-body content">
 
@@ -44,13 +43,11 @@
 
 <script>
 import Header from '@/components/Header.vue'
-import Cart from '@/views/Cart.vue'
 
 export default {
   name: 'Contact',
   components: {
     Header,
-    Cart,
   },
   methods: {
     userFullName(event) {

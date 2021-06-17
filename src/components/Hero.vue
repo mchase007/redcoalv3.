@@ -1,6 +1,6 @@
 <template>
     <div class="heroOne">
-
+ 
     <div class="container has-text-centered">
       <p class="title">
         Title
