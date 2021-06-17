@@ -11,33 +11,52 @@
 }
 
 .map {
-  width: 200px;
+  max-width: 300px;
   margin: 0 auto;
-  text-align: center;
+  
+}
+
+.labels {
+  max-width: 400px;
+  margin: 0 auto;
+  span {
+    text-align: center;
+    // border: 2px solid gray;
+    width: 100px;
+  }
+}
+
+
+.indicators { 
+  margin-bottom: 10px;
+
+  .lat {
+    background-color: #00d1b2;
+  }
   
   .lng {
-    padding-bottom: calc(0.5em - 1px);
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: calc(0.5em - 1px);
-    border-radius: 4px;
-    
+    width: 0.7rem;
+    height: 0.7rem;
+    border: 1px solid #00d1b2;
+    border-radius: 100%;
+    margin: 0 auto;
   }
-  
-  .lat {
-    border: 1px solid gray;
-  }
-
 }
+
 
 .cart-control {
   display: flex;
   flex-direction: column;
   max-width: 750px;
   margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
   align-items: flex-start;
   padding-left: 1.5rem;
-  padding-bottom: 20px;
+
+  button {
+    margin-bottom: 20px;
+  }
 }
 
 .drawer-close {

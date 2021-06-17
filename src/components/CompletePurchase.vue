@@ -1,17 +1,22 @@
 <template> 
   <div class="checkout-box" :class="{checkout : isCheckout}">
-    
+     
     <div class="orderForm">
     <div class="cartRoute">
     <button class="button is-outlined is-info" @click="returnToCart">Back to cart</button>
     </div>
 
-    <div class="map flex flex-jc-sb">
-        <span class="lng">Cart</span>
-        <!-- <span class="lat">-</span> -->
-        <span class="lng lat">Delivery</span>
-        <!-- <span class="lat">-</span> -->
-        <span class="lng">Payment</span>
+    <div class="map flex flex-fd-c">
+        <div class="indicators flex flex-jc-sb">
+          <div class="lng"></div>
+          <div class="lng lat"></div>
+        <div class="lng"></div>
+        </div>
+        <div class="labels flex flex-jc-sb">
+        <span>Cart</span>
+        <span class="">Delivery</span>
+        <span class="">Payment</span>
+        </div>
       </div>
 
       <div class="field one">

@@ -1,22 +1,28 @@
-<template> 
-  <div class="drawer">
+<template>  
+  <div class="">
     
     <div v-if="cart.length > 0">
       <div class="cart-control">
-      <button class="drawer-close button is-outlined is-primary" @click="closeCart">
-        <router-link to="/">
-        Back to shopping
-        </router-link>
+      <button class="button is-outlined is-primary">
+        <router-link to="/">Continue shopping</router-link>
         </button>
+
       <div>
         Basket items: {{cartItemLength}}
       </div>
       </div>
 
-      <div class="map flex flex-jc-sb">
-        <span class="lng lat">Cart</span>
-        <span class="lng">Delivery</span>
-        <span class="lng">Payment</span>
+      <div class="map flex flex-fd-c">
+        <div class="indicators flex flex-jc-sb">
+          <div class="lng lat"></div>
+          <div class="lng"></div>
+        <div class="lng"></div>
+        </div>
+        <div class="labels flex flex-jc-sb">
+        <span>Cart</span>
+        <span class="">Delivery</span>
+        <span class="">Payment</span>
+        </div>
       </div>
 
       <div v-for="product in cart">
@@ -46,7 +52,9 @@
     </div>
     <div v-if="cart.length === 0">
       <div class="cart-control">
-      <button class="drawer-close button is-outlined is-primary" @click="closeCart">Back to shopping</button>
+      <button class="button is-outlined is-primary">
+        <router-link to="/">Continue Shopping</router-link>
+      </button>
       <div>
         Basket items: {{cartItemLength}}
       </div>
@@ -56,7 +64,7 @@
 
     <div v-if="cart.length > 0" class="box">
       
-      <button class="button is-primary" @click="openCheckout">Complete Purchase</button>
+      <button class="button is-primary" @click="openCheckout">Complete Address</button>
     </div>
   </div>
   <CompletePurchase></CompletePurchase>

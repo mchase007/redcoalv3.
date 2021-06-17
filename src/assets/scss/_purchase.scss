@@ -44,3 +44,21 @@
   margin-bottom: 50px;
   display: flex;
 }
+
+
+.indicators2 { 
+  // border: 2px solid rgb(134, 223, 18);
+  margin-bottom: 10px;
+
+  .lat {
+    background-color: #00d1b2;
+  }
+  
+  .lng {
+    width: 0.7rem;
+    height: 0.7rem;
+    border: 1px solid #00d1b2;
+    border-radius: 100%;
+    margin: 0 auto;
+  }
+}

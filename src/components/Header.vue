@@ -18,11 +18,13 @@
         <a><router-link to="/">redcoal</router-link></a>
       </div>  
 
-      <div class="header_cart" @click="openCart">
+      <div class="header_cart">
         <router-link to="/cart">
           <i class="gg-shopping-cart"></i>
         </router-link>
+        <router-link to="/cart">
           <p>{{cartItemNum}}</p>
+        </router-link>
       </div>
     </div>  
   </nav>  
@@ -48,9 +50,6 @@ export default {
       console.log('Menu' + this.open)
       this.open = !this.open 
      },
-     openCart() {
-      // this.$store.commit('openCartTask');
-    }
   },
 }
 </script>
