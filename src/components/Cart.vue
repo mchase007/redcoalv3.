@@ -38,8 +38,8 @@
       <p>There are no items in cart</p>
     </div>
 
-    <div class="box">
-      <p>GHS {{cartTotal}}</p>
+    <div v-if="cart.length > 0" class="box">
+      
       <button class="button is-primary" @click="openCheckout">Complete Purchase</button>
     </div>
   </div>

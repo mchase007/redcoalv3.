@@ -1,7 +1,7 @@
 import { createStore } from 'vuex'
 import items from '@/data/items.js'
 import { createTest } from '@/firebase'
-
+ 
 function updateLocalStorage(cart) {
   console.log("local updated");
   localStorage.setItem("cart", JSON.stringify(cart))
@@ -18,6 +18,8 @@ export default createStore({
     total: null,
     mobile: '',
     fullName: '',
+    contactEmail: '',
+    contactMessage: '',
     gpsAddress: '',
     transactionRef: '',
     plusInfor: '',
@@ -160,6 +162,12 @@ export default createStore({
     userFullName(state, payload) {
       state.fullName = payload
     },
+    userEmail(state, payload) {
+      state.contactEmail = payload
+    },
+    userContactMessage(state, payload) {
+      state.contactMessage = payload
+    },
     userAddress(state, payload) {
       state.gpsAddress = payload
     },
@@ -185,6 +193,22 @@ export default createStore({
       state.checkout = false
       state.open = false
       
+    },
+    firebaseTestTwo(state){
+      console.log('shoot2');
+      createTest({
+          userName: state.fullName,
+          email: state.contactEmail,
+          contactMessage: state.contactMessage,
+        });
+        console.log('clear');
+        state.fullName = '';
+        state.contactEmail = '';
+        state.contactMessage
+      // localStorage.clear();
+      // state.cart = [];
+      // state.checkout = false
+      // state.open = false 
     }   
   },
   actions: {

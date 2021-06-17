@@ -1,20 +1,18 @@
 <template>
   <nav>
     <div class="container flex flex-jc-sb flex-ai-c">
-      <!-- <div> -->
-        <!-- <div @click="displayMenu" class="header-hamburger" :class="{open: open}">
+      <div>
+        <div @click="displayMenu" class="header-hamburger" :class="{open: open}">
           <i v-if="open" class="gg-close"></i>
           <i v-if="!open" class="gg-menu"></i>
-        </div>  -->
+        </div> 
 
-        <!-- <div class="mobile-menu" :class="{open: open}">
+        <div class="mobile-menu" :class="{open: open}">
           <span>
-
-          <router-link to="/">Sign In</router-link>
+          <router-link to="/contact-us">Contact Us</router-link>
           </span>
-          <router-link to="/">Sign Up</router-link>
-        </div>  -->
-      <!-- </div> -->
+        </div> 
+      </div>
 
       <div class="header_logo is-size-5 is-size-4-desktop">
         <a><router-link to="/">redcoal</router-link></a>
@@ -45,6 +43,7 @@ export default {
   },
   methods: {
     displayMenu(event) {
+      console.log('Menu' + this.open)
       this.open = !this.open 
      },
      openCart() {

@@ -6,8 +6,8 @@
         <div>
           <h5 class="is-size-5 is-size-4-tablet" >GHS {{userMeal.productPrice}}.00</h5>
         </div>
-        <div>
-          <p class="promo is-size-7 is-size-6-tablet">+ FREE Delivery</p>
+        <div class="promo">
+          <p class=" is-size-7 is-size-6-tablet">+ FREE Delivery</p>
         </div>
       </div>
       <!-- <p class="promo is-size-7 is-size-6-tablet">FREE Delivery</p> -->

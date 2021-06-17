@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import CoalSite from '../views/CoalSite.vue'
 import Product from '../views/Product.vue'
 import NotFound from '../views/NotFound.vue'
+import Contact from '../views/Contact.vue'
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     name: 'Product',
     component: Product,
     props: true
+  },
+  {
+    path: '/contact-us',
+    name: 'Contact',
+    component: Contact
   },
   {
     path: '/:catchAll(.*)',
