@@ -14,10 +14,31 @@
   }
 }
 
+.map {
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+  
+  .lng {
+    padding-bottom: calc(0.5em - 1px);
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: calc(0.5em - 1px);
+    border-radius: 4px;
+    
+  }
+  
+  .lat {
+    border: 1px solid gray;
+  }
+
+}
+
 .cart-control {
   display: flex;
   flex-direction: column;
-  max-width: 700px;
+  max-width: 750px;
+  margin: 0 auto;
   align-items: flex-start;
   padding-left: 1.5rem;
 }

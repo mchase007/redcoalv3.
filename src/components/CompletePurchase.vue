@@ -6,7 +6,15 @@
     <button class="button is-outlined is-info" @click="returnToCart">Back to cart</button>
     </div>
 
-      <div class="field">
+    <div class="map flex flex-jc-sb">
+        <span class="lng">Cart</span>
+        <!-- <span class="lat">-</span> -->
+        <span class="lng lat">Delivery</span>
+        <!-- <span class="lat">-</span> -->
+        <span class="lng">Payment</span>
+      </div>
+
+      <div class="field one">
         <label class="label">Full Name</label>
         <div class="control">
           <input @input="userFullName" ref="name" class="input" type="text" placeholder="Kofi Grills Chills">
@@ -50,7 +58,7 @@
     </div> -->
       
       <div class="card-content cartProduct">
-      
+       
       <div class="box flex flex-jc-sb total content">
         <div>
           <p>Total Price:</p>
