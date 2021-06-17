@@ -1,14 +1,20 @@
 <template>
   <div class="drawer" :class="{open : isOpen}">
     
-    <div class="cart-control">
+    <div v-if="cart.length > 0">
+      <div class="cart-control">
       <button class="drawer-close button is-outlined is-primary" @click="closeCart">Back to shopping</button>
       <div>
         Basket items: {{cartItemLength}}
       </div>
-    </div>
+      </div>
 
-    <div v-if="cart.length > 0">
+      <div class="map flex flex-jc-sb">
+        <span class="lng lat">Cart</span>
+        <span class="lng">Delivery</span>
+        <span class="lng">Payment</span>
+      </div>
+
       <div v-for="product in cart">
         <div class="card-content cartProduct">
           <div class="box">
@@ -35,6 +41,12 @@
       </div>
     </div>
     <div v-if="cart.length === 0">
+      <div class="cart-control">
+      <button class="drawer-close button is-outlined is-primary" @click="closeCart">Back to shopping</button>
+      <div>
+        Basket items: {{cartItemLength}}
+      </div>
+    </div>
       <p>There are no items in cart</p>
     </div>
 

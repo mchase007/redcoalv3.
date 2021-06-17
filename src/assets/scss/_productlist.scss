@@ -4,14 +4,24 @@
   margin-top: 40px;
   display: flex;
   justify-content: space-between;
-}
-
+} 
+ 
 .mealItem {
-  // border: 2px solid gray;
   width: 30%;
 
-  // .router-link-active {
-  //   border: 2px solid gray;
-  //   padding-left: 20px;
-  // }
+  a {
+    border: 1px solid gray;
+    padding-bottom: calc(0.5em - 1px);
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: calc(0.5em - 1px);
+    text-align: center;
+    border-radius: 4px;
+  }
+
+  .router-link-active {
+    border: 2px solid #731739;
+    color: white;
+    background-color: #731739;
+  }
 }
