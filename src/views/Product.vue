@@ -13,7 +13,7 @@
 
 <script>
 import Header from '@/components/Header.vue'
-import Cart from '@/components/Cart.vue'
+import Cart from '@/views/Cart.vue'
 import ProductItem from '@/components/ProductItem.vue'
 import ProductList from '@/components/ProductList.vue'
 

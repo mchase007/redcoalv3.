@@ -4,7 +4,7 @@
   display: block;
   width: 22px;
   height: 22px;
-  border: 2px solid;
+  border: 1.85px solid;
   transform: scale(var(--ggs,1));
   border-radius: 20px
  }
@@ -21,15 +21,15 @@
  .gg-arrow-right-o::after {
   width: 6px;
   height: 6px;
-  border-top: 2px solid;
-  border-right: 2px solid;
+  border-top: 1px solid;
+  border-right: 1.85px solid;
   transform: rotate(45deg);
   bottom: 6px
  }
  
  .gg-arrow-right-o::before {
-  width: 10px;
-  height: 2px;
-  bottom: 8px;
+  width: 9px;
+  height: 1.2px;
+  bottom: 8.5px;
   background: currentColor
  } 

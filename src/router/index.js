@@ -3,6 +3,7 @@ import CoalSite from '../views/CoalSite.vue'
 import Product from '../views/Product.vue'
 import NotFound from '../views/NotFound.vue'
 import Contact from '../views/Contact.vue'
+import Cart from '../views/Cart.vue'
 
 const routes = [
   {
@@ -20,6 +21,11 @@ const routes = [
     path: '/contact-us',
     name: 'Contact',
     component: Contact
+  },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: Cart
   },
   {
     path: '/:catchAll(.*)',

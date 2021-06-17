@@ -11,7 +11,7 @@ export default createStore({
   state: {
     products: items,
     cart: [],
-    open: false,
+    // open: false,
     checkout: false,
     remove: false,
     meal: {},
@@ -95,12 +95,12 @@ export default createStore({
       payload.productQuantity++
       // state.meal.productQuantity++;
     },
-    openCartTask(state) {
-      state.open = true;
-    },
-    closeCartTask(state) {
-      state.open = false;
-    },
+    // openCartTask(state) {
+    //   state.open = true;
+    // },
+    // closeCartTask(state) {
+    //   state.open = false;
+    // },
     closeProductTask(state) {
       state.productView = false;
     }, 

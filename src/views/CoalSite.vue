@@ -2,7 +2,7 @@
   <section class="hero is-fullheight is-medium">
     <div class="hero-head">
       <Header></Header>
-      <Cart/>
+      <!-- <Cart/> -->
     </div>
     <div class="hero-body">
       <Hero></Hero>
@@ -17,7 +17,7 @@
   import Header from '@/components/Header.vue'
   import Hero from '@/components/Hero.vue'
   // import ProductList from '@/components/ProductList.vue'
-  import Cart from '@/components/Cart.vue'
+  // import Cart from '@/views/Cart.vue'
 
 export default {
   name: "CoalSite",
@@ -26,7 +26,7 @@ export default {
     Hero,
     // ProductList,
     // ProductItem,
-    Cart,
+    // Cart,
   },
   data() {
     return {

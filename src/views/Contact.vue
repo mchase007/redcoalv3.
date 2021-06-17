@@ -44,7 +44,7 @@
 
 <script>
 import Header from '@/components/Header.vue'
-import Cart from '@/components/Cart.vue'
+import Cart from '@/views/Cart.vue'
 
 export default {
   name: 'Contact',

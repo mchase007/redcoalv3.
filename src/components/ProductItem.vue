@@ -28,8 +28,14 @@
 
       <p class="is-size-5">{{userMeal.productDescription}}</p>
       <div class="clicker is-size-5" @click="viewPack">
-        What you get 
-        <i class="gg-arrow-right-o"></i> 
+        <button class="button">
+          <span>What you get</span>
+          <span class="is-small">
+            <i class="gg-arrow-right-o"></i>
+          </span>
+        </button>
+         
+         
         </div>
 
        <div class="more is-size-5" :class="{pack: pack}">
