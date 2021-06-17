@@ -1,9 +1,13 @@
-<template>
-  <div class="drawer" :class="{open : isOpen}">
+<template> 
+  <div class="drawer">
     
     <div v-if="cart.length > 0">
       <div class="cart-control">
-      <button class="drawer-close button is-outlined is-primary" @click="closeCart">Back to shopping</button>
+      <button class="drawer-close button is-outlined is-primary" @click="closeCart">
+        <router-link to="/">
+        Back to shopping
+        </router-link>
+        </button>
       <div>
         Basket items: {{cartItemLength}}
       </div>
@@ -73,9 +77,9 @@ export default {
     }
   },
   computed: {
-    isOpen() { 
-      return this.$store.state.open
-    },
+    // isOpen() { 
+    //   return this.$store.state.open
+    // },
     cart() {
       return this.$store.state.cart
     },
@@ -90,9 +94,9 @@ export default {
     }
   },
   methods: {
-    closeCart() {
-      this.$store.commit('closeCartTask');
-    },
+    // closeCart() {
+    //   this.$store.commit('closeCartTask');
+    // },
     openCheckout() {
       this.$store.commit('openCheckout');
     },
@@ -100,11 +104,11 @@ export default {
       this.$store.commit('decreaseQuantity');
       this.$store.commit('decreasePrice');
     },
-    increaseCartQuantity(product) {
+    // increaseCartQuantity(product) {
       // this.$store.commit('increaseCartQuantity', product);
       // this.$store.commit('increaseQuantity');
       // this.$store.commit('increasePrice')
-    },
+    // },
   },
 }
 </script>

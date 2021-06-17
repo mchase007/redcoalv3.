@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="container flex flex-jc-sb flex-ai-c">
-      <div>
+      <div> 
         <div @click="displayMenu" class="header-hamburger" :class="{open: open}">
           <i v-if="open" class="gg-close"></i>
           <i v-if="!open" class="gg-menu"></i>
@@ -19,7 +19,9 @@
       </div>  
 
       <div class="header_cart" @click="openCart">
+        <router-link to="/cart">
           <i class="gg-shopping-cart"></i>
+        </router-link>
           <p>{{cartItemNum}}</p>
       </div>
     </div>  
@@ -47,7 +49,7 @@ export default {
       this.open = !this.open 
      },
      openCart() {
-      this.$store.commit('openCartTask');
+      // this.$store.commit('openCartTask');
     }
   },
 }
