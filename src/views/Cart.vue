@@ -43,7 +43,7 @@
                 </div> 
                 <!-- <p>{{product.addOn}}</p> -->
                 <div>
-                  <button @click="$store.commit('deleteFromCart', product)">Delete</button>
+                  <button @click="removeItem(product)">Delete</button>
                 </div>
             </div>
           </div>
@@ -85,9 +85,6 @@ export default {
     }
   },
   computed: {
-    // isOpen() { 
-    //   return this.$store.state.open
-    // },
     cart() {
       return this.$store.state.cart
     },
@@ -102,9 +99,6 @@ export default {
     }
   },
   methods: {
-    // closeCart() {
-    //   this.$store.commit('closeCartTask');
-    // },
     openCheckout() {
       this.$store.commit('openCheckout');
     },
@@ -112,11 +106,16 @@ export default {
       this.$store.commit('decreaseQuantity');
       this.$store.commit('decreasePrice');
     },
-    // increaseCartQuantity(product) {
-      // this.$store.commit('increaseCartQuantity', product);
-      // this.$store.commit('increaseQuantity');
-      // this.$store.commit('increasePrice')
-    // },
+    removeItem(product) {
+
+      this.$store.commit('deleteFromCart',product);
+      // this.cart.splice(this.cart.indexOf(product), 1);
+      // var index = arr.indexOf(value);
+      // if (index > -1) {
+      //   arr.splice(index, 1);
+      // }
+      // return arr;
+    },
   },
 }
 </script>

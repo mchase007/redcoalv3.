@@ -7,7 +7,6 @@
       <Hero></Hero>
     </div> 
     <div class="hero-foot">
-      <!-- <ProductList></ProductList> -->
     </div>
   </section>
 </template>
@@ -15,14 +14,12 @@
 <script>
   import Header from '@/components/Header.vue'
   import Hero from '@/components/Hero.vue'
-  // import ProductList from '@/components/ProductList.vue'
 
 export default {
   name: "CoalSite",
   components: {
     Header,
     Hero,
-    // ProductList,
   },
   data() {
     return {
