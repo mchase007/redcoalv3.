@@ -20,7 +20,6 @@ export default {
   name: "ProductList",
   data() {
     return {
-      // isActive: false,
     }
   },
   mounted() {
@@ -45,5 +44,3 @@ export default {
 <style lang='scss'>
 
 </style>
-
-:class="{isPrimary: $refs.link.$els.classList.contains('router-link-active')}"

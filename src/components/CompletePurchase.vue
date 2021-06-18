@@ -35,6 +35,67 @@
         <p class="help">021-123-1234</p>
       </div>
 
+      <div class="content">
+        <h5>Local Area</h5>
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="rsvp">
+            Brunei
+          </label>
+          <label class="radio">
+            <input type="radio" name="rsvp">
+            Hall 7
+          </label>
+          <label class="radio">
+            <input type="radio" name="rsvp">
+            Ayeduase
+          </label>
+          <label class="radio">
+            <input type="radio" name="rsvp">
+            Kotei
+          </label>
+          <label class="radio">
+            <input type="radio" name="rsvp">
+            New Site
+          </label>
+          <label class="radio">
+            <input type="radio" name="rsvp">
+              Campus 
+          </label>
+          <label class="radio">
+            <input type="radio" name="rsvp">
+            Bomso
+          </label>
+          <label class="radio">
+            <input type="radio" name="rsvp">
+            Commercial
+          </label>
+          <label class="radio">
+            <input type="radio" name="rsvp">
+            Tech Junction
+          </label><label class="radio">
+            <input type="radio" name="rsvp">
+            Asokore Mampong
+          </label>
+          <label class="radio">
+            <input type="radio" name="rsvp">
+            Suntreso
+          </label>
+          <label class="radio">
+            <input type="radio" name="rsvp">
+            Ahodwo
+          </label>
+          <label class="radio">
+            <input type="radio" name="rsvp">
+            Asokwa
+          </label>
+          <label class="radio">
+            <input type="radio" name="rsvp">
+            Bantama
+          </label>
+        </div>
+      </div>
+
       <div class="field">
         <label class="label">GPS Number</label>
         <div class="control">
@@ -49,18 +110,6 @@
           <textarea @input="plusInfor" ref="plusInfor" class="textarea" placeholder="Textarea"></textarea>
         </div>
       </div>
-      
-      <!-- <div class="field">
-        <label class="label">Payment Method</label>
-        <div class="control">
-        <div class="select">
-          <select @input="userNetwork">
-            <option>MTN</option>
-            <option>Vodafone</option>
-          </select>
-        </div>
-      </div>
-    </div> -->
       
       <div class="card-content cartProduct">
        

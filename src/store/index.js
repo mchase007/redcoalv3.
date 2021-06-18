@@ -11,6 +11,7 @@ export default createStore({
   state: {
     products: items,
     cart: [],
+    exists: null,
     // open: false,
     checkout: false,
     remove: false,
@@ -53,54 +54,21 @@ export default createStore({
       state.meal = payload;
     },
     addToCart(state, payload) {
-      console.log('One'+payload.uniqueID);
-      let randomId = Math.floor(Math.random() * 100)
-      payload.uniqueID = randomId
-      console.log('Two'+payload.uniqueID);
-      // let item = state.cart.find(i => i.productQuantity === payload.productQuantity)
+      let randomId = Math.floor(Math.random() * 100);
+      payload.uniqueID = randomId;
       state.cart.push(payload);
-      console.log('Loaded');
-      // if (item) {
-      //   item.productQuantity2++
-      //   console.log(item.productQuantity2);
-      //   // item.totalPrice = item.productQuantity * item.productPrice
-      // } else {
-      // }
+      console.log('Loaded' + payload);
       updateLocalStorage(state.cart)
     },
-    // removeFromCart(state, payload) {
-    //   let item = state.cart.find(i => i.productID === payload.productID)
-
-    //   if (item.productQuantity > 1) {
-    //     item.productQuantity--
-    //     item.totalPrice = item.productQuantity * item.productPrice
-    //   } else {
-    //     state.cart = state.cart.filter(i => i.productID !== payload.productID);
-    //   }
-    //   updateLocalStorage(state.cart)
-    // },
     deleteFromCart(state, payload) {
-      console.log(payload.uniqueID);
-      // for (let i = 0; i < state.cart.length; i++) {
-      //   if (i.uniqueID === payload.uniqueID) {
-      //     let removed = state.cart.splice(i, 1)
-      //     console.log(removed);
-      //   }
-        
-      // }
-      state.cart = state.cart.filter(i => i.uniqueID !== payload.uniqueID);
+      console.log(state.cart.indexOf(payload));
+      state.cart.splice(state.cart.indexOf(payload), 1);
       updateLocalStorage(state.cart)
     },
     increaseCartQuantity(state, payload) {
       payload.productQuantity++
       // state.meal.productQuantity++;
     },
-    // openCartTask(state) {
-    //   state.open = true;
-    // },
-    // closeCartTask(state) {
-    //   state.open = false;
-    // },
     closeProductTask(state) {
       state.productView = false;
     }, 
@@ -124,8 +92,7 @@ export default createStore({
         state.meal.productPrice = price;  
       } else {
         let price = (state.meal.productPrice + 2);
-        state.meal.productPrice = price;
-        
+        state.meal.productPrice = price;      
       }
     },
     decreaseQuantity(state) {
@@ -167,7 +134,7 @@ export default createStore({
     },
     userContactMessage(state, payload) {
       state.contactMessage = payload
-    },
+    }, 
     userAddress(state, payload) {
       state.gpsAddress = payload
     },
@@ -204,11 +171,7 @@ export default createStore({
         console.log('clear');
         state.fullName = '';
         state.contactEmail = '';
-        state.contactMessage
-      // localStorage.clear();
-      // state.cart = [];
-      // state.checkout = false
-      // state.open = false 
+        state.contactMessage = '';
     }   
   },
   actions: {

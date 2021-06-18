@@ -64,9 +64,7 @@ export default {
       this.$refs['name'].value = ''
       this.$refs['email'].value = ''
       this.$refs['message'].value = ''
-      console.log('shot fired');
-
-      
+      console.log('shot fired');      
     },
   },
 

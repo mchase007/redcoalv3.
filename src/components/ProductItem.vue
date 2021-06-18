@@ -10,7 +10,6 @@
           <p class=" is-size-7 is-size-6-tablet">+ FREE Delivery</p>
         </div>
       </div>
-      <!-- <p class="promo is-size-7 is-size-6-tablet">FREE Delivery</p> -->
       <div class="controlSet">
         <button class="button" @click="decreaseQuantity">-</button>
         <p class="quantity">{{userMeal.productQuantity}}</p>
@@ -31,7 +30,8 @@
         <button class="button">
           <span>What you get</span>
           <span class="is-small">
-            <i class="gg-arrow-right-o"></i>
+            <i v-if="pack" class="gg-arrow-up-r"></i>
+            <i v-if="!pack" class="gg-arrow-down-r"></i>
           </span>
         </button>
          
@@ -41,7 +41,7 @@
        <div class="more is-size-5" :class="{pack: pack}">
         <ol type="1">
           <li>
-            Grilled {{userMeal.productName}} neatly wrapped in foil and packaging paper
+            {{userMeal.productQuantity}} grilled {{userMeal.productID}}s neatly wrapped in foil and packaging paper
           </li>
           <li>
             A bottle of water.
@@ -81,9 +81,6 @@ export default {
   methods: {
     updateCart(product) {
       this.$store.commit('addToCart', product);
-      // this.$store.commit('closeProductTask');
-      // this.$store.commit('openCartTask');
-      console.log('cart open');
     },
     closeProductView() {
       this.$store.commit('closeProductTask');
