@@ -35,65 +35,72 @@
         <p class="help">021-123-1234</p>
       </div>
 
+      <div class="field locale">
       <div class="content">
-        <h5>Local Area</h5>
-        <div class="control">
+        <h5>Local Area: {{userLocale}}</h5>
+
+        <div class="control local">
           <label class="radio">
-            <input type="radio" name="rsvp">
-            Brunei
-          </label>
-          <label class="radio">
-            <input type="radio" name="rsvp">
-            Hall 7
-          </label>
-          <label class="radio">
-            <input type="radio" name="rsvp">
-            Ayeduase
-          </label>
-          <label class="radio">
-            <input type="radio" name="rsvp">
-            Kotei
-          </label>
-          <label class="radio">
-            <input type="radio" name="rsvp">
-            New Site
-          </label>
-          <label class="radio">
-            <input type="radio" name="rsvp">
-              Campus 
-          </label>
-          <label class="radio">
-            <input type="radio" name="rsvp">
-            Bomso
-          </label>
-          <label class="radio">
-            <input type="radio" name="rsvp">
-            Commercial
-          </label>
-          <label class="radio">
-            <input type="radio" name="rsvp">
-            Tech Junction
-          </label><label class="radio">
-            <input type="radio" name="rsvp">
-            Asokore Mampong
-          </label>
-          <label class="radio">
-            <input type="radio" name="rsvp">
-            Suntreso
-          </label>
-          <label class="radio">
-            <input type="radio" name="rsvp">
+            <input type="radio" ref="local" @input="userLocal" value="Ahodwo" name="rsvp">
             Ahodwo
           </label>
           <label class="radio">
-            <input type="radio" name="rsvp">
+            <input type="radio" ref="local" @input="userLocal" value="Asokore Mampong" name="rsvp">
+            Asokore Mampong
+          </label>
+          <label class="radio">
+            <input type="radio" ref="local" @input="userLocal" value="Asokwa" name="rsvp">
             Asokwa
           </label>
           <label class="radio">
-            <input type="radio" name="rsvp">
+            <input type="radio" ref="local" @input="userLocal" value="Ayeduase" name="rsvp">
+            Ayeduase
+          </label>
+          <label class="radio">
+            <input type="radio" ref="local" @input="userLocal" value="Bantama" name="rsvp">
             Bantama
           </label>
+          <label class="radio">
+            <input type="radio" ref="local" @input="userLocal" value="Bomso" name="rsvp">
+            Bomso
+          </label>
+          <label class="radio">
+            <input type="radio" ref="local" @input="userLocal" value="Brunei" name="rsvp">
+            Brunei
+          </label>
+          <label class="radio">
+            <input type="radio" ref="local" @input="userLocal" value="Campus" name="rsvp">
+            Campus 
+          </label>
+          <label class="radio">
+            <input type="radio" ref="local" @input="userLocal" value="Commercial" name="rsvp">
+            Commercial
+          </label>
+          <label class="radio">
+            <input type="radio" ref="local" @input="userLocal" value="Hall 7" name="rsvp">
+            Hall 7
+          </label>
+          <label class="radio">
+            <input type="radio" ref="local" @input="userLocal" value="Kotei" name="rsvp">
+            Kotei
+          </label>
+          <label class="radio">
+            <input type="radio" ref="local" @input="userLocal" value="New Site" name="rsvp">
+            New Site
+          </label>
+          <label class="radio">
+            <input type="radio" ref="local" @input="userLocal" value="Suntreso" name="rsvp">
+            Suntreso
+          </label>
+          <label class="radio">
+            <input type="radio" ref="local" @input="userLocal" value="Tech Junction" name="rsvp">
+            Tech Junction
+          </label>
         </div>
+      <p class="help">* Delivering to entire Ashanti soon</p>
+      </div>
+
+
       </div>
 
       <div class="field">
@@ -154,6 +161,9 @@ export default {
     cartTotal() {
       return this.$store.getters.cartTotal
     },
+    userLocale() {
+      return this.$store.state.local
+    },
     isCheckout() {
       return this.$store.state.checkout
     },
@@ -184,6 +194,9 @@ export default {
     userAddress(event) {
       this.$store.commit('userAddress', event.target.value)
     },
+    userLocal(event) {
+      this.$store.commit('userLocal', event.target.value)
+    },
     plusInfor(event) {
       this.$store.commit('plusInfor', event.target.value)
     },
@@ -197,6 +210,7 @@ export default {
       this.$refs['number'].value = ''
       this.$refs['gpsAddress'].value = ''
       this.$refs['plusInfor'].value = ''
+      this.$refs['local'].value = ''
       console.log('shot fired');
 
       

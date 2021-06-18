@@ -62,3 +62,25 @@
     margin: 0 auto;
   }
 }
+
+.local {
+  display: flex;
+  flex-wrap: wrap;
+
+  .radio {
+    border: 1px solid gray;
+    font-size: 1rem;
+    padding-bottom: calc(0.25em - 0.5px);
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: calc(0.25em - 0.5px);
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom: 5px;
+    border-radius: 4px;
+  }
+}
+
+.locale {
+  margin: 10px 0 10px 0;
+}
