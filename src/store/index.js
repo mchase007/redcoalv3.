@@ -22,6 +22,7 @@ export default createStore({
     contactEmail: '',
     contactMessage: '',
     gpsAddress: '',
+    local: '',
     transactionRef: '',
     plusInfor: '',
     key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d',
@@ -138,6 +139,9 @@ export default createStore({
     userAddress(state, payload) {
       state.gpsAddress = payload
     },
+    userLocal(state, payload) {
+      state.local = payload
+    },
     plusInfor(state, payload) {
       state.plusInfor = payload
     },
@@ -150,6 +154,7 @@ export default createStore({
           userName: state.fullName,
           mobile: state.mobile,
           gpsAddress: state.gpsAddress,
+          local: state.local,
           plusInfor: state.plusInfor,
           cart: state.cart,
           // total: state.cartTotal,
