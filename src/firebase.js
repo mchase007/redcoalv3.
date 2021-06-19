@@ -1,5 +1,6 @@
 import 'firebase/app';
 import 'firebase/firestore';
+import 'firebase/performance';
 import firebase from 'firebase/app';
 
 
@@ -21,4 +22,9 @@ const testCollection = db.collection('test')
 export const createTest = test => {
   console.log('test');
   return testCollection.add(test)
+}
+
+export const runPerformance = () => {
+  console.log('Performance');
+  firebaseApp.performance()
 }
