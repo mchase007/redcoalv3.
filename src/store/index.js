@@ -11,6 +11,7 @@ export default createStore({
   state: {
     products: items,
     cart: [],
+    isActive: false,
     exists: null,
     // open: false,
     checkout: false,
@@ -55,11 +56,15 @@ export default createStore({
       state.meal = payload;
     },
     addToCart(state, payload) {
+      state.isActive = !state.isActive;
       let randomId = Math.floor(Math.random() * 100);
       payload.uniqueID = randomId;
       state.cart.push(payload);
-      console.log('Loaded' + payload);
-      updateLocalStorage(state.cart)
+      console.log('Loaded' + state.isActive);
+      updateLocalStorage(state.cart);
+      setTimeout(() => {
+        state.isActive = !state.isActive;
+      }, 500);
     },
     deleteFromCart(state, payload) {
       console.log(state.cart.indexOf(payload));

@@ -53,7 +53,7 @@
       </div>
 
     </div>
-      <button class="is-primary next" @click="updateCart(userMeal)">Buy Now</button>
+      <button class="is-primary next" @click="updateCart(userMeal)">{{isActive ? 'Added' : 'Add to Basket'}}</button>
     </div>
 </template>
 
@@ -63,6 +63,7 @@ export default {
   data() {
     return {
       pack: false,
+      effect: 'Add to Basket',
     }
   },
   components: {
@@ -74,6 +75,9 @@ export default {
     },
     userMeal() {
       return this.$store.state.meal
+    },
+    isActive() {
+      return this.$store.state.isActive
     }
   },
   mounted() {
