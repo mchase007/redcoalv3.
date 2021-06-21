@@ -1,11 +1,16 @@
 <template>  
-  <div class="">
+  <div class="cartBox">
     
     <div v-if="cart.length > 0">
       <div class="cart-control">
-      <button class="button is-outlined is-primary">
-        <router-link to="/">Continue shopping</router-link>
-        </button>
+      <div class="theButton2">
+        <router-link to="/">
+        <div class="flex">
+        <i class="gg-arrow-left"></i>
+        <span>Back to Shop</span>
+        </div>
+        </router-link>
+      </div>
 
       <div>
         Basket items: {{cartItemLength}}
@@ -52,19 +57,26 @@
     </div>
     <div v-if="cart.length === 0">
       <div class="cart-control">
-      <button class="button is-outlined is-primary">
-        <router-link to="/">Continue Shopping</router-link>
-      </button>
+      <div class="theButton2">
+        <router-link to="/">
+        <div class="flex">
+        <i class="gg-arrow-left"></i>
+        <span>Back to Shop</span>
+        </div>
+        </router-link>
+      </div>
       <div>
         Basket items: {{cartItemLength}}
       </div>
     </div>
       <p>There are no items in cart</p>
+      <div class="space"></div>
     </div>
 
-    <div v-if="cart.length > 0" class="box">
-      
-      <button class="button is-primary" @click="openCheckout">Complete Address</button>
+
+    
+    <div v-if="cart.length > 0" class="next" @click="openCheckout">
+      Complete Address
     </div>
   </div>
   <CompletePurchase></CompletePurchase>
@@ -120,6 +132,5 @@ export default {
 }
 </script>
 
-<style lang="scss">
-  
+<style lang="scss" scoped>
 </style>

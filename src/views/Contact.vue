@@ -3,11 +3,11 @@
     <div class="hero-head">
       <Header></Header>
     </div>
-    <div class="hero-body content">
+    <div class="hero-body content contact-page">
 
       <div class="contact-form">
       <h1>Talk to us</h1>
-
+ 
         <div class="field">
         <label class="label">Full Name</label>
         <div class="control">
@@ -31,12 +31,38 @@
         </div>
       </div>
 
-       <div class="field checkout-button">
+       <div class="field">
     <div class="control">
-      <button class="button is-link" @click="firebaseTestTwo">Submit Message</button>
+      <button class="theButton4 is-link" @click="firebaseTestTwo">Submit Message</button>
     </div>
       </div>
       </div>
+
+      <div class="contact-links">
+      <div class="infor">
+        <!-- <p>redcoal.com</p> -->
+        <div class="flex">
+          <i class="gg-pin"></i>
+          <p>KNUST</p> 
+        </div>
+        <div class="flex">
+          <i class="gg-phone"></i>
+          <p>0201234578</p>
+        </div>
+        <div class="flex">
+          <i class="gg-mail"></i>
+          <p class="flex">redcoal@redcoal.com</p>
+        </div>
+      </div>
+
+      </div>
+
+      <div class="social flex">
+        <span><i class="gg-instagram"></i></span>
+        <i class="gg-twitter"></i>
+        <i class="gg-facebook"></i>
+      </div>
+
     </div> 
   </section>
 </template>

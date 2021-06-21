@@ -64,7 +64,7 @@ export default createStore({
       updateLocalStorage(state.cart);
       setTimeout(() => {
         state.isActive = !state.isActive;
-      }, 500);
+      }, 300);
     },
     deleteFromCart(state, payload) {
       console.log(state.cart.indexOf(payload));

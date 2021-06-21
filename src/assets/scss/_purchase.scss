@@ -13,9 +13,31 @@
     display: block;
   }
 
-  .label,
+  .label {
+    text-align: left;
+  }
+
   .help {
     text-align: left;
+    margin-bottom: 20px;
+  }
+ 
+  .theButton3 {
+    border: 1px solid #731739;
+    padding-bottom: calc(0.5em - 1px);
+    padding-left: 1em;
+    margin-bottom: 20px;
+    padding-right: 1em;
+    padding-top: calc(0.5em - 1px);
+    text-align: center;
+    border-radius: 4px;
+    color: #731739;
+    cursor: pointer;
+
+    .flex {
+      align-items: center;
+    }
+  
   }
 }
 
@@ -51,23 +73,27 @@
   margin-bottom: 10px;
 
   .lat {
-    background-color: #00d1b2;
+    background-color: #731739;
   }
   
   .lng {
     width: 0.7rem;
     height: 0.7rem;
-    border: 1px solid #00d1b2;
+    border: 1px solid #731739;
     border-radius: 100%;
     margin: 0 auto;
   }
 }
-
+ 
 .local {
   display: flex;
   flex-wrap: wrap;
-
+  // border: 2px solid #731739;
+  
   .radio {
+    // width: 80%;
+    max-width: 500px;
+    display: flex;
     border: 1px solid gray;
     font-size: 1rem;
     padding-bottom: calc(0.25em - 0.5px);
@@ -78,9 +104,30 @@
     white-space: nowrap;
     margin-bottom: 5px;
     border-radius: 4px;
+    margin-left: 2px;
   }
 }
 
 .locale {
-  margin: 10px 0 10px 0;
+  margin: 20px 0 0 0;
+}
+
+
+.side {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 5px;
+}
+
+.localeResponse {
+  align-items: baseline;
+  h5 {
+    margin-right: 10px;
+  }
+}
+
+.btns {
+  div {
+    margin-bottom: 20px;
+  }
 }

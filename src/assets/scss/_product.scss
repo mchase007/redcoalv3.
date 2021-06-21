@@ -59,6 +59,30 @@
   display: flex;
   align-items: center;
 
+  .theButton {
+    border: 1px solid #731739;
+    padding-bottom: calc(0.5em - 1px);
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: calc(0.5em - 1px);
+    text-align: center;
+    border-radius: 4px;
+    display: flex;
+    // justify-content: space-evenly;
+    align-items: center;
+    // border-color: ;
+    color: #731739;
+  }
+  
+  .packOpen {
+    font-weight: 700;
+  }
+
+  .buttonText{
+    font-size: 13.4px;
+    text-transform: uppercase;
+  }
+
   i{
     margin-left: 10px;
   }

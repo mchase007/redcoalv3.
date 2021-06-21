@@ -26,5 +26,5 @@ export const createTest = test => {
 
 export const runPerformance = () => {
   console.log('Performance');
-  firebaseApp.performance()
+  // firebaseApp.performance()
 }

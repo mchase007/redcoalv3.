@@ -27,20 +27,20 @@
 
       <p class="is-size-5">{{userMeal.productDescription}}</p>
       <div class="clicker is-size-5" @click="viewPack">
-        <button class="button">
-          <span>What you get</span>
+        <div class="theButton" :class="{packOpen: pack}">
+          <span class="buttonText">what you get</span>
           <span class="is-small">
             <i v-if="pack" class="gg-arrow-up-r"></i>
             <i v-if="!pack" class="gg-arrow-down-r"></i>
           </span>
-        </button>
+        </div>
          
          
         </div>
 
        <div class="more is-size-5" :class="{pack: pack}">
         <ol type="1">
-          <li>
+          <li> 
             {{userMeal.productQuantity}} grilled {{userMeal.productID}}s neatly wrapped in foil and packaging paper
           </li>
           <li>
@@ -53,7 +53,7 @@
       </div>
 
     </div>
-      <button class="is-primary next" @click="updateCart(userMeal)">{{isActive ? 'Added' : 'Add to Basket'}}</button>
+      <div class="is-primary next" @click="updateCart(userMeal)">{{isActive ? 'Added' : 'Add to Basket'}}</div>
     </div>
 </template>
 
@@ -63,7 +63,6 @@ export default {
   data() {
     return {
       pack: false,
-      effect: 'Add to Basket',
     }
   },
   components: {

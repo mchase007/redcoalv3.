@@ -6,7 +6,7 @@
   justify-content: space-between;
 } 
  
-.mealItem {
+.mealItem { 
   width: 30%;
 
   a {
@@ -17,6 +17,7 @@
     padding-top: calc(0.5em - 1px);
     text-align: center;
     border-radius: 4px;
+    color: #731739;
   }
 
   .router-link-active {
