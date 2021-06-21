@@ -16,11 +16,30 @@
         <button class="button" @click="increaseQuantity">+</button>
       </div>
 
-      <div class="field">
+      <div class="field pepper flex">
+        <span>Pepper Spice:</span>
         <div class="control">
           <label class="">
             <input type="checkbox">
+            No Spice
+          </label>
+          <label class="">
+            <input type="checkbox">
+            Spice
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control addOns flex">
+          <p>Add On:</p>
+          <label class="addOn">
+            <input class="" type="checkbox">
             Banku with Pepper - GHS 5.00
+          </label>
+          <label class="addOn">
+            <input class="" type="checkbox">
+            redcoal Sobolo 500ml - GHS 2.00
           </label>
         </div>
       </div>
