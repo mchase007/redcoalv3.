@@ -20,12 +20,13 @@
         <span>Pepper Spice:</span>
         <div class="control">
           <label class="">
-            <input type="checkbox">
-            No Spice
-          </label>
-          <label class="">
-            <input type="checkbox">
-            Spice
+            <input @click="spicey" type="checkbox">
+            <span>
+              No Spice
+            </span>
+            <!-- <span v-if="!noSpice">
+              Spice
+            </span> -->
           </label>
         </div>
       </div>
@@ -82,6 +83,7 @@ export default {
   data() {
     return {
       pack: false,
+      noSpice: false,
     }
   },
   components: {
@@ -123,6 +125,9 @@ export default {
       console.log('View Pack')
       this.pack = !this.pack 
      },
+     spicey() {
+       this.noSpice = !this.noSpice
+     }
   },
 
 }

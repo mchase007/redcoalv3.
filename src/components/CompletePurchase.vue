@@ -132,7 +132,7 @@
 
       <div class="btns">
       <div class="theButton4" @click="firebaseTest">Submit Order</div>
-      <div class="theButton4" @click="runPaystack">Pay Order</div>
+      <div class="theButton4 payBtn" @click="runPaystack">Pay Order</div>
       </div>
 
     </div>
