@@ -1,11 +1,16 @@
 <template> 
   <div class="checkout-box" :class="{checkout : isCheckout}">
-     
+      
     <div class="orderForm">
     <div class="cartRoute">
-    <button class="button is-outlined is-info" @click="returnToCart">Back to cart</button>
+    <div class="theButton3" @click="returnToCart">
+      <div class="flex">
+        <i class="gg-arrow-left"></i>
+        <span>Back to cart</span>
+        </div>
+      </div>
     </div>
-
+    
     <div class="map flex flex-fd-c">
         <div class="indicators flex flex-jc-sb">
           <div class="lng"></div>
@@ -13,9 +18,9 @@
         <div class="lng"></div>
         </div>
         <div class="labels flex flex-jc-sb">
-        <span>Cart</span>
-        <span class="">Delivery</span>
-        <span class="">Payment</span>
+        <span>Shopping Cart</span>
+        <span class="">Delivery Address</span>
+        <span class="">Secure Payment</span>
         </div>
       </div>
 
@@ -34,67 +39,54 @@
         </div>
         <p class="help">021-123-1234</p>
       </div>
-
+ 
       <div class="field locale">
       <div class="content">
-        <h5>Local Area: {{userLocale}}</h5>
-
+        <div class="flex localeResponse">
+        <h5>Local Area: </h5>
+        <p>{{userLocale}} <span v-if="userLocale">and surroundings</span></p> 
+        
+        </div>
         <div class="control local">
+        
           <label class="radio">
-            <input type="radio" ref="local" @input="userLocal" value="Ahodwo" name="rsvp">
-            Ahodwo
+            <div class="flex inside">
+                <input type="radio" ref="local" @input="userLocal" value="Ahodwo" name="location">
+                <div class="side">
+                <span>Ahodwo,</span>
+                <span>Asokwa,</span>
+                <span>Adiemmbra,</span>
+                <span>Dakodwon,</span>
+                <span>and surroundings.</span>
+                </div>
+              </div>
           </label>
           <label class="radio">
-            <input type="radio" ref="local" @input="userLocal" value="Asokore Mampong" name="rsvp">
-            Asokore Mampong
+              <div class="flex inside">
+                <input type="radio" ref="local" @input="userLocal" value="KNUST Campus" name="location">
+                <div class="side">
+                <span>Asokore Mampong,</span>
+                <span>Ayeduase,</span>
+                <span>Bomso,</span>
+                <span>KNUST Campus,</span>
+                <span>Kotei,</span>
+                <span>New Site</span> 
+                <span>and surroundings.</span>
+                </div>
+              </div>
           </label>
+
           <label class="radio">
-            <input type="radio" ref="local" @input="userLocal" value="Asokwa" name="rsvp">
-            Asokwa
-          </label>
-          <label class="radio">
-            <input type="radio" ref="local" @input="userLocal" value="Ayeduase" name="rsvp">
-            Ayeduase
-          </label>
-          <label class="radio">
-            <input type="radio" ref="local" @input="userLocal" value="Bantama" name="rsvp">
-            Bantama
-          </label>
-          <label class="radio">
-            <input type="radio" ref="local" @input="userLocal" value="Bomso" name="rsvp">
-            Bomso
-          </label>
-          <label class="radio">
-            <input type="radio" ref="local" @input="userLocal" value="Brunei" name="rsvp">
-            Brunei
-          </label>
-          <label class="radio">
-            <input type="radio" ref="local" @input="userLocal" value="Campus" name="rsvp">
-            Campus 
-          </label>
-          <label class="radio">
-            <input type="radio" ref="local" @input="userLocal" value="Commercial" name="rsvp">
-            Commercial
-          </label>
-          <label class="radio">
-            <input type="radio" ref="local" @input="userLocal" value="Hall 7" name="rsvp">
-            Hall 7
-          </label>
-          <label class="radio">
-            <input type="radio" ref="local" @input="userLocal" value="Kotei" name="rsvp">
-            Kotei
-          </label>
-          <label class="radio">
-            <input type="radio" ref="local" @input="userLocal" value="New Site" name="rsvp">
-            New Site
-          </label>
-          <label class="radio">
-            <input type="radio" ref="local" @input="userLocal" value="Suntreso" name="rsvp">
-            Suntreso
-          </label>
-          <label class="radio">
-            <input type="radio" ref="local" @input="userLocal" value="Tech Junction" name="rsvp">
-            Tech Junction
+            <div class="flex inside">
+                <input type="radio" ref="local" @input="userLocal" value="Adum" name="location">
+                <div class="side">
+                <span>Adum,</span>
+                <span>Bantama,</span>
+                <span>Bekwai,</span>
+                <span>Kwadaso,</span>
+                <span>and surroundings.</span>
+                </div>
+              </div>
           </label>
         </div>
       <p class="help">* Delivering to entire Ashanti soon</p>
@@ -122,25 +114,25 @@
        
       <div class="box flex flex-jc-sb total content">
         <div>
+          <p>Number of Items:</p>
           <p>Total Price:</p>
           <p>Delivery:</p>
           <p>Total:</p>
         </div>
         <div>
+          <p>{{cartItemLength}}</p>
           <p> GHS {{cartTotal}}</p>
-        <p> Free</p>
-        <strong>
-        <p> GHS {{cartTotal}}</p>
-        </strong>
+          <p> Free</p>
+          <strong>
+            <p> GHS {{cartTotal}}</p>
+          </strong>
         </div>
       </div>
       </div>
 
-      <div class="field checkout-button is-grouped">
-    <div class="control">
-      <button class="button is-link" @click="firebaseTest">Submit Order</button>
-      <button class="button is-link" @click="runPaystack">Pay Order</button>
-    </div>
+      <div class="btns">
+      <div class="theButton4" @click="firebaseTest">Submit Order</div>
+      <div class="theButton4 payBtn" @click="runPaystack">Pay Order</div>
       </div>
 
     </div>
@@ -179,6 +171,9 @@ export default {
     },
     payRef(){
       return this.$store.state.transactionRef
+    },
+    cartItemLength() {
+      return this.$store.getters.cartLength
     },
   },
   methods: {

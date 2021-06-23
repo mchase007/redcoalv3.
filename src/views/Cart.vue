@@ -1,15 +1,18 @@
 <template>  
-  <div class="">
+  <div class="cartBox hero is-fullheight is-medium">
     
     <div v-if="cart.length > 0">
       <div class="cart-control">
-      <button class="button is-outlined is-primary">
-        <router-link to="/">Continue shopping</router-link>
-        </button>
+      <div @click="toShop" class="theButton2">
+        <div class="flex">
+        <i class="gg-arrow-left"></i>
+        <span>Back to Shop</span>
+        </div>
+      </div>
 
       <div>
         Basket items: {{cartItemLength}}
-      </div>
+      </div> 
       </div>
 
       <div class="map flex flex-fd-c">
@@ -19,52 +22,73 @@
         <div class="lng"></div>
         </div>
         <div class="labels flex flex-jc-sb">
-        <span>Cart</span>
-        <span class="">Delivery</span>
-        <span class="">Payment</span>
+        <span>Shopping Cart</span>
+        <span class="">Delivery Address</span>
+        <span class="">Secure Payment</span>
         </div>
       </div>
 
       <div v-for="product in cart">
         <div class="card-content cartProduct">
           <div class="box">
-            <div class="flex flex-jc-sb">
-                <p>Image</p>
-                <p>{{ product.productName }}</p>
+            <div class="flex flex-jc-sb orderRow">
+                <!-- <p>Image</p> -->
+                <div class="flex flex-jc-sb">
+                  <div>
+                  <p>{{product.productQuantity}} {{ product.productName }}s</p>
+                </div>
                 
                 <div>
-                  <p>GHS {{ product.productPrice }}</p>
+                  <p>GHS {{ product.productPrice }}.00</p>
                   <!-- <div class="controlSet">
                     <button class="button" @click="decreaseQuantity">-</button>
                     <p class="quantity">{{product.productQuantity}}</p>
                     <button class="button" @click="increaseCartQuantity(product)">+</button>
                   </div> -->
-                  <p>Quantity: {{product.productQuantity}}</p>
                 </div> 
                 <!-- <p>{{product.addOn}}</p> -->
                 <div>
-                  <button @click="removeItem(product)">Delete</button>
+                  <button @click="removeItem(product)">x</button>
+                </div>
+                </div>
+                
+                <div class="addOnRow flex flex-jc-sb" v-if="product.addOnQuantity > 1">
+                  <div>
+                    <p>{{product.addOnQuantity}} Banku Pack</p>
+                  </div>
+                  
+                  <p>GHS {{product.addOnPrice}}.00</p>
+
+                  <div>
+                    <button @click="removeAddOn(product)">x</button>
+                  </div>
                 </div>
             </div>
           </div>
         </div> 
       </div>
     </div>
+    
     <div v-if="cart.length === 0">
       <div class="cart-control">
-      <button class="button is-outlined is-primary">
-        <router-link to="/">Continue Shopping</router-link>
-      </button>
+      <div class="theButton2">
+        <router-link to="/">
+        <div class="flex">
+        <i class="gg-arrow-left"></i>
+        <span>Back to Shop</span>
+        </div>
+        </router-link>
+      </div>
       <div>
         Basket items: {{cartItemLength}}
       </div>
     </div>
       <p>There are no items in cart</p>
+      <div class="space"></div>
     </div>
-
-    <div v-if="cart.length > 0" class="box">
-      
-      <button class="button is-primary" @click="openCheckout">Complete Address</button>
+    
+    <div v-if="cart.length > 0" class="next2" @click="openCheckout">
+      Complete Address
     </div>
   </div>
   <CompletePurchase></CompletePurchase>
@@ -102,24 +126,18 @@ export default {
     openCheckout() {
       this.$store.commit('openCheckout');
     },
-    decreaseQuantity() {
-      this.$store.commit('decreaseQuantity');
-      this.$store.commit('decreasePrice');
-    },
     removeItem(product) {
-
       this.$store.commit('deleteFromCart',product);
-      // this.cart.splice(this.cart.indexOf(product), 1);
-      // var index = arr.indexOf(value);
-      // if (index > -1) {
-      //   arr.splice(index, 1);
-      // }
-      // return arr;
     },
+    removeAddOn(product) {
+      this.$store.commit('removeAddOn',product);
+    },
+    toShop() {
+      this.$router.go(-1)
+    }
   },
 }
 </script>
 
-<style lang="scss">
-  
+<style lang="scss" scoped>
 </style>

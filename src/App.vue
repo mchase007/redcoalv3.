@@ -2,6 +2,16 @@
   <router-view/>
 </template>
 
+<script>
+import { runPerformance } from '@/firebase'
+
+export default {
+  mounted() {
+    runPerformance()
+  },
+}
+</script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

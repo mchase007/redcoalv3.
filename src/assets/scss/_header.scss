@@ -8,13 +8,17 @@ nav {
   }
 }
 
+.header-hamburger {
+  cursor: pointer;
+}
+
 .header_cart{
   display: flex;
   justify-content: space-between;
   padding: 4px;
   cursor: pointer;
   border-radius: 4px;
-  border: 1px solid gray;
+  border: 1px solid #731739;
   width: 50px;
 
   p {

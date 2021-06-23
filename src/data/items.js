@@ -8,7 +8,9 @@ const items = [
     productDescription: "Fresh sausages that are tenderly charcoal-grilled till they are well cooked and seasoned with sweet and hot low-salt spice specially mixed with your health in mind.",
     totalPrice: 15,
     uniqueID: '',
-    addOn: '',
+    noSpice: '',
+    addOnQuantity: 0,
+    addOnPrice: 0,
   },
   {
     productName: "Chicken",
@@ -19,7 +21,9 @@ const items = [
     productDescription: "Fresh chicken that are tenderly charcoal-grilled till they are well cooked and seasoned with sweet and hot low-salt spice specially mixed with your health in mind.",
     totalPrice: 15,
     uniqueID: '',
-    addOn: '',
+    noSpice: '',
+    addOnQuantity: 0,
+    addOnPrice: 0,
   },
   {
     productName: "Beef",
@@ -30,7 +34,9 @@ const items = [
     productDescription: "Fresh beef that are tenderly charcoal-grilled till they are well cooked and seasoned with sweet and hot low-salt spice specially mixed with your health in mind.",
     totalPrice: 15,
     uniqueID: '',
-    addOn: '',
+    noSpice: '',
+    addOnQuantity: 0,
+    addOnPrice: 0,
   }
 ]
 
