@@ -1,6 +1,6 @@
 <template>
   <div class="productView container" >
-    <div class="content">
+    <div class="content"> 
       <h4 class="is-size-4 is-size-3-tablet">Charcoal Grilled {{userMeal.productName}}</h4>
       <div class="bill">
         <div>
@@ -38,7 +38,15 @@
             @change="updateExtra">{{extra.extraName}}: GHS {{extra.extraPrice}}.00
       </div> -->
 
-      <div @click="superPack" class="theButtonz">Super Pack</div>
+      <div @click="superPack" class="theButtonz">
+        <span>
+          Super Pack  
+        </span> 
+        <div>
+          <span><i v-if="!extras" class="gg-arrow-down-r"></i></span>
+          <span><i v-if="extras" class="gg-arrow-up-r"></i></span>
+        </div>
+      </div>
 
       <div v-if="extras" class="extraSet">
         <p v-if="!userMeal.addOnQuantity > 0">Banku with Pepper:  GHS 5.00</p>
@@ -62,15 +70,19 @@
         </div>
       </div> -->
       <div class="is-size-5 packList" >
+        <p>What you get</p>
         <ol type="1">
           <li> 
-            {{userMeal.productQuantity}} grilled {{userMeal.productID}}s
+            Grilled {{userMeal.productID}} kebab: {{userMeal.productQuantity}} 
           </li>
           <li>
-            A bottle of water.
+            Bottled water.
           </li>
           <li>
             Mint.
+          </li>
+          <li v-if="userMeal.addOnQuantity > 0">
+            Banku with pepper pack: {{userMeal.addOnQuantity}}
           </li>
         </ol>
       </div>
@@ -136,11 +148,12 @@ export default {
     },
     increaseQuantity() {
       this.$store.commit('increaseQuantity');
-      this.$store.commit('increasePrice')
+      this.$store.commit('increasePrice');
+
     },
     increaseQuantity1() {
       this.$store.commit('increaseQuantity1');
-      this.$store.commit('increasePrice1')
+      this.$store.commit('increasePrice1');
     },
     decreaseQuantity1() {
       this.$store.commit('decreaseQuantity1');

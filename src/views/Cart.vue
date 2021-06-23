@@ -1,6 +1,6 @@
 <template>  
   <div class="cartBox hero is-fullheight is-medium">
-    
+     
     <div v-if="cart.length > 0">
       <div class="cart-control">
       <div @click="toShop" class="theButton2">
@@ -48,11 +48,11 @@
                 </div> 
                 <!-- <p>{{product.addOn}}</p> -->
                 <div>
-                  <button @click="removeItem(product)">x</button>
+                  <i class="gg-close-r" @click="removeItem(product)"></i>
                 </div>
                 </div>
                 
-                <div class="addOnRow flex flex-jc-sb" v-if="product.addOnQuantity > 1">
+                <div class="addOnRow flex flex-jc-sb" v-if="product.addOnQuantity > 0">
                   <div>
                     <p>{{product.addOnQuantity}} Banku Pack</p>
                   </div>
@@ -60,7 +60,7 @@
                   <p>GHS {{product.addOnPrice}}.00</p>
 
                   <div>
-                    <button @click="removeAddOn(product)">x</button>
+                    <i class="gg-close-r" @click="removeAddOn(product)"></i>
                   </div>
                 </div>
             </div>
@@ -85,6 +85,26 @@
     </div>
       <p>There are no items in cart</p>
       <div class="space"></div>
+    </div>
+
+    <div class="">
+        
+      <div v-if="cart.length > 0" class="box flex total flex-jc-sb">
+        <div>
+          <p>Number of Items:</p>
+          <p>Total Price:</p>
+          <p>Delivery:</p>
+          <p>Total:</p>
+        </div>
+        <div>
+          <p>{{cartItemLength}}</p>
+          <p> GHS {{cartTotal}}</p>
+          <p> Free</p>
+          <strong>
+            <p> GHS {{cartTotal}}</p>
+          </strong>
+        </div>
+      </div>
     </div>
     
     <div v-if="cart.length > 0" class="next2" @click="openCheckout">

@@ -111,7 +111,7 @@
       </div>
       
       <div class="card-content cartProduct">
-       
+        
       <div class="box flex flex-jc-sb total content">
         <div>
           <p>Number of Items:</p>

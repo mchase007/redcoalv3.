@@ -28,8 +28,7 @@
     margin: 0 auto;
   }
 }
-
-
+ 
 .cart-control {
   display: flex;
   flex-direction: column;
@@ -39,7 +38,6 @@
   margin-bottom: 40px;
   align-items: flex-start;
   padding-left: 1.5rem;
-  
   
   .theButton2 {
     border: 1px solid #731739;
@@ -51,6 +49,7 @@
     text-align: center;
     border-radius: 4px;
     color: #731739;
+    cursor: pointer;
 
     .flex {
       align-items: center;
@@ -86,8 +85,25 @@
   width: 90%;
   max-width: 400px;
   margin: 0 auto;
+  margin-bottom: 40px;
 }
 
 .orderRow {
   flex-direction: column;
+}
+
+.gg-close-r {
+  color: #731739;
+  cursor: pointer;
+}
+
+.addOnRow {
+  margin-top: 4px;
+}
+
+.total {
+  margin: 0 auto;
+  max-width: 750px;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
 }
