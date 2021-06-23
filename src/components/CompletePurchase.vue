@@ -1,6 +1,6 @@
 <template> 
   <div class="checkout-box" :class="{checkout : isCheckout}">
-     
+      
     <div class="orderForm">
     <div class="cartRoute">
     <div class="theButton3" @click="returnToCart">
@@ -18,9 +18,9 @@
         <div class="lng"></div>
         </div>
         <div class="labels flex flex-jc-sb">
-        <span>Cart</span>
-        <span class="">Delivery</span>
-        <span class="">Payment</span>
+        <span>Shopping Cart</span>
+        <span class="">Delivery Address</span>
+        <span class="">Secure Payment</span>
         </div>
       </div>
 
@@ -44,14 +44,14 @@
       <div class="content">
         <div class="flex localeResponse">
         <h5>Local Area: </h5>
-        <p>{{ userLocale}} and surroundings</p> 
+        <p>{{userLocale}} <span v-if="userLocale">and surroundings</span></p> 
+        
         </div>
-
         <div class="control local">
         
           <label class="radio">
             <div class="flex inside">
-                <input type="radio" ref="local" @input="userLocal" value="Ahodwo" name="rsvp">
+                <input type="radio" ref="local" @input="userLocal" value="Ahodwo" name="location">
                 <div class="side">
                 <span>Ahodwo,</span>
                 <span>Asokwa,</span>
@@ -63,7 +63,7 @@
           </label>
           <label class="radio">
               <div class="flex inside">
-                <input type="radio" ref="local" @input="userLocal" value="KNUST Campus" name="rsvp">
+                <input type="radio" ref="local" @input="userLocal" value="KNUST Campus" name="location">
                 <div class="side">
                 <span>Asokore Mampong,</span>
                 <span>Ayeduase,</span>
@@ -78,7 +78,7 @@
 
           <label class="radio">
             <div class="flex inside">
-                <input type="radio" ref="local" @input="userLocal" value="Adum" name="rsvp">
+                <input type="radio" ref="local" @input="userLocal" value="Adum" name="location">
                 <div class="side">
                 <span>Adum,</span>
                 <span>Bantama,</span>

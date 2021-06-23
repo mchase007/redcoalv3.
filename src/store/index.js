@@ -13,10 +13,10 @@ export default createStore({
     cart: [],
     isActive: false,
     exists: null,
-    // open: false,
     checkout: false,
     remove: false,
     meal: {},
+    extraList: [],
     total: null,
     mobile: '',
     fullName: '',
@@ -24,13 +24,13 @@ export default createStore({
     contactMessage: '',
     gpsAddress: '',
     local: '',
-    transactionRef: '',
+    transactionRef: '', 
     plusInfor: '',
     key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d',
   },
   getters: {
     cartTotal: state => {
-      return state.cart.reduce((a, b) => a + b.productPrice, 0)
+      return state.cart.reduce((a, b) => a + b.productPrice + b.addOnPrice, 0)
     },
     reference() {
       let text = "";
@@ -71,6 +71,12 @@ export default createStore({
       state.cart.splice(state.cart.indexOf(payload), 1);
       updateLocalStorage(state.cart)
     },
+    removeAddOn(state, payload) {
+      let item = state.cart.indexOf(payload);
+      console.log(item);
+      state.cart[item].addOnQuantity = 0;
+      updateLocalStorage(state.cart)
+    },
     increaseCartQuantity(state, payload) {
       payload.productQuantity++
       // state.meal.productQuantity++;
@@ -92,6 +98,9 @@ export default createStore({
     increaseQuantity(state) {
       state.meal.productQuantity++;
     },
+    increaseQuantity1(state) {
+      state.meal.addOnQuantity++;
+    },
     increasePrice(state) {
       if (state.meal.productName === 'Sausage') {
         let price = (state.meal.productPrice + 3);
@@ -101,11 +110,22 @@ export default createStore({
         state.meal.productPrice = price;      
       }
     },
+    increasePrice1(state) {
+      let price = (state.meal.addOnPrice + 5);
+      state.meal.addOnPrice = price; 
+    },
     decreaseQuantity(state) {
       if (state.meal.productQuantity > 2) {
         state.meal.productQuantity--;
       } else {
         console.log('Two or more');
+      }
+    },
+    decreaseQuantity1(state) {
+      if (state.meal.addOnQuantity > 0) {
+        state.meal.addOnQuantity--;
+      } else {
+        console.log('Enough');
       }
     },
     decreasePrice(state) {
@@ -123,6 +143,14 @@ export default createStore({
         } else if (state.meal.productQuantity === 2 ) {
           state.meal.productPrice = 8;
         }
+      } 
+    },
+    decreasePrice1(state) {
+      if (state.meal.addOnQuantity > 0) {
+        let price = (state.meal.addOnPrice - 5);
+        state.meal.addOnPrice = price;
+      } else if (state.meal.addOnQuantity === 0 ) {
+        state.meal.addOnPrice = 0;
       } 
     },
     returnToCart(state) {
@@ -162,9 +190,9 @@ export default createStore({
           local: state.local,
           plusInfor: state.plusInfor,
           cart: state.cart,
-          // total: state.cartTotal,
         });
         console.log('clear');
+        console.log(state.cart);
       localStorage.clear();
       state.cart = [];
       state.checkout = false

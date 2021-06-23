@@ -1,15 +1,6 @@
-// .cart-Box {
-  // height: 100%;
-// }
-
-.space {
-  height: 100%;
-}
-
 .map {
   max-width: 300px;
-  margin: 0 auto;
-  
+  margin: 0 auto; 
 }
 
 .labels {
@@ -59,6 +50,7 @@
     padding-top: calc(0.5em - 1px);
     text-align: center;
     border-radius: 4px;
+    color: #731739;
 
     .flex {
       align-items: center;
@@ -80,4 +72,22 @@
 .cartProduct {
   max-width: 750px;
   margin: 0 auto;
+}
+
+.next2 {
+  background-color: #731739;
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding-bottom: calc(0.8em - 1px);
+  padding-top: calc(0.8em - 1px);
+  white-space: nowrap;
+  border-radius: 4px;
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.orderRow {
+  flex-direction: column;
 }

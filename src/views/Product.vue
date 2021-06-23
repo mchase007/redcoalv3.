@@ -1,4 +1,4 @@
-<template>
+<template> 
   <section class="hero is-fullheight is-medium">
     <div class="hero-head">
       <Header></Header>
