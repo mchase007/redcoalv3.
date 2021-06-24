@@ -64,7 +64,7 @@ export default createStore({
 
       if (item) {
         if (item.productQuantity === payload.productQuantity) {
-          console.log('Cart Updated');
+          console.log('Cart Updated'); 
         }       
       } else {
         state.cart.push(payload);
