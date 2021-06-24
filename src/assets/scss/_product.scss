@@ -1,6 +1,12 @@
 .content {
+  margin: 0 auto;
   text-align: left;
-  max-width: 575px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+
+  // border: 1px solid gray;
 }
  
 .controlSet {
@@ -43,14 +49,16 @@
   padding-top: calc(0.8em - 1px);
   white-space: nowrap;
   border-radius: 4px;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .clicker {
   cursor: pointer;
   color: gray;
   border-bottom: 1px solid gray;
-  // margin-top: 20px;
   font-size: 15px;
+  width: 100px;
 }
 
 .packList {

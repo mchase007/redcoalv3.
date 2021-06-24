@@ -41,15 +41,6 @@
   }
 }
 
-.total {
-  text-align: left;
-  // margin: 0 auto;
-  // max-width: 575px;
-  // margin-left: 1.5em;
-  // margin-right: 1.5em;
-  
-}
-
 .one {
   margin-top: 20px;
 }
@@ -70,7 +61,6 @@
   margin-bottom: 50px;
   display: flex;
 }
-
 
 .indicators2 { 
   // border: 2px solid rgb(134, 223, 18);
@@ -138,3 +128,17 @@
     margin-bottom: 50px;
   }
 }
+
+.totalContainer2 {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+
+  div p {
+    margin-bottom: 10px;
+  }
+}
+
+// .completeTotal {
+
+// }

@@ -68,7 +68,7 @@
         </div> 
       </div>
     </div>
-    
+     
     <div v-if="cart.length === 0">
       <div class="cart-control">
       <div class="theButton2">
@@ -87,8 +87,7 @@
       <div class="space"></div>
     </div>
 
-    <div class="">
-        
+    <div class="totalContainer">     
       <div v-if="cart.length > 0" class="box flex total flex-jc-sb">
         <div>
           <p>Number of Items:</p>

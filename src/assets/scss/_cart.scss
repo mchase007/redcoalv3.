@@ -102,8 +102,19 @@
 }
 
 .total {
-  margin: 0 auto;
-  max-width: 750px;
+  text-align: left;
   margin-left: 1.5em;
   margin-right: 1.5em;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.totalContainer {
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+
+  div p {
+    margin-bottom: 10px;
+  }
 }

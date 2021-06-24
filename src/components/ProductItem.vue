@@ -1,4 +1,4 @@
-<template>
+<template> 
   <div class="productView container" >
     <div class="content"> 
       <h4 class="is-size-4 is-size-3-tablet">Charcoal Grilled {{userMeal.productName}}</h4>
