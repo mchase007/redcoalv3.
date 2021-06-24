@@ -58,8 +58,18 @@ export default createStore({
     addToCart(state, payload) {
       state.isActive = !state.isActive;
       let randomId = Math.floor(Math.random() * 100);
-      payload.uniqueID = randomId;
-      state.cart.push(payload);
+      payload.uniqueID += randomId;
+
+      let item = state.cart.find( (e) => e.id === payload.id);
+
+      if (item) {
+        if (item.productQuantity === payload.productQuantity) {
+          console.log('Cart Updated');
+        }       
+      } else {
+        state.cart.push(payload);
+      }
+
       console.log('Loaded' + state.isActive);
       updateLocalStorage(state.cart);
       setTimeout(() => {
