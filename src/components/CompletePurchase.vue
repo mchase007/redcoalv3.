@@ -129,10 +129,9 @@
           <textarea @input="plusInfor" ref="plusInfor" class="textarea" placeholder="Textarea"></textarea>
         </div>
       </div>
-      
-      <div class="card-content cartProduct">
-        
-      <div class="box flex flex-jc-sb total content">
+
+      <div class="totalContainer2">     
+      <div class="box flex total flex-jc-sb">
         <div>
           <p>Number of Items:</p>
           <p>Total Price:</p>
@@ -148,7 +147,7 @@
           </strong>
         </div>
       </div>
-      </div>
+    </div>
 
       <div class="btns">
       <div class="theButton4" @click="firebaseTest">Submit Order</div>
@@ -162,7 +161,7 @@
 <script>
  
 import useVuelidate from '@vuelidate/core'
-import { required, minLength } from '@vuelidate/validators'
+import { required, minLength, maxLength } from '@vuelidate/validators'
 
 export default {
   setup () {
@@ -182,10 +181,8 @@ export default {
   validations() {
     return {
       userName: {required, minLength: minLength(3)},
-      userContact: {required, minLength: minLength(10)},
-      userGPS: {required, minLength: minLength(9)},
-      // userLocality: {required},
-      // userExtraInfor: '',
+      userContact: {required, minLength: minLength(10), maxLength: maxLength(10)},
+      userGPS: {required, minLength: minLength(9), maxLength: maxLength(9)},
     }
   },
   computed: {
