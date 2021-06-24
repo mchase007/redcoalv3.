@@ -1,4 +1,6 @@
 <template> 
+
+
   <div class="checkout-box" :class="{checkout : isCheckout}">
       
     <div class="orderForm">
@@ -12,32 +14,46 @@
     </div>
     
     <div class="map flex flex-fd-c">
-        <div class="indicators flex flex-jc-sb">
-          <div class="lng"></div>
-          <div class="lng lat"></div>
+      <div class="indicators flex flex-jc-sb">
         <div class="lng"></div>
-        </div>
-        <div class="labels flex flex-jc-sb">
+        <div class="lng lat"></div>
+        <div class="lng"></div>
+      </div>
+      <div class="labels flex flex-jc-sb">
         <span>Shopping Cart</span>
         <span class="">Delivery Address</span>
         <span class="">Secure Payment</span>
-        </div>
       </div>
+    </div>
+
+    <!-- <div>
+      <input type="text" v-model="userName" @blur="test"/>
+      <span class="help" v-if="v$.userName.$error">
+        Kindly enter fullName
+      </span>
+    </div> -->
+
 
       <div class="field one">
         <label class="label">Full Name</label>
         <div class="control">
-          <input @input="userFullName" ref="name" class="input" type="text" placeholder="Kofi Grills Chills">
+          <input @blur="userFullName" v-model="userName" ref="name" class="input" type="text" placeholder="Kofi Grills Chills">
         </div>
-        <p class="help">Kofi Grills</p>
+        <span class="help" v-if="v$.userName.$error">
+        Kindly enter Fullname correctly
+        </span>
+        <!-- <p class="help">Kofi Grills</p> -->
       </div>
 
       <div class="field">
         <label class="label">Contact Number</label>
         <div class="control">
-          <input @input="userMobile" ref="number" class="input" type="number" placeholder="021-123-1234">
+          <input @blur="userMobile" v-model="userContact" ref="number" class="input" type="tel" placeholder="0211231234">
         </div>
-        <p class="help">021-123-1234</p>
+        <span class="help" v-if="v$.userContact.$error">
+          Kindly enter your contact correctly
+        </span>
+        <p class="help">0211231234</p>
       </div>
  
       <div class="field locale">
@@ -98,13 +114,17 @@
       <div class="field">
         <label class="label">GPS Number</label>
         <div class="control">
-          <input @input="userAddress" ref="gpsAddress" class="input" type="text" placeholder="">
+          <input @blur="userAddress" v-model="userGPS" ref="gpsAddress" class="input" type="text" placeholder="">
         </div>
-        <p class="help">ABC-123</p>
+        <span class="help" v-if="v$.userGPS.$error">
+          Kindly enter your contact correctly
+        </span>
+        <p class="help">ABC1234567</p>
       </div>
 
       <div class="field">
-        <label class="label">Special Instructions</label>
+        <label class="label">Special Instructions <span class="help">Optional</span></label>
+        
         <div class="control">
           <textarea @input="plusInfor" ref="plusInfor" class="textarea" placeholder="Textarea"></textarea>
         </div>
@@ -141,13 +161,32 @@
 
 <script>
  
+import useVuelidate from '@vuelidate/core'
+import { required, minLength } from '@vuelidate/validators'
+
 export default {
+  setup () {
+    return { v$: useVuelidate() }
+  },
   components: { 
   }, 
   data() {
     return {
-      
+      userName: '',
+      userContact: '',
+      userGPS: '',
+      userLocality: '',
+      // userExtraInfor: '',
     };
+  },
+  validations() {
+    return {
+      userName: {required, minLength: minLength(3)},
+      userContact: {required, minLength: minLength(10)},
+      userGPS: {required, minLength: minLength(9)},
+      // userLocality: {required},
+      // userExtraInfor: '',
+    }
   },
   computed: {
     cartTotal() {
@@ -177,16 +216,27 @@ export default {
     },
   },
   methods: {
+    test() {
+      
+      // if (this.v$.$error) {
+      //   console.log(this.userName)
+      // } else {
+      //   // console.log(this.v$.$errors[0].$message)
+      //   console.log('Form incomplete')
+      // }
+    },
     returnToCart() {
       this.$store.commit('returnToCart');
     },
     userMobile(event) {
+      this.v$.$touch()
       this.$store.commit('userMobile', event.target.value)
     },
     userFullName(event) {
-      this.$store.commit('userFullName', event.target.value)
+      this.v$.$touch()
     },
     userAddress(event) {
+      this.v$.$touch()
       this.$store.commit('userAddress', event.target.value)
     },
     userLocal(event) {
