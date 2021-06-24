@@ -60,7 +60,7 @@ export default createStore({
       let randomId = Math.floor(Math.random() * 100);
       payload.uniqueID += randomId;
 
-      let item = state.cart.find( (e) => e.id === payload.id);
+      let item = state.cart.find( (e) => e.id === payload.id && e.productQuantity === payload.productQuantity);
 
       if (item) {
         if (item.productQuantity === payload.productQuantity) {
