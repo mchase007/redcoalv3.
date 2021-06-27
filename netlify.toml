@@ -1,2 +1,4 @@
-[functions]
-  directory = "lambda"
+[build]
+  command = "npm run build"
+  functions = "lambda" #  netlify-lambda reads this
+  publish = "build"

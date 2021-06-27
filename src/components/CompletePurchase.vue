@@ -1,6 +1,5 @@
 <template> 
 
-
   <div class="checkout-box" :class="{checkout : isCheckout}">
       
     <div class="orderForm">

@@ -1,9 +1,39 @@
+const axios = require('axios')
+
 exports.handler = function (event,context,callback){
-  callback(null, {
-    statusCode: 200,
-    body: 'Hello World',
+
+  const parsedBody = JSON.parse(event.body);
+  console.log(parsedBody);
+  axios({
+    method: 'POST',
+    url: 'https://hookb.in/LggkYrpynXcWkkranyNX',
+    data: {name: parsedBody.name},
   })
-}
+  .then( response => {
+    callback(null, {
+      statusCode: 200,
+      body: 'Yes',
+    }) 
+  })
+  .catch(err => {
+    console.log(err);
+    callback(new Error('Something went wrong'))
+  })
+  // let payload = 'data'
+  //   axios.post('http://requestbin.net/r/du9pnq6v', payload)
+  //   .then(res => res)
+  //   .then(console.log('Sent'))
+  //   .catch(err => {
+  //     console.log(err);
+  //     callback(new Error('Something is up'))
+  //   });
+  //   console.log(res)
+  
+  // callback(null, {
+  //   statusCode: 200,
+  //   body: 'Hello World',
+  // })
+} 
 
 /* Import faunaDB sdk */
 // const faunadb = require('faunadb')
