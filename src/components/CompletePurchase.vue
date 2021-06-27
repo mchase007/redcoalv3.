@@ -162,6 +162,7 @@
  
 import useVuelidate from '@vuelidate/core'
 import { required, minLength, maxLength } from '@vuelidate/validators'
+import axios from 'axios'
 
 export default {
   setup () {
@@ -175,6 +176,7 @@ export default {
       userContact: '',
       userGPS: '',
       userLocality: '',
+      info: {},
       // userExtraInfor: '',
     };
   },
@@ -186,6 +188,9 @@ export default {
     }
   },
   computed: {
+    userDetail() {
+      return this.$store.getters.userDetails
+    },
     cartTotal() {
       return this.$store.getters.cartTotal
     },
@@ -231,6 +236,7 @@ export default {
     },
     userFullName(event) {
       this.v$.$touch()
+      this.$store.commit('userFullName', event.target.value)
     },
     userAddress(event) {
       this.v$.$touch()
@@ -254,38 +260,33 @@ export default {
       this.$refs['plusInfor'].value = ''
       this.$refs['local'].value = ''
       console.log('shot fired');
-
-      
     },
     logRef() {
       console.log(this.payRef);
     },
     runPaystack() {
-      console.log('Start');
+      console.log(this.userDetail);
       var handler = PaystackPop.setup({
-
+ 
           key: this.key, // Replace with your public key
           email: this.email,
           amount: this.cartTotal * 100, // the amount value is multiplied by 100 to convert to the lowest currency unit
           currency: 'GHS', // Use GHS for Ghana Cedis or USD for US Dollars
 
           callback: function(response) {
+            let payload = this.userDetail
+            axios.post('../.netlify/functions/test', payload)
+            .then(res => res)
+            .then(console.log('Sent'))
+            .catch();
+            console.log(res)
+          },
 
-          //this happens after the payment is completed successfully
+          onClose: function() {
 
-          var reference = response.reference;
-          
-          this.$store.commit('transactionRef', reference)
+          alert('Transaction was not completed, window closed.');
 
-          alert('Payment complete! Reference: ' + reference);
-
-    },
-
-    onClose: function() {
-
-      alert('Transaction was not completed, window closed.');
-
-    },
+          },
 
   });
 

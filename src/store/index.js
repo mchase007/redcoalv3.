@@ -26,7 +26,8 @@ export default createStore({
     local: '',
     transactionRef: '', 
     plusInfor: '',
-    key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d',
+    key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d'
+    // key: 'pk_live_e786ac56bef30fbb72f76237347338c4176377a3',
   },
   getters: {
     cartTotal: state => {
@@ -48,8 +49,19 @@ export default createStore({
     cartLength(state) {
       let itemNum = state.cart.length
       return itemNum
+    },
+    userDetails(state) {
+      let details = {
+        fullName: state.fullName,
+        mobile: state.mobile,
+        local: state.local,
+        plusInfor: state.plusInfor,
+        gpsAddress: state.gpsAddress,
+        cart: state.cart
+      }
 
-    }
+      return details
+    },
   },
   mutations: {
     selectMeal(state, payload) {
