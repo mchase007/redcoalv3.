@@ -29,6 +29,17 @@ export default createStore({
     key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d',
   },
   getters: {
+    userDetails(state) {
+      let details = {
+        fullName: state.fullName,
+        mobile: state.mobile,
+        local: state.local,
+        plusInfor: state.plusInfor,
+        gpsAddress: state.gpsAddress,
+        cart: state.cart
+      }
+      return details
+    },
     cartTotal: state => {
       return state.cart.reduce((a, b) => a + b.productPrice + b.addOnPrice, 0)
     },
@@ -48,7 +59,6 @@ export default createStore({
     cartLength(state) {
       let itemNum = state.cart.length
       return itemNum
-
     }
   },
   mutations: {

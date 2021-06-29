@@ -162,6 +162,7 @@
  
 import useVuelidate from '@vuelidate/core'
 import { required, minLength, maxLength } from '@vuelidate/validators'
+import axios from "axios"
 
 export default {
   setup () {
@@ -175,6 +176,7 @@ export default {
       userContact: '',
       userGPS: '',
       userLocality: '',
+      testVariable: true,
       // userExtraInfor: '',
     };
   },
@@ -186,6 +188,10 @@ export default {
     }
   },
   computed: {
+    userDetail() {
+      var userOrder = this.$store.getters.userDetails
+      return userOrder
+    },
     cartTotal() {
       return this.$store.getters.cartTotal
     },
@@ -215,12 +221,22 @@ export default {
   methods: {
     test() {
       
-      // if (this.v$.$error) {
-      //   console.log(this.userName)
-      // } else {
-      //   // console.log(this.v$.$errors[0].$message)
-      //   console.log('Form incomplete')
-      // }
+      var config = {
+            method: 'post',
+            url: 'https://hookb.in/3OORRG9Dd0tEwwjBlW17',
+            headers: { 
+              'Content-Type': 'application/json'
+            },
+            data : this.userDetail
+            };
+
+          axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
     },
     returnToCart() {
       this.$store.commit('returnToCart');
@@ -270,14 +286,48 @@ export default {
           currency: 'GHS', // Use GHS for Ghana Cedis or USD for US Dollars
 
           callback: function(response) {
+            var config = {
+            method: 'post',
+            url: 'https://hookb.in/3OORRG9Dd0tEwwjBlW17',
+            headers: { 
+              'Content-Type': 'application/json'
+            },
+            data : this.userDetail
+            };
 
+            axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+            
+            // var data = JSON.stringify({
+            //   "email": {{this.userName}},
+            //   "password": "pistol"
+            // });
+            
+            // console.log(payload);
+            // axios.post('https://hookb.in/JKKonxVxzduJPPWVOo7o', {
+              // data: this.userName
+            // })
+            // .then(function (response) {
+            // console.log(response);
+            // })
+            // axios.post('https://hookb.in/kxxNjb8ErLcrOOoL8b2d', 
+            // {data: 'userdetails'})
+            // .then(res => res)
+            // .then(console.log('Sent'))
+            // .catch();
+            // console.log(res)
           //this happens after the payment is completed successfully
 
-          var reference = response.reference;
+          // var reference = response.reference;
           
-          this.$store.commit('transactionRef', reference)
+          // this.$store.commit('transactionRef', reference)
 
-          alert('Payment complete! Reference: ' + reference);
+          // alert('Payment complete! Reference: ' + reference);
 
     },
 
