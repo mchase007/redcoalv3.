@@ -1,6 +1,5 @@
 <template> 
 
-
   <div class="checkout-box" :class="{checkout : isCheckout}">
       
     <div class="orderForm">
@@ -33,22 +32,24 @@
       </span>
     </div> -->
 
-
-      <div class="field one">
+      <form>
+        <div class="field one">
         <label class="label">Full Name</label>
         <div class="control">
-          <input @blur="userFullName" v-model="userName" ref="name" class="input" type="text" placeholder="Kofi Grills Chills">
+          <input @blur="userFullName" v-model="form.userName" ref="name" class="input" type="text" placeholder="Kofi Grills Chills">
         </div>
         <span class="help" v-if="v$.userName.$error">
         Kindly enter Fullname correctly
         </span>
         <!-- <p class="help">Kofi Grills</p> -->
       </div>
+      </form>
+      
 
       <div class="field">
         <label class="label">Contact Number</label>
         <div class="control">
-          <input @blur="userMobile" v-model="userContact" ref="number" class="input" type="tel" placeholder="0211231234">
+          <input @blur="userMobile" v-model="form.userContact" ref="number" class="input" type="tel" placeholder="0211231234">
         </div>
         <span class="help" v-if="v$.userContact.$error">
           Kindly enter your contact correctly
@@ -60,14 +61,14 @@
       <div class="content">
         <div class="flex localeResponse">
         <h5>Local Area: </h5>
-        <p>{{userLocale}} <span v-if="userLocale">and surroundings</span></p> 
+        <p>{{userLocale}} <span v-if="form.userLocale">and surroundings</span></p> 
         
         </div>
         <div class="control local">
         
           <label class="radio">
             <div class="flex inside">
-                <input type="radio" ref="local" @input="userLocal" value="Ahodwo" name="location">
+                <input type="radio" ref="local" @input="form.userLocal" value="Ahodwo" name="location">
                 <div class="side">
                 <span>Ahodwo,</span>
                 <span>Asokwa,</span>
@@ -79,7 +80,7 @@
           </label>
           <label class="radio">
               <div class="flex inside">
-                <input type="radio" ref="local" @input="userLocal" value="KNUST Campus" name="location">
+                <input type="radio" ref="local" @input="form.userLocal" value="KNUST Campus" name="location">
                 <div class="side">
                 <span>Asokore Mampong,</span>
                 <span>Ayeduase,</span>
@@ -94,7 +95,7 @@
 
           <label class="radio">
             <div class="flex inside">
-                <input type="radio" ref="local" @input="userLocal" value="Adum" name="location">
+                <input type="radio" ref="local" @input="form.userLocal" value="Adum" name="location">
                 <div class="side">
                 <span>Adum,</span>
                 <span>Bantama,</span>
@@ -114,7 +115,7 @@
       <div class="field">
         <label class="label">GPS Number</label>
         <div class="control">
-          <input @blur="userAddress" v-model="userGPS" ref="gpsAddress" class="input" type="text" placeholder="">
+          <input @blur="userAddress" v-model="form.userGPS" ref="gpsAddress" class="input" type="text" placeholder="">
         </div>
         <span class="help" v-if="v$.userGPS.$error">
           Kindly enter your contact correctly
@@ -126,7 +127,7 @@
         <label class="label">Special Instructions <span class="help">Optional</span></label>
         
         <div class="control">
-          <textarea @input="plusInfor" ref="plusInfor" class="textarea" placeholder="Textarea"></textarea>
+          <textarea @input="form.plusInfor" ref="plusInfor" class="textarea" placeholder="Textarea"></textarea>
         </div>
       </div>
 
@@ -151,7 +152,7 @@
 
       <div class="btns">
       <div class="theButton4" @click="firebaseTest">Submit Order</div>
-      <div class="theButton4 payBtn" @click="runPaystack">Pay Order</div>
+      <div class="theButton4 payBtn" @click="test">Pay Order</div>
       </div>
 
     </div>
@@ -172,12 +173,14 @@ export default {
   }, 
   data() {
     return {
-      userName: '',
-      userContact: '',
-      userGPS: '',
-      userLocality: '',
-      testVariable: true,
-      // userExtraInfor: '',
+      form: {
+        userName: '',
+        // userContact: this.mobile,
+        userGPS: '',
+        // userLocale: '',
+        // plusInfor: '',
+        // cart: this.cartTotal,
+      }
     };
   },
   validations() {
@@ -202,7 +205,7 @@ export default {
       return this.$store.state.checkout
     },
     mobile(){
-      return this.$store.state.mobile
+      return this.$store.state.cart
     },
     key() {
       return this.$store.state.key
@@ -223,11 +226,15 @@ export default {
       
       var config = {
             method: 'post',
-            url: 'https://hookb.in/3OORRG9Dd0tEwwjBlW17',
+            url: 'https://hookb.in/1ggK1MRp8ksj002ylkJO',
             headers: { 
               'Content-Type': 'application/json'
             },
-            data : this.userDetail
+            data : {
+              cart: this.mobile,
+              name: this.form.userName,
+
+            }
             };
 
           axios(config)

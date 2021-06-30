@@ -59,7 +59,7 @@ export default createStore({
     cartLength(state) {
       let itemNum = state.cart.length
       return itemNum
-    }
+    } 
   },
   mutations: {
     selectMeal(state, payload) {
@@ -73,6 +73,7 @@ export default createStore({
         console.log(item.id);
       } else {
         state.cart.push(payload);
+        console.log(payload);
       }
       updateLocalStorage(state.cart);
       setTimeout(() => {

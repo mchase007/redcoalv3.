@@ -131,7 +131,7 @@ export default {
     isActive() {
       return this.$store.state.isActive
     }
-  },
+  }, 
   mounted() {
   },
   methods: {
