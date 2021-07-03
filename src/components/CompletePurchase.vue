@@ -175,7 +175,7 @@ export default {
     return {
       form: {
         userName: '',
-        // userContact: this.mobile,
+        userContact: '',
         userGPS: '',
         // userLocale: '',
         // plusInfor: '',
@@ -211,7 +211,7 @@ export default {
       return this.$store.state.key
     },
     email() {
-      let email = this.mobile + '@redcoal.com'
+      let email = this.userContact + '@redcoal.com'
       return email
     },
     payRef(){
@@ -226,7 +226,8 @@ export default {
       
       var config = {
             method: 'post',
-            url: 'https://hookb.in/1ggK1MRp8ksj002ylkJO',
+            url: '../.netlify/functions/test',
+            // url: 'https://hookb.in/1ggK1MRp8ksj002ylkJO',
             headers: { 
               'Content-Type': 'application/json'
             },
@@ -295,11 +296,11 @@ export default {
           callback: function(response) {
             var config = {
             method: 'post',
-            url: 'https://hookb.in/3OORRG9Dd0tEwwjBlW17',
+            // url: 'https://hookb.in/DrrN68kZkRSdNNEwggwk',
             headers: { 
               'Content-Type': 'application/json'
             },
-            data : this.userDetail
+            data : response.reference
             };
 
             axios(config)
@@ -309,33 +310,6 @@ export default {
             .catch(function (error) {
               console.log(error);
             });
-            
-            // var data = JSON.stringify({
-            //   "email": {{this.userName}},
-            //   "password": "pistol"
-            // });
-            
-            // console.log(payload);
-            // axios.post('https://hookb.in/JKKonxVxzduJPPWVOo7o', {
-              // data: this.userName
-            // })
-            // .then(function (response) {
-            // console.log(response);
-            // })
-            // axios.post('https://hookb.in/kxxNjb8ErLcrOOoL8b2d', 
-            // {data: 'userdetails'})
-            // .then(res => res)
-            // .then(console.log('Sent'))
-            // .catch();
-            // console.log(res)
-          //this happens after the payment is completed successfully
-
-          // var reference = response.reference;
-          
-          // this.$store.commit('transactionRef', reference)
-
-          // alert('Payment complete! Reference: ' + reference);
-
     },
 
     onClose: function() {

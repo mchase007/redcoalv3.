@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
 .firebase
+/lambda
+firbase.js
 
 
 # local env files

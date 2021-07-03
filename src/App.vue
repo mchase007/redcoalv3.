@@ -3,11 +3,11 @@
 </template>
 
 <script>
-import { runPerformance } from '@/firebase'
+// import { runPerformance } from '@/firebase'
 
 export default {
   mounted() {
-    runPerformance()
+    // runPerformance()
   },
 }
 </script>

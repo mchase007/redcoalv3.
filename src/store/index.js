@@ -195,36 +195,36 @@ export default createStore({
     transactionRef(state, payload) {
       state.transactionRef = payload
     },
-    firebaseTest(state){
-      console.log('shoot');
-      createTest({
-          userName: state.fullName,
-          mobile: state.mobile,
-          gpsAddress: state.gpsAddress,
-          local: state.local,
-          plusInfor: state.plusInfor,
-          cart: state.cart,
-        });
-        console.log('clear');
-        console.log(state.cart);
-      localStorage.clear();
-      state.cart = [];
-      state.checkout = false
-      state.open = false
+    // firebaseTest(state){
+    //   console.log('shoot');
+    //   createTest({
+    //       userName: state.fullName,
+    //       mobile: state.mobile,
+    //       gpsAddress: state.gpsAddress,
+    //       local: state.local,
+    //       plusInfor: state.plusInfor,
+    //       cart: state.cart,
+    //     });
+    //     console.log('clear');
+    //     console.log(state.cart);
+    //   localStorage.clear();
+    //   state.cart = [];
+    //   state.checkout = false
+    //   state.open = false
       
-    },
-    firebaseTestTwo(state){
-      console.log('shoot2');
-      createTest({
-          userName: state.fullName,
-          email: state.contactEmail,
-          contactMessage: state.contactMessage,
-        });
-        console.log('clear');
-        state.fullName = '';
-        state.contactEmail = '';
-        state.contactMessage = '';
-    }   
+    // },
+    // firebaseTestTwo(state){
+    //   console.log('shoot2');
+    //   createTest({
+    //       userName: state.fullName,
+    //       email: state.contactEmail,
+    //       contactMessage: state.contactMessage,
+    //     });
+    //     console.log('clear');
+    //     state.fullName = '';
+    //     state.contactEmail = '';
+    //     state.contactMessage = '';
+    // }   
   },
   actions: {
   },
