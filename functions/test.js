@@ -1,7 +1,24 @@
-exports.handler = (event, context, callback) => {
+var admin = require("firebase-admin");
+
+var serviceAccount = require("../keys/serviceAccount.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount)
+});
+
+
+exports.handler = async (event, context, callback) => {
+
+  const firestore = admin.firestore();
+  let collection = await firestore.collection("Orders").get();
+  let doc = collection.docs[0].ref;
+  doc = await doc.get();
+
+  console.log(doc.data());
+
   return callback(null, {
   statusCode: 200,
-  body: JSON.stringify({msg: 'Yay Test 1'})
+  body: JSON.stringify({msg: "test"})
   }) 
   }
 
