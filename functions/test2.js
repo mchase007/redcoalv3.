@@ -1,8 +1,8 @@
 exports.handler = (event, context, callback) => {
   return callback(null, {
   statusCode: 200,
-  body: JSON.stringify({msg: 'Yay'})
-  })
+  body: JSON.stringify({msg: 'Yay Test 2'})
+  }) 
   }
 
 // exports.handler = (event, context, callback) => {

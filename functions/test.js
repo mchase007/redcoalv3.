@@ -1,3 +1,10 @@
+exports.handler = (event, context, callback) => {
+  return callback(null, {
+  statusCode: 200,
+  body: JSON.stringify({msg: 'Yay Test 1'})
+  }) 
+  }
+
 /* code from functions/todos-create.js */
 // import faunadb from 'faunadb' /* Import faunaDB sdk */
 
@@ -38,9 +45,9 @@
   // })
 // }
 
-/* export our lambda function as named "handler" export */
-exports.handler = (event, context, callback) => {
-  /* parse the string body into a useable JS object */
-  const data = JSON.parse(event.body)
-  console.log("Function `todo-create` invoked", data)
-}
+// /* export our lambda function as named "handler" export */
+// exports.handler = (event, context, callback) => {
+//   /* parse the string body into a useable JS object */
+//   const data = JSON.parse(event.body)
+//   console.log("Function `todo-create` invoked", data)
+// }
