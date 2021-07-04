@@ -1,6 +1,5 @@
 import { createStore } from 'vuex'
 import items from '@/data/items.js'
-import { createTest } from '@/firebase'
  
 function updateLocalStorage(cart) {
   console.log("local updated");
@@ -16,45 +15,20 @@ export default createStore({
     checkout: false,
     remove: false,
     meal: {},
+    mobile: '',
     extraList: [],
     total: null,
-    mobile: '',
-    fullName: '',
-    contactEmail: '',
-    contactMessage: '',
-    gpsAddress: '',
-    local: '',
-    transactionRef: '', 
-    plusInfor: '',
     key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d',
   },
   getters: {
     userDetails(state) {
       let details = {
-        fullName: state.fullName,
-        mobile: state.mobile,
-        local: state.local,
-        plusInfor: state.plusInfor,
-        gpsAddress: state.gpsAddress,
         cart: state.cart
       }
       return details
     },
     cartTotal: state => {
       return state.cart.reduce((a, b) => a + b.productPrice + b.addOnPrice, 0)
-    },
-    reference() {
-      let text = "";
-      let possible =
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-      for (let i = 0; i < 10; i++)
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-      console.log(text);
-      return text;
-    },
-    email() {
-      let email = `{{state.mobile}}@redcoal.com`
-      return email
     },
     cartLength(state) {
       let itemNum = state.cart.length
@@ -93,7 +67,6 @@ export default createStore({
     },
     increaseCartQuantity(state, payload) {
       payload.productQuantity++
-      // state.meal.productQuantity++;
     },
     closeProductTask(state) {
       state.productView = false;
@@ -173,27 +146,6 @@ export default createStore({
     },
     userMobile(state, payload) {
       state.mobile = payload
-    },
-    userFullName(state, payload) {
-      state.fullName = payload
-    },
-    userEmail(state, payload) {
-      state.contactEmail = payload
-    },
-    userContactMessage(state, payload) {
-      state.contactMessage = payload
-    }, 
-    userAddress(state, payload) {
-      state.gpsAddress = payload
-    },
-    userLocal(state, payload) {
-      state.local = payload
-    },
-    plusInfor(state, payload) {
-      state.plusInfor = payload
-    },
-    transactionRef(state, payload) {
-      state.transactionRef = payload
     },
     // firebaseTest(state){
     //   console.log('shoot');

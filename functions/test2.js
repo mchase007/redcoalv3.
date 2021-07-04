@@ -1,7 +1,9 @@
 exports.handler = (event, context, callback) => {
+
+  const viewPacked = JSON.parse(event.body)
   return callback(null, {
   statusCode: 200,
-  body: JSON.stringify({msg: 'Yay Test 2'})
+  body: JSON.stringify({msg: viewPacked})
   }) 
   }
 

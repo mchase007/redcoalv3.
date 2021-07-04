@@ -25,51 +25,38 @@
       </div>
     </div>
 
-    <!-- <div>
-      <input type="text" v-model="userName" @blur="test"/>
-      <span class="help" v-if="v$.userName.$error">
-        Kindly enter fullName
+    <div class="field one">
+      <label class="label">Full Name</label>
+        <div class="control">
+          <input v-model="form.userName" @blur="userFullName" ref="name" class="input" type="text" placeholder="Kofi Grills Chills">
+        </div>
+        <span class="help" v-if="v$.form.userName.$error">
+        Kindly enter full name correctly
+        </span>
+    </div>
+
+    <div class="field">
+      <label class="label">Contact Number</label>
+      <div class="control">
+        <input v-model="form.userContact" @blur="userMobile" ref="number" class="input" type="tel" placeholder="0211231234">
+      </div>
+      <span class="help" v-if="v$.form.userContact.$error">
+        Kindly enter your contact correctly
       </span>
-    </div> -->
-
-      <form>
-        <div class="field one">
-        <label class="label">Full Name</label>
-        <div class="control">
-          <input @blur="userFullName" v-model="form.userName" ref="name" class="input" type="text" placeholder="Kofi Grills Chills">
-        </div>
-        <span class="help" v-if="v$.userName.$error">
-        Kindly enter Fullname correctly
-        </span>
-        <!-- <p class="help">Kofi Grills</p> -->
-      </div>
-      </form>
-      
-
-      <div class="field">
-        <label class="label">Contact Number</label>
-        <div class="control">
-          <input @blur="userMobile" v-model="form.userContact" ref="number" class="input" type="tel" placeholder="0211231234">
-        </div>
-        <span class="help" v-if="v$.userContact.$error">
-          Kindly enter your contact correctly
-        </span>
-        <p class="help">0211231234</p>
-      </div>
+    </div>
  
-      <div class="field locale">
+    <div class="field locale">
       <div class="content">
         <div class="flex localeResponse">
-        <h5>Local Area: </h5>
-        <p>{{userLocale}} <span v-if="form.userLocale">and surroundings</span></p> 
-        
+        <label class="label">Local Area: </label>
+        <p> {{form.userLocale}} <span v-if="form.userLocale"> and surroundings</span></p> 
         </div>
         <div class="control local">
         
-          <label class="radio">
-            <div class="flex inside">
-                <input type="radio" ref="local" @input="form.userLocal" value="Ahodwo" name="location">
-                <div class="side">
+        <label class="radio">
+          <div class="flex inside">
+            <input type="radio" ref="local" v-model="form.userLocale" value="Ahodwo" name="location">
+              <div class="side">
                 <span>Ahodwo,</span>
                 <span>Asokwa,</span>
                 <span>Adiemmbra,</span>
@@ -80,7 +67,7 @@
           </label>
           <label class="radio">
               <div class="flex inside">
-                <input type="radio" ref="local" @input="form.userLocal" value="KNUST Campus" name="location">
+                <input type="radio" ref="local" v-model="form.userLocale" value="KNUST Campus" name="location">
                 <div class="side">
                 <span>Asokore Mampong,</span>
                 <span>Ayeduase,</span>
@@ -95,7 +82,7 @@
 
           <label class="radio">
             <div class="flex inside">
-                <input type="radio" ref="local" @input="form.userLocal" value="Adum" name="location">
+                <input type="radio" ref="local" v-model="form.userLocale" value="Adum" name="location">
                 <div class="side">
                 <span>Adum,</span>
                 <span>Bantama,</span>
@@ -109,25 +96,27 @@
       <p class="help">* Delivering to entire Ashanti soon</p>
       </div>
 
-
       </div>
 
       <div class="field">
         <label class="label">GPS Number</label>
         <div class="control">
-          <input @blur="userAddress" v-model="form.userGPS" ref="gpsAddress" class="input" type="text" placeholder="">
+          <input v-model="form.userGPS" @blur="userMobile" ref="gpsAddress" class="input" type="text" placeholder="ABC1234567">
         </div>
-        <span class="help" v-if="v$.userGPS.$error">
-          Kindly enter your contact correctly
-        </span>
+        <span class="help" v-if="v$.form.userGPS.$error">
+          Kindly enter your GPS code correctly
+        </span> 
         <p class="help">ABC1234567</p>
       </div>
 
       <div class="field">
-        <label class="label">Special Instructions <span class="help">Optional</span></label>
+        <div class="specialInstructions">
+        <label class="label">Special Instructions</label> 
+        <span class="help">Optional</span>
+        </div>
         
         <div class="control">
-          <textarea @input="form.plusInfor" ref="plusInfor" class="textarea" placeholder="Textarea"></textarea>
+          <textarea v-model="form.plusInfor" ref="plusInfor" class="textarea" placeholder="Textarea"></textarea>
         </div>
       </div>
 
@@ -151,8 +140,7 @@
     </div>
 
       <div class="btns">
-      <div class="theButton4" @click="firebaseTest">Submit Order</div>
-      <div class="theButton4 payBtn" @click="test">Pay Order</div>
+      <div class="theButton4 payBtn" @click="runPaystack">Pay Order</div>
       </div>
 
     </div>
@@ -169,53 +157,42 @@ export default {
   setup () {
     return { v$: useVuelidate() }
   },
-  components: { 
-  }, 
   data() {
     return {
       form: {
         userName: '',
         userContact: '',
         userGPS: '',
-        // userLocale: '',
-        // plusInfor: '',
-        // cart: this.cartTotal,
+        userLocale: '',
+        plusInfor: '',
       }
     };
   },
   validations() {
     return {
-      userName: {required, minLength: minLength(3)},
-      userContact: {required, minLength: minLength(10), maxLength: maxLength(10)},
-      userGPS: {required, minLength: minLength(9), maxLength: maxLength(9)},
+      form: {
+        userName: {required, minLength: minLength(3)},
+        userContact: {required, minLength: minLength(10), maxLength: maxLength(10)},
+        userGPS: {required, minLength: minLength(9), maxLength: maxLength(9)},
+      }
     }
   },
   computed: {
-    userDetail() {
-      var userOrder = this.$store.getters.userDetails
-      return userOrder
+    userCart() {
+      return this.$store.state.cart
     },
     cartTotal() {
       return this.$store.getters.cartTotal
     },
-    userLocale() {
-      return this.$store.state.local
-    },
     isCheckout() {
       return this.$store.state.checkout
-    },
-    mobile(){
-      return this.$store.state.cart
     },
     key() {
       return this.$store.state.key
     },
     email() {
-      let email = this.userContact + '@redcoal.com'
+      let email = this.form.userContact + '@redcoal.com'
       return email
-    },
-    payRef(){
-      return this.$store.state.transactionRef
     },
     cartItemLength() {
       return this.$store.getters.cartLength
@@ -223,66 +200,58 @@ export default {
   },
   methods: {
     test() {
-      
-      var config = {
-            method: 'post',
-            url: '../.netlify/functions/test',
-            // url: 'https://hookb.in/1ggK1MRp8ksj002ylkJO',
-            headers: { 
-              'Content-Type': 'application/json'
-            },
-            data : {
-              cart: this.mobile,
-              name: this.form.userName,
+      this.v$.$validate()
+      if (!this.v$.$error) {
+        console.log('No errors')
 
-            }
-            };
+        let userPack = {
+          infor: this.form,
+          meal: this.userCart, 
+        }
 
-          axios(config)
-            .then(function (response) {
-              console.log(JSON.stringify(response.data));
+        console.log(userPack);
+        
+        var config = {
+        method: 'post',
+        url: '../.netlify/functions/test2',
+        // url: 'https://hookb.in/1ggK1MRp8ksj002ylkJO',
+        headers: { 
+          'Content-Type': 'application/json'
+        },
+        data : userPack
+        };
+
+        axios(config)
+        .then(function (response) {
+              console.log(JSON.stringify(response.data.status));
+              console.log('Verified')
             })
-            .catch(function (error) {
+        .catch(function (error) {
               console.log(error);
             });
+
+
+      }
     },
     returnToCart() {
       this.$store.commit('returnToCart');
     },
     userMobile(event) {
       this.v$.$touch()
-      this.$store.commit('userMobile', event.target.value)
     },
     userFullName(event) {
       this.v$.$touch()
     },
     userAddress(event) {
       this.v$.$touch()
-      this.$store.commit('userAddress', event.target.value)
-    },
-    userLocal(event) {
-      this.$store.commit('userLocal', event.target.value)
-    },
-    plusInfor(event) {
-      this.$store.commit('plusInfor', event.target.value)
-    },
-    transactionRef(ref) {
-      this.$store.commit('transactionRef', ref)
-      console.log(ref);
     },
     firebaseTest(event) {
-      this.$store.commit('firebaseTest')
       this.$refs['name'].value = ''
       this.$refs['number'].value = ''
       this.$refs['gpsAddress'].value = ''
       this.$refs['plusInfor'].value = ''
       this.$refs['local'].value = ''
-      console.log('shot fired');
-
-      
-    },
-    logRef() {
-      console.log(this.payRef);
+      console.log('shot fired');      
     },
     runPaystack() {
       console.log('Start');
@@ -296,7 +265,7 @@ export default {
           callback: function(response) {
             var config = {
             method: 'post',
-            // url: 'https://hookb.in/DrrN68kZkRSdNNEwggwk',
+            url: '../.netlify/functions/test3',
             headers: { 
               'Content-Type': 'application/json'
             },

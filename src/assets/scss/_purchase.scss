@@ -114,7 +114,7 @@
 
 .localeResponse {
   align-items: baseline;
-  h5 {
+  label {
     margin-right: 10px;
   }
 }
@@ -139,6 +139,10 @@
   }
 }
 
-// .completeTotal {
+.specialInstructions {
+  display: flex;
 
-// }
+  label {
+    margin-right: 5px;
+  }
+}
