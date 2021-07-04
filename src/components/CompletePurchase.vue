@@ -214,7 +214,6 @@ export default {
         var config = {
         method: 'post',
         url: '../.netlify/functions/test2',
-        // url: 'https://hookb.in/1ggK1MRp8ksj002ylkJO',
         headers: { 
           'Content-Type': 'application/json'
         },
