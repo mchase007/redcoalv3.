@@ -3,6 +3,7 @@ node_modules
 .firebase
 keys
 
+
 # local env files
 .env.local
 .env.*.local

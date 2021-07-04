@@ -2,7 +2,8 @@ const items = [
   {
     productName: "Sausage",
     productID: "sausage",
-    productPrice: 10,
+    // productPrice: 10,
+    productPrice: 0.5,
     id: 0,
     productImage: "Image",
     productQuantity: 2,
@@ -17,7 +18,8 @@ const items = [
   {
     productName: "Chicken",
     productID: "chicken",
-    productPrice: 8,
+    // productPrice: 8,
+    productPrice: 0.5,
     id: 1,
     productImage: "Image",
     productQuantity: 2,
@@ -32,7 +34,8 @@ const items = [
   {
     productName: "Beef",
     productID: "beef",
-    productPrice: 8,
+    productPrice: 0.5,
+    // productPrice: 8,
     id: 2,
     productImage: "Image",
     productQuantity: 2,

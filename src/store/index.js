@@ -18,7 +18,7 @@ export default createStore({
     mobile: '',
     extraList: [],
     total: null,
-    key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d',
+    key: 'pk_live_e786ac56bef30fbb72f76237347338c4176377a3',
   },
   getters: {
     userDetails(state) {
@@ -97,15 +97,18 @@ export default createStore({
     },
     increasePrice(state) {
       if (state.meal.productName === 'Sausage') {
-        let price = (state.meal.productPrice + 3);
+        // let price = (state.meal.productPrice + 3);
+        let price = (state.meal.productPrice + 0.5);
         state.meal.productPrice = price;  
       } else {
-        let price = (state.meal.productPrice + 2);
+        // let price = (state.meal.productPrice + 2);
+        let price = (state.meal.productPrice + 0.5);
         state.meal.productPrice = price;      
       }
     },
     increasePrice1(state) {
-      let price = (state.meal.addOnPrice + 5);
+      // let price = (state.meal.addOnPrice + 5);
+      let price = (state.meal.addOnPrice + 0.5);
       state.meal.addOnPrice = price; 
     },
     decreaseQuantity(state) {
@@ -125,23 +128,28 @@ export default createStore({
     decreasePrice(state) {
       if (state.meal.productName === 'Sausage') {
         if (state.meal.productQuantity > 2 ) {
-          let price = (state.meal.productPrice - 3);
+          // let price = (state.meal.productPrice - 3);
+          let price = (state.meal.productPrice - 0.5);
           state.meal.productPrice = price;
         } else if (state.meal.productQuantity === 2 ) {
-          state.meal.productPrice = 10;
+          // state.meal.productPrice = 10;
+          state.meal.productPrice = 0.5;
         }
       } else if (state.meal.productName === 'Beef' || state.meal.productName === 'Chicken'){
         if (state.meal.productQuantity > 2 ) {
-          let price = (state.meal.productPrice - 2);
+          // let price = (state.meal.productPrice - 2);
+          let price = (state.meal.productPrice - 0.5);
           state.meal.productPrice = price;
         } else if (state.meal.productQuantity === 2 ) {
-          state.meal.productPrice = 8;
+          // state.meal.productPrice = 8;
+          state.meal.productPrice = 0.5;
         }
       } 
     },
     decreasePrice1(state) {
       if (state.meal.addOnQuantity > 0) {
-        let price = (state.meal.addOnPrice - 5);
+        // let price = (state.meal.addOnPrice - 5);
+        let price = (state.meal.addOnPrice - 0.5);
         state.meal.addOnPrice = price;
       } else if (state.meal.addOnQuantity === 0 ) {
         state.meal.addOnPrice = 0;

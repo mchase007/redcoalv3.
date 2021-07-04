@@ -4,7 +4,8 @@
       <h4 class="is-size-4 is-size-3-tablet">Charcoal Grilled {{userMeal.productName}}</h4>
       <div class="bill">
         <div>
-          <h5 class="is-size-5 is-size-4-tablet" >GHS {{userMeal.productPrice}}.00</h5>
+          <!-- <h5 class="is-size-5 is-size-4-tablet" >GHS {{userMeal.productPrice}}.00</h5> -->
+          <h5 class="is-size-5 is-size-4-tablet" >GHS {{userMeal.productPrice}}</h5>
         </div>
         <div class="promo">
           <p class=" is-size-7 is-size-6-tablet">+ FREE Delivery</p>
@@ -16,7 +17,7 @@
         <button class="button" @click="increaseQuantity">+</button>
       </div>
  
-      <div class="field pepper flex">
+      <!-- <div class="field pepper flex">
         <span>Pepper Spice:</span>
         <div class="control">
           <label class="">
@@ -26,7 +27,7 @@
             </span>
           </label>
         </div>
-      </div>
+      </div> -->
 
       <!-- <div v-for="extra in userMeal.addOn" 
           v-bind:key="extra.extraId" class="addOns">
@@ -49,8 +50,10 @@
       </div>
 
       <div v-if="extras" class="extraSet">
-        <p v-if="!userMeal.addOnQuantity > 0">Banku with Pepper:  GHS 5.00</p>
-        <p v-if="userMeal.addOnQuantity > 0">Banku with Pepper:  GHS {{userMeal.addOnPrice}}.00</p>
+        <!-- <p v-if="!userMeal.addOnQuantity > 0">Banku with Pepper:  GHS 5.00</p> -->
+        <p v-if="!userMeal.addOnQuantity > 0">Banku with Pepper:  GHS 0.50</p>
+        <!-- <p v-if="userMeal.addOnQuantity > 0">Banku with Pepper:  GHS {{userMeal.addOnPrice}}.00</p> -->
+        <p v-if="userMeal.addOnQuantity > 0">Banku with Pepper:  GHS {{userMeal.addOnPrice}}</p>
         <div class="controlSet">
           <div class="button btn2" @click="decreaseQuantity1">-</div>
           <p class="quantity">{{userMeal.addOnQuantity}}</p>

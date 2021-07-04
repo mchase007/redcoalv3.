@@ -39,13 +39,14 @@
                 </div>
                 
                 <div>
-                  <p>GHS {{ product.price }}.00</p>
+                  <!-- <p>GHS {{ product.price }}.00</p> -->
+                  <p>GHS {{ product.price }}</p>
                   <!-- <div class="controlSet">
                     <button class="button" @click="decreaseQuantity">-</button>
                     <p class="quantity">{{product.productQuantity}}</p>
                     <button class="button" @click="increaseCartQuantity(product)">+</button>
                   </div> -->
-                </div> 
+                </div>  
                 <!-- <p>{{product.addOn}}</p> -->
                 <div>
                   <i class="gg-close-r" @click="removeItem(product)"></i>
@@ -57,7 +58,8 @@
                     <p>{{product.addOnQuantity}} Banku Pack</p>
                   </div>
                   
-                  <p>GHS {{product.addOnPrice}}.00</p>
+                  <!-- <p>GHS {{product.addOnPrice}}.00</p> -->
+                  <p>GHS {{product.addOnPrice}}</p>
 
                   <div>
                     <i class="gg-close-r" @click="removeAddOn(product)"></i>
