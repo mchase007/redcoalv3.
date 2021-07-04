@@ -41,7 +41,7 @@
 
       <div @click="superPack" class="theButtonz">
         <span>
-          Super Pack  
+          Super Saver Pack  
         </span> 
         <div>
           <span><i v-if="!extras" class="gg-arrow-down-r"></i></span>
