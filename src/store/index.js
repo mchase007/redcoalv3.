@@ -28,7 +28,7 @@ export default createStore({
       return details
     },
     cartTotal: state => {
-      return state.cart.reduce((a, b) => a + b.productPrice + b.addOnPrice, 0)
+      return state.cart.reduce((a, b) => a + b.price + b.addOnPrice, 0)
     },
     cartLength(state) {
       let itemNum = state.cart.length
@@ -46,8 +46,15 @@ export default createStore({
       if (item) {
         console.log(item.id);
       } else {
-        state.cart.push(payload);
-        console.log(payload);
+        let y = {
+          meal: payload.productName,
+          price: payload.productPrice,
+          quantity: payload.productQuantity,
+          addOnQuantity: payload.addOnQuantity,
+          addOnPrice: payload.addOnPrice,
+        }
+        state.cart.push(y);
+        console.log(y);
       }
       updateLocalStorage(state.cart);
       setTimeout(() => {

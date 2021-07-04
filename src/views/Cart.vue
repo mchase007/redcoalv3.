@@ -27,7 +27,7 @@
         <span class="">Secure Payment</span>
         </div>
       </div>
-
+ 
       <div v-for="product in cart">
         <div class="card-content cartProduct">
           <div class="box">
@@ -35,11 +35,11 @@
                 <!-- <p>Image</p> -->
                 <div class="flex flex-jc-sb">
                   <div>
-                  <p>{{product.productQuantity}} {{ product.productName }}s</p>
+                  <p>{{product.quantity}} {{ product.meal }}s</p>
                 </div>
                 
                 <div>
-                  <p>GHS {{ product.productPrice }}.00</p>
+                  <p>GHS {{ product.price }}.00</p>
                   <!-- <div class="controlSet">
                     <button class="button" @click="decreaseQuantity">-</button>
                     <p class="quantity">{{product.productQuantity}}</p>

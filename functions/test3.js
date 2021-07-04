@@ -31,7 +31,8 @@ exports.handler = (event, context, callback) => {
     });
   
     res.on('end', () => {
-  
+      // var body = Buffer.concat(chunks);
+      // console.log(data.toString());
       console.log(JSON.parse(data))
   
     })
@@ -43,9 +44,9 @@ exports.handler = (event, context, callback) => {
   })
 
   // const viewPacked = JSON.parse(event.body)
-  return callback(null, {
-  statusCode: 200,
+  // return callback(null, {
+  // statusCode: 200,
   // body: JSON.stringify({msg: viewPacked})
-  }) 
+  // }) 
   }
 

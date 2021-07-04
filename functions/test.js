@@ -2,25 +2,31 @@ var admin = require("firebase-admin");
 
 var serviceAccount = require("../keys/serviceAccount.json");
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
+if (admin.apps.length === 0) {
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+  });
+  
+}
 
 
 exports.handler = async (event, context, callback) => {
 
   const firestore = admin.firestore();
-  let collection = await firestore.collection("Orders").get();
-  let doc = collection.docs[0].ref;
-  doc = await doc.get();
+  let data = JSON.parse(event.body);
+  let collection = await firestore.collection("Orders").doc("Incoming")
+  collection.set(data)
+  // let collection = await firestore.collection("Orders");
+  // let doc = collection.docs[0].ref;
+  // doc = await doc.get();
 
-  console.log(doc.data());
+  // console.log(doc.data());
 
   return callback(null, {
   statusCode: 200,
-  body: JSON.stringify({msg: "test"})
+  body: JSON.stringify(data)
   }) 
-  }
+}
 
 /* code from functions/todos-create.js */
 // import faunadb from 'faunadb' /* Import faunaDB sdk */

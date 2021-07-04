@@ -254,7 +254,20 @@ export default {
     },
     runPaystack() {
       console.log('Start');
-      var handler = PaystackPop.setup({
+
+      this.v$.$validate();
+
+      if (!this.v$.$error) {
+        console.log('No errors')
+
+        let userPack = {
+          infor: this.form,
+          meal: this.userCart, 
+        }
+
+        console.log('userPack initialised')
+
+        var handler = PaystackPop.setup({
 
           key: this.key, // Replace with your public key
           email: this.email,
@@ -264,11 +277,14 @@ export default {
           callback: function(response) {
             var config = {
             method: 'post',
-            url: '../.netlify/functions/test3',
+            url: '../.netlify/functions/test',
             headers: { 
               'Content-Type': 'application/json'
             },
-            data : response.reference
+            data : {
+              reference: response.reference,
+              userOrder: userPack
+            }
             };
 
             axios(config)
@@ -278,17 +294,23 @@ export default {
             .catch(function (error) {
               console.log(error);
             });
-    },
+          },
+      
 
-    onClose: function() {
+          onClose: function() {
 
-      alert('Transaction was not completed, window closed.');
+          alert('Transaction was not completed, window closed.');
 
-    },
+          },
 
-  });
+          });
 
-  handler.openIframe();
+        handler.openIframe();
+      }
+      
+    
+    
+    
     }
 
   },
