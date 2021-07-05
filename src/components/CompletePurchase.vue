@@ -200,37 +200,38 @@ export default {
   },
   methods: {
     test() {
-      this.v$.$validate()
-      if (!this.v$.$error) {
-        console.log('No errors')
+      console.log('Run')
+      // this.v$.$validate()
+      // if (!this.v$.$error) {
+        // console.log('No errors')
 
-        let userPack = {
-          infor: this.form,
-          meal: this.userCart, 
-        }
+        // let userPack = {
+        //   infor: this.form,
+        //   meal: this.userCart, 
+        // }
 
-        console.log(userPack);
+        // console.log(userPack);
         
-        var config = {
-        method: 'post',
-        url: '../.netlify/functions/test2',
-        headers: { 
-          'Content-Type': 'application/json'
-        },
-        data : userPack
-        };
+        // var config = {
+        // method: 'post',
+        // url: '../.netlify/functions/test2',
+        // headers: { 
+        //   'Content-Type': 'application/json'
+        // },
+        // data : userPack
+        // };
 
-        axios(config)
-        .then(function (response) {
-              console.log(JSON.stringify(response.data.status));
-              console.log('Verified')
-            })
-        .catch(function (error) {
-              console.log(error);
-            });
+        // axios(config)
+        // .then(function (response) {
+        //       console.log(JSON.stringify(response.data.status));
+        //       console.log('Verified')
+        //     })
+        // .catch(function (error) {
+        //       console.log(error);
+        //     });
 
 
-      }
+      // }
     },
     returnToCart() {
       this.$store.commit('returnToCart');
