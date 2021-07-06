@@ -40,7 +40,7 @@
 
       <div @click="superPack" class="theButtonz">
         <span>
-          Super Pack  
+          Super Pack   
         </span> 
         <div>
           <span><i v-if="!extras" class="gg-arrow-down-r"></i></span>
@@ -88,17 +88,6 @@
       </div>
 
       <p class="is-size-5 more" :class="{pack: pack}">{{userMeal.productDescription}}</p>
-      <!-- <div class="clicker is-size-5" @click="viewPack">
-        <div class="theButton" :class="{packOpen: pack}">
-          <span class="buttonText">what you get</span>
-          <span class="is-small">
-            <i v-if="pack" class="gg-arrow-up-r"></i>
-            <i v-if="!pack" class="gg-arrow-down-r"></i>
-          </span>
-        </div>
-         
-         
-      </div> -->
 
       <span v-if="!extras" @click="viewPack" class="clicker">Extra Details</span>
       <span v-if="extras" @click="viewPack" class="clicker">Less Details</span>
@@ -164,7 +153,6 @@ export default {
       this.pack = !this.pack 
     },
     superPack() {
-      // console.log('View Pack')
       this.extras = !this.extras 
      },
   },

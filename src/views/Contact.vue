@@ -79,6 +79,7 @@
 import Header from '@/components/Header.vue'
 import useVuelidate from '@vuelidate/core'
 import { required, minLength, email } from '@vuelidate/validators'
+import axios from "axios"
 
 export default {
   name: 'Contact',
@@ -124,28 +125,25 @@ export default {
         headers: { 
           'Content-Type': 'application/json'
         },
-        data : userPack
+        data : userRequest
         };
 
-        // axios(config)
-        // .then(function (response) {
-        //       console.log(JSON.stringify(response.data.status));
-        //       console.log('Verified')
-        //     })
-        // .catch(function (error) {
-        //       console.log(error);
-        //     });
-
-
+        axios(config)
+        .then(function (response) {
+              console.log(JSON.stringify(response.data));
+            })
+        .catch(function (error) {
+              console.log(error);
+            });
       }
     },
-    firebaseTestTwo(event) {
-      this.$store.commit('firebaseTestTwo')
-      this.$refs['name'].value = ''
-      this.$refs['email'].value = ''
-      this.$refs['message'].value = ''
-      console.log('shot fired');      
-    },
+    // firebaseTestTwo(event) {
+    //   // this.$store.commit('firebaseTestTwo')
+    //   this.$refs['name'].value = ''
+    //   this.$refs['email'].value = ''
+    //   this.$refs['message'].value = ''
+    //   console.log('shot fired');      
+    // },
     userFullname(event) {
       this.v$.$touch()
     },

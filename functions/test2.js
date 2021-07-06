@@ -1,9 +1,27 @@
-exports.handler = (event, context, callback) => { 
+var admin = require("firebase-admin");  
 
-  const viewPacked = JSON.parse(event.body)
+if (admin.apps.length === 0) {
+  admin.initializeApp({
+    credential: admin.credential.cert({
+      projectId: process.env.PROJECT_ID,
+      privateKey: process.env.PRIVATE_KEY.split("\\n").join("\n"),
+      clientEmail: process.env.CLIENT_EMAIL,
+    }
+      )
+  });
+  
+}
+
+exports.handler = async (event, context, callback) => {
+  
+  const firestore = admin.firestore();
+  let data = JSON.parse(event.body);
+  let collection = await firestore.collection("Contact Form").doc("Incoming2")
+  collection.set(data)
+
   return callback(null, {
   statusCode: 200,
-  body: JSON.stringify({msg: viewPacked})
+  body: JSON.stringify(data)
   }) 
   }
 

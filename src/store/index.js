@@ -13,7 +13,7 @@ export default createStore({
     isActive: false,
     exists: null,
     checkout: false,
-    remove: false,
+    // remove: false,
     meal: {},
     mobile: '',
     extraList: [],
@@ -42,7 +42,6 @@ export default createStore({
     addToCart(state, payload) {
       state.isActive = !state.isActive;
       let item = state.cart.find( (e) => e.id === payload.id);
-      // let item2 = state.cart.find( (e) => e.id === payload.id && e.productQuantity !== payload.productQuantity);
       if (item) {
         console.log(item.id);
       } else {
@@ -154,36 +153,13 @@ export default createStore({
     userMobile(state, payload) {
       state.mobile = payload
     },
-    // firebaseTest(state){
-    //   console.log('shoot');
-    //   createTest({
-    //       userName: state.fullName,
-    //       mobile: state.mobile,
-    //       gpsAddress: state.gpsAddress,
-    //       local: state.local,
-    //       plusInfor: state.plusInfor,
-    //       cart: state.cart,
-    //     });
-    //     console.log('clear');
-    //     console.log(state.cart);
     //   localStorage.clear();
     //   state.cart = [];
     //   state.checkout = false
     //   state.open = false
-      
-    // },
-    // firebaseTestTwo(state){
-    //   console.log('shoot2');
-    //   createTest({
-    //       userName: state.fullName,
-    //       email: state.contactEmail,
-    //       contactMessage: state.contactMessage,
-    //     });
-    //     console.log('clear');
-    //     state.fullName = '';
-    //     state.contactEmail = '';
-    //     state.contactMessage = '';
-    // }   
+    //   state.fullName = '';
+    //   state.contactEmail = '';
+    //   state.contactMessage = '';
   },
   actions: {
   },

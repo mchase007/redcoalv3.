@@ -147,7 +147,7 @@
   </div>
 </template>
 
-<script>
+<script> 
  
 import useVuelidate from '@vuelidate/core'
 import { required, minLength, maxLength } from '@vuelidate/validators'
@@ -199,39 +199,6 @@ export default {
     },
   },
   methods: {
-    test() {
-      this.v$.$validate()
-      if (!this.v$.$error) {
-        console.log('No errors')
-
-        let userPack = {
-          infor: this.form,
-          meal: this.userCart, 
-        }
-
-        console.log(userPack);
-        
-        var config = {
-        method: 'post',
-        url: '../.netlify/functions/test2',
-        headers: { 
-          'Content-Type': 'application/json'
-        },
-        data : userPack
-        };
-
-        axios(config)
-        .then(function (response) {
-              console.log(JSON.stringify(response.data.status));
-              console.log('Verified')
-            })
-        .catch(function (error) {
-              console.log(error);
-            });
-
-
-      }
-    },
     returnToCart() {
       this.$store.commit('returnToCart');
     },
@@ -269,10 +236,10 @@ export default {
 
         var handler = PaystackPop.setup({
 
-          key: this.key, // Replace with your public key
+          key: this.key,
           email: this.email,
-          amount: this.cartTotal * 100, // the amount value is multiplied by 100 to convert to the lowest currency unit
-          currency: 'GHS', // Use GHS for Ghana Cedis or USD for US Dollars
+          amount: this.cartTotal * 100,
+          currency: 'GHS',
 
           callback: function(response) {
             var config = { 
@@ -307,12 +274,7 @@ export default {
 
         handler.openIframe();
       }
-      
-    
-    
-    
     }
-
   },
 }
 </script>

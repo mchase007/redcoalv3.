@@ -40,13 +40,7 @@
                 
                 <div>
                   <p>GHS {{ product.price }}.00</p>
-                  <!-- <div class="controlSet">
-                    <button class="button" @click="decreaseQuantity">-</button>
-                    <p class="quantity">{{product.productQuantity}}</p>
-                    <button class="button" @click="increaseCartQuantity(product)">+</button>
-                  </div> -->
                 </div> 
-                <!-- <p>{{product.addOn}}</p> -->
                 <div>
                   <i class="gg-close-r" @click="removeItem(product)"></i>
                 </div>
@@ -133,9 +127,6 @@ export default {
     },
     cartTotal() {
       return this.$store.getters.cartTotal
-    },
-    isRemoved() {
-      return this.$store.state.remove
     },
     cartItemLength() {
       return this.$store.getters.cartLength
