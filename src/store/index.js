@@ -34,7 +34,7 @@ export default createStore({
       let itemNum = state.cart.length
       return itemNum
     } 
-  },
+  }, 
   mutations: {
     selectMeal(state, payload) {
       state.meal = payload;

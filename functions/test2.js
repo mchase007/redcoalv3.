@@ -1,4 +1,4 @@
-exports.handler = (event, context, callback) => {
+exports.handler = (event, context, callback) => { 
 
   const viewPacked = JSON.parse(event.body)
   return callback(null, {

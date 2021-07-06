@@ -275,7 +275,7 @@ export default {
           currency: 'GHS', // Use GHS for Ghana Cedis or USD for US Dollars
 
           callback: function(response) {
-            var config = {
+            var config = { 
             method: 'post',
             url: '../.netlify/functions/test',
             headers: { 
