@@ -24,14 +24,11 @@ export default {
   data() {
     return {
     }  
-  },
+  }, 
   mounted() {
     this.$store.commit('updateCartFromLocalStorage')
   },
   methods: {
-    updateCart(product) {
-      this.$store.commit('addToCart', product);
-    },
   },
 
 }

@@ -1,20 +1,20 @@
 <template> 
   <div class="productView container" >
-    <div class="content"> 
-      <h4 class="is-size-4 is-size-3-tablet">Charcoal Grilled {{userMeal.productName}}</h4>
-      <div class="bill">
-        <div>
-          <h5 class="is-size-5 is-size-4-tablet" >GHS {{userMeal.productPrice}}.00</h5>
-        </div>
-        <div class="promo">
-          <p class=" is-size-7 is-size-6-tablet">+ FREE Delivery</p>
-        </div>
-      </div>
+    <div class="contents"> 
+      <div class="flex flex-jc-sb">
+          <span class="item">
+          <p class="is-size-6 is-size-5-tablet">Charcoal Grilled {{userMeal.productName}}</p>
+          <p class="is-size-6 is-size-5-tablet price" >GHS {{userMeal.productPrice}}.00</p>
+          </span>
+
       <div class="controlSet">
-        <button class="button" @click="decreaseQuantity">-</button>
+        <button class="button is-small" @click="decreaseQuantity">-</button>
         <p class="quantity">{{userMeal.productQuantity}}</p>
-        <button class="button" @click="increaseQuantity">+</button>
+        <button class="button is-small" @click="increaseQuantity">+</button>
       </div>
+      </div>
+      
+      
  
       <div class="field pepper flex">
         <span>Pepper Spice:</span>
@@ -28,19 +28,9 @@
         </div>
       </div>
 
-      <!-- <div v-for="extra in userMeal.addOn" 
-          v-bind:key="extra.extraId" class="addOns">
-
-          <input type="checkbox" 
-            class="addOn" 
-            v-bind:id="extra.extraId" 
-            v-bind:value="extra.extraName" 
-            @change="updateExtra">{{extra.extraName}}: GHS {{extra.extraPrice}}.00
-      </div> -->
-
       <div @click="superPack" class="theButtonz">
         <span>
-          Super Pack  
+          Super Pack   
         </span> 
         <div>
           <span><i v-if="!extras" class="gg-arrow-down-r"></i></span>
@@ -48,33 +38,51 @@
         </div>
       </div>
 
-      <div v-if="extras" class="extraSet">
-        <p v-if="!userMeal.addOnQuantity > 0">Banku with Pepper:  GHS 5.00</p>
-        <p v-if="userMeal.addOnQuantity > 0">Banku with Pepper:  GHS {{userMeal.addOnPrice}}.00</p>
+      <div v-if="extras" class="extraSet flex flex-jc-sb">
+        <span v-if="!userMeal.addOnQuantity > 0" class="item">
+          <p class="is-size-6 is-size-5-tablet">Banku with Pepper:</p>
+          <p class="is-size-6 is-size-5-tablet price" >GHS 5.00</p>
+        </span>
+
+        <span v-if="userMeal.addOnQuantity > 0" class="item">
+          <p class="is-size-6 is-size-5-tablet">Banku with Pepper:</p>
+          <p class="is-size-6 is-size-5-tablet price">GHS {{userMeal.addOnPrice}}.00</p>
+        </span>
+        
         <div class="controlSet">
-          <div class="button btn2" @click="decreaseQuantity1">-</div>
+          <div class="button is-small" @click="decreaseQuantity1">-</div>
           <p class="quantity">{{userMeal.addOnQuantity}}</p>
-          <div class="button btn2" @click="increaseQuantity1">+</div>
+          <div class="button is-small" @click="increaseQuantity1">+</div>
         </div>
       </div>
 
-      
+      <div v-if="extras" class="extraset3"></div>
 
-      <!-- <div class="field">
-        <div class="control addOns flex">
-          <p>Add On:</p>
-          <label class="addOn">
-            <input @click="addOn1" value="Sobolo" class="" type="checkbox">
-            redcoal Sobolo 500ml - GHS 2.00
-          </label>
+      <div v-if="extras" class="extraSet flex flex-jc-sb extraset2">
+
+        <span v-if="!userMeal.addOnQuantity2 > 0" class="item">
+          <p class="is-size-6 is-size-5-tablet">Lemon flavored Sobolo</p>
+          <p class="is-size-6 is-size-5-tablet price" >GHS 2.00</p>
+        </span>
+
+        <span v-if="userMeal.addOnQuantity2 > 0" class="item">
+          <p class="is-size-6 is-size-5-tablet">Lemon flavored Sobolo</p>
+          <p class="is-size-6 is-size-5-tablet price">GHS {{userMeal.addOnPrice2}}.00</p>
+        </span>
+
+        <div class="controlSet">
+          <div class="button is-small" @click="decreaseQuantity2">-</div>
+          <p class="quantity">{{userMeal.addOnQuantity2}}</p>
+          <div class="button is-small" @click="increaseQuantity2">+</div>
         </div>
-      </div> -->
-      <div class="is-size-5 packList" >
-        <p>What you get</p>
+      </div>
+      
+      <div class="is-size-5 packList item content">
+        <p class="list-heading">What you get</p>
         <ol type="1">
           <li> 
             Grilled {{userMeal.productID}} kebab: {{userMeal.productQuantity}} 
-          </li>
+          </li> 
           <li>
             Bottled water.
           </li>
@@ -84,27 +92,19 @@
           <li v-if="userMeal.addOnQuantity > 0">
             Banku with pepper pack: {{userMeal.addOnQuantity}}
           </li>
+          <li v-if="userMeal.addOnQuantity2 > 0">
+            Lemon flavored Sobolo: {{userMeal.addOnQuantity2}}
+          </li>
         </ol>
       </div>
 
       <p class="is-size-5 more" :class="{pack: pack}">{{userMeal.productDescription}}</p>
-      <!-- <div class="clicker is-size-5" @click="viewPack">
-        <div class="theButton" :class="{packOpen: pack}">
-          <span class="buttonText">what you get</span>
-          <span class="is-small">
-            <i v-if="pack" class="gg-arrow-up-r"></i>
-            <i v-if="!pack" class="gg-arrow-down-r"></i>
-          </span>
-        </div>
-         
-         
-      </div> -->
 
       <span v-if="!extras" @click="viewPack" class="clicker">Extra Details</span>
       <span v-if="extras" @click="viewPack" class="clicker">Less Details</span>
 
     </div>
-      <div class="is-primary next" @click="updateCart(userMeal)">{{isActive ? 'Added' : 'Add to Basket'}}</div>
+      <div class="is-primary next" @click="updateCart(userMeal)">{{isActive ? 'Meal added to basket' : 'Add to Basket' }}</div>
     </div>
 </template>
 
@@ -130,8 +130,8 @@ export default {
     },
     isActive() {
       return this.$store.state.isActive
-    }
-  },
+    },
+  }, 
   mounted() {
   },
   methods: {
@@ -149,7 +149,6 @@ export default {
     increaseQuantity() {
       this.$store.commit('increaseQuantity');
       this.$store.commit('increasePrice');
-
     },
     increaseQuantity1() {
       this.$store.commit('increaseQuantity1');
@@ -158,13 +157,20 @@ export default {
     decreaseQuantity1() {
       this.$store.commit('decreaseQuantity1');
       this.$store.commit('decreasePrice1');
+    },
+    increaseQuantity2() {
+      this.$store.commit('increaseQuantity2');
+      this.$store.commit('increasePrice2');
+    },
+    decreaseQuantity2() {
+      this.$store.commit('decreaseQuantity2');
+      this.$store.commit('decreasePrice2');
     },  
     viewPack() {
       console.log('View Pack')
       this.pack = !this.pack 
     },
     superPack() {
-      // console.log('View Pack')
       this.extras = !this.extras 
      },
   },

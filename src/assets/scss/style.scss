@@ -1,4 +1,4 @@
-@import "~bulma/bulma";
+// @import "~bulma/bulma"; 
 // @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 
 @import url('https://css.gg/instagram.css');
@@ -10,6 +10,9 @@
 @import url('https://css.gg/arrow-up-r.css');
 @import url('https://css.gg/arrow-down-r.css');
 @import url('https://css.gg/close-r.css');
+@import url('https://css.gg/menu-boxed.css');
+@import url('https://css.gg/arrow-left.css');
+@import url('https://css.gg/shopping-cart.css');
 
 @import "variables";
 @import "globals";
@@ -18,14 +21,9 @@
 @import "purchase";
 @import "cart";
 @import "product";
-@import "shoppingcart";
-@import "menu";
-@import "close";
 @import "hero";
-@import "arrowU";
-@import "arrowD";
 @import "contact";
 
 
 
-$family-sans-serif: "Josefin Sans", sans-serif;
+// $family-sans-serif: "Josefin Sans", sans-serif;

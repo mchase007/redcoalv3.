@@ -1,6 +1,5 @@
 <template> 
 
-
   <div class="checkout-box" :class="{checkout : isCheckout}">
       
     <div class="orderForm">
@@ -12,63 +11,52 @@
         </div>
       </div>
     </div>
-    
+     
     <div class="map flex flex-fd-c">
       <div class="indicators flex flex-jc-sb">
-        <div class="lng"></div>
-        <div class="lng lat"></div>
-        <div class="lng"></div>
+        <div class="lng">1</div>
+        <div class="lat">2</div>
+        <div class="lng">3</div>
       </div>
-      <div class="labels flex flex-jc-sb">
+      <div class="flex flex-jc-sb">
         <span>Shopping Cart</span>
         <span class="">Delivery Address</span>
         <span class="">Secure Payment</span>
       </div>
     </div>
 
-    <!-- <div>
-      <input type="text" v-model="userName" @blur="test"/>
-      <span class="help" v-if="v$.userName.$error">
-        Kindly enter fullName
+    <div class="field one">
+      <label class="label">Full Name</label>
+        <div class="control">
+          <input v-model="form.userName" @blur="userFullName" ref="name" class="input" type="text" placeholder="Kofi Grills Chills">
+        </div>
+        <span class="help is-info" v-if="v$.form.userName.$error">
+        Kindly enter full name correctly
+        </span>
+    </div>
+
+    <div class="field">
+      <label class="label">Contact Number</label>
+      <div class="control">
+        <input v-model="form.userContact" @blur="userMobile" ref="number" class="input" type="tel" placeholder="0211231234">
+      </div>
+      <span class="help is-info" v-if="v$.form.userContact.$error">
+        Kindly enter your contact correctly
       </span>
-    </div> -->
-
-
-      <div class="field one">
-        <label class="label">Full Name</label>
-        <div class="control">
-          <input @blur="userFullName" v-model="userName" ref="name" class="input" type="text" placeholder="Kofi Grills Chills">
-        </div>
-        <span class="help" v-if="v$.userName.$error">
-        Kindly enter Fullname correctly
-        </span>
-        <!-- <p class="help">Kofi Grills</p> -->
-      </div>
-
-      <div class="field">
-        <label class="label">Contact Number</label>
-        <div class="control">
-          <input @blur="userMobile" v-model="userContact" ref="number" class="input" type="tel" placeholder="0211231234">
-        </div>
-        <span class="help" v-if="v$.userContact.$error">
-          Kindly enter your contact correctly
-        </span>
-        <p class="help">0211231234</p>
-      </div>
+    </div>
  
-      <div class="field locale">
+    <div class="field locale">
       <div class="content">
         <div class="flex localeResponse">
-        <h5>Local Area: </h5>
-        <p>{{userLocale}} <span v-if="userLocale">and surroundings</span></p> 
-        
+        <label class="label">Local Area: </label>
+        <p> {{form.userLocale}} <span v-if="form.userLocale"> and surroundings</span></p> 
         </div>
         <div class="control local">
         
-          <label class="radio">
-            <div class="flex inside">
-                <input type="radio" ref="local" @input="userLocal" value="Ahodwo" name="location">
-                <div class="side">
+        <label class="radio">
+          <div class="flex inside">
+            <input type="radio" ref="local" v-model="form.userLocale" value="Ahodwo" name="location">
+              <div class="side">
                 <span>Ahodwo,</span>
                 <span>Asokwa,</span>
                 <span>Adiemmbra,</span>
@@ -79,7 +67,7 @@
           </label>
           <label class="radio">
               <div class="flex inside">
-                <input type="radio" ref="local" @input="userLocal" value="KNUST Campus" name="location">
+                <input type="radio" ref="local" v-model="form.userLocale" value="KNUST Campus" name="location">
                 <div class="side">
                 <span>Asokore Mampong,</span>
                 <span>Ayeduase,</span>
@@ -94,7 +82,7 @@
 
           <label class="radio">
             <div class="flex inside">
-                <input type="radio" ref="local" @input="userLocal" value="Adum" name="location">
+                <input type="radio" ref="local" v-model="form.userLocale" value="Adum" name="location">
                 <div class="side">
                 <span>Adum,</span>
                 <span>Bantama,</span>
@@ -108,40 +96,42 @@
       <p class="help">* Delivering to entire Ashanti soon</p>
       </div>
 
-
       </div>
 
       <div class="field">
         <label class="label">GPS Number</label>
         <div class="control">
-          <input @blur="userAddress" v-model="userGPS" ref="gpsAddress" class="input" type="text" placeholder="">
+          <input v-model="form.userGPS" @blur="userMobile" ref="gpsAddress" class="input" type="text" placeholder="ABC1234567">
         </div>
-        <span class="help" v-if="v$.userGPS.$error">
-          Kindly enter your contact correctly
-        </span>
+        <span class="help is-info" v-if="v$.form.userGPS.$error">
+          Kindly enter your GPS code correctly
+        </span> 
         <p class="help">ABC1234567</p>
       </div>
 
       <div class="field">
-        <label class="label">Special Instructions <span class="help">Optional</span></label>
+        <div class="specialInstructions">
+        <label class="label">Special Instructions</label> 
+        <span class="help">Optional</span>
+        </div>
         
         <div class="control">
-          <textarea @input="plusInfor" ref="plusInfor" class="textarea" placeholder="Textarea"></textarea>
+          <textarea v-model="form.plusInfor" ref="plusInfor" class="textarea" placeholder="Textarea"></textarea>
         </div>
       </div>
 
       <div class="totalContainer2">     
-      <div class="box flex total flex-jc-sb">
-        <div>
+      <div class="flex total flex-jc-sb">
+        <div class="group1">
           <p>Number of Items:</p>
           <p>Total Price:</p>
           <p>Delivery:</p>
           <p>Total:</p>
         </div>
-        <div>
+        <div class="group2">
           <p>{{cartItemLength}}</p>
           <p> GHS {{cartTotal}}</p>
-          <p> Free</p>
+          <h5 class="free">FREE!</h5>
           <strong>
             <p> GHS {{cartTotal}}</p>
           </strong>
@@ -150,7 +140,6 @@
     </div>
 
       <div class="btns">
-      <div class="theButton4" @click="firebaseTest">Submit Order</div>
       <div class="theButton4 payBtn" @click="runPaystack">Pay Order</div>
       </div>
 
@@ -158,140 +147,140 @@
   </div>
 </template>
 
-<script>
+<script> 
  
 import useVuelidate from '@vuelidate/core'
 import { required, minLength, maxLength } from '@vuelidate/validators'
+import axios from "axios"
 
 export default {
   setup () {
     return { v$: useVuelidate() }
   },
-  components: { 
-  }, 
   data() {
     return {
-      userName: '',
-      userContact: '',
-      userGPS: '',
-      userLocality: '',
-      // userExtraInfor: '',
+      form: {
+        userName: '',
+        userContact: '',
+        userGPS: '',
+        userLocale: '',
+        plusInfor: '',
+      }
     };
   },
   validations() {
     return {
-      userName: {required, minLength: minLength(3)},
-      userContact: {required, minLength: minLength(10), maxLength: maxLength(10)},
-      userGPS: {required, minLength: minLength(9), maxLength: maxLength(9)},
+      form: {
+        userName: {required, minLength: minLength(3)},
+        userContact: {required, minLength: minLength(10), maxLength: maxLength(10)},
+        userGPS: {required, minLength: minLength(9), maxLength: maxLength(9)},
+      }
     }
   },
   computed: {
+    userCart() {
+      return this.$store.state.cart
+    },
     cartTotal() {
       return this.$store.getters.cartTotal
     },
-    userLocale() {
-      return this.$store.state.local
-    },
     isCheckout() {
       return this.$store.state.checkout
-    },
-    mobile(){
-      return this.$store.state.mobile
     },
     key() {
       return this.$store.state.key
     },
     email() {
-      let email = this.mobile + '@redcoal.com'
+      let email = this.form.userContact + '@redcoal.com'
       return email
-    },
-    payRef(){
-      return this.$store.state.transactionRef
     },
     cartItemLength() {
       return this.$store.getters.cartLength
     },
   },
   methods: {
-    test() {
-      
-      // if (this.v$.$error) {
-      //   console.log(this.userName)
-      // } else {
-      //   // console.log(this.v$.$errors[0].$message)
-      //   console.log('Form incomplete')
-      // }
-    },
     returnToCart() {
       this.$store.commit('returnToCart');
     },
     userMobile(event) {
       this.v$.$touch()
-      this.$store.commit('userMobile', event.target.value)
     },
     userFullName(event) {
       this.v$.$touch()
     },
     userAddress(event) {
       this.v$.$touch()
-      this.$store.commit('userAddress', event.target.value)
     },
-    userLocal(event) {
-      this.$store.commit('userLocal', event.target.value)
+    runPaystack() {
+      console.log('God Is Good');
+
+      this.v$.$validate();
+
+      if (!this.v$.$error) {
+        console.log('No errors')
+
+        let userPack = {
+          infor: this.form,
+          meal: this.userCart, 
+        }
+
+        // console.log('userPack initialised')
+
+        let self = this;
+
+        var handler = PaystackPop.setup({
+
+          key: self.key,
+          email: self.email,
+          amount: self.cartTotal * 100,
+          currency: 'GHS',
+ 
+          callback: function(response) {
+            var config = { 
+            method: 'post',
+            url: '../.netlify/functions/test',
+            headers: { 
+              'Content-Type': 'application/json'
+            },
+            data : {
+              reference: response.reference,
+              userOrder: userPack
+            }
+            };
+
+            axios(config)
+            .then(function(response) {
+              self.test3()
+              console.log("God Is Good");
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+          },
+      
+
+          onClose: function() {
+
+          alert('Transaction was not completed, window closed.');
+
+          },
+
+          });
+
+        handler.openIframe();
+      }
     },
-    plusInfor(event) {
-      this.$store.commit('plusInfor', event.target.value)
-    },
-    transactionRef(ref) {
-      this.$store.commit('transactionRef', ref)
-      console.log(ref);
-    },
-    firebaseTest(event) {
-      this.$store.commit('firebaseTest')
+    test3() {
       this.$refs['name'].value = ''
       this.$refs['number'].value = ''
       this.$refs['gpsAddress'].value = ''
       this.$refs['plusInfor'].value = ''
       this.$refs['local'].value = ''
-      console.log('shot fired');
-
-      
+      localStorage.clear();
+      this.$store.commit('clearCart');
+      this.$router.go(-1)
+      // console.log('shot fired');      
     },
-    logRef() {
-      console.log(this.payRef);
-    },
-    runPaystack() {
-      console.log('Start');
-      var handler = PaystackPop.setup({
-
-          key: this.key, // Replace with your public key
-          email: this.email,
-          amount: this.cartTotal * 100, // the amount value is multiplied by 100 to convert to the lowest currency unit
-          currency: 'GHS', // Use GHS for Ghana Cedis or USD for US Dollars
-
-          callback: function(response) {
-
-          //this happens after the payment is completed successfully
-
-          var reference = response.reference;
-          
-          this.$store.commit('transactionRef', reference)
-
-          alert('Payment complete! Reference: ' + reference);
-
-    },
-
-    onClose: function() {
-
-      alert('Transaction was not completed, window closed.');
-
-    },
-
-  });
-
-  handler.openIframe();
-    }
-
   },
 }
 </script>

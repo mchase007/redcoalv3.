@@ -5,6 +5,14 @@
   margin: 0 auto;
 }
 
+.gg-pin,
+.gg-phone,
+.gg-mail,
+.gg-twitter,
+.gg-instagram,
+.gg-facebook{
+  color: #731739;
+}
 .contact-page {
   display: flex;
   flex-direction: column;
@@ -45,6 +53,7 @@
   border-radius: 4px;
   background-color: #731739;
   color: whitesmoke;
+  cursor: pointer;
 
 }
 

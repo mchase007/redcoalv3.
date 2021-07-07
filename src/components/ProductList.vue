@@ -1,7 +1,7 @@
 <template> 
   <nav>
     <div class="container">    
-      <div class="">
+      <div class=""> 
         <div class="mealList" >
           <div class="mealItem" v-for="product in products" :key="product.id">
             <router-link ref="link" :to="{ name:'Product', params: { id: product.productID}}" @click="selectMeal(product)">{{product.productName}}</router-link>

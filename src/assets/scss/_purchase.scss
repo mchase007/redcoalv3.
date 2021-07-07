@@ -114,9 +114,9 @@
 
 .localeResponse {
   align-items: baseline;
-  h5 {
+  label {
     margin-right: 10px;
-  }
+  } 
 }
 
 .btns {
@@ -124,7 +124,7 @@
     margin-bottom: 20px;
     cursor: pointer;
   }
-  payBtn {
+  .payBtn {
     margin-bottom: 50px;
   }
 }
@@ -139,6 +139,10 @@
   }
 }
 
-// .completeTotal {
+.specialInstructions {
+  display: flex;
 
-// }
+  label {
+    margin-right: 5px;
+  }
+}

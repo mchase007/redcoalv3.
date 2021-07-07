@@ -1,10 +1,10 @@
-<template> 
+<template>  
   <nav>
     <div class="container flex flex-jc-sb flex-ai-c">
       <div> 
         <div @click="displayMenu" class="header-hamburger" :class="{open: open}">
-          <i v-if="open" class="gg-close"></i>
-          <i v-if="!open" class="gg-menu"></i>
+          <i v-if="!open" class="gg-menu-boxed"></i>
+          <i v-if="open" class="gg-close-r"></i>
         </div> 
 
         <div class="mobile-menu" :class="{open: open}">
@@ -15,7 +15,7 @@
       </div>
 
       <div class="header_logo is-size-5 is-size-4-desktop">
-        <a><router-link to="/">redcoal</router-link></a>
+        <a><router-link to="/">morekebab.</router-link></a>
       </div>  
 
       <div class="header_cart">
@@ -37,7 +37,6 @@ export default {
   data() {
     return {
       open: false,
-      addressLink: '../assets/menu.svg' 
     }  
   },
   computed: {
