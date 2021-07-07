@@ -13,7 +13,6 @@ export default createStore({
     isActive: false,
     exists: null,
     checkout: false,
-    // remove: false,
     meal: {},
     mobile: '',
     extraList: [],
@@ -85,7 +84,7 @@ export default createStore({
       }
     },
     openCheckout(state) {
-      state.open = false;
+      // state.open = false;
       state.checkout = true;
     },
     increaseQuantity(state) {
@@ -153,6 +152,10 @@ export default createStore({
     userMobile(state, payload) {
       state.mobile = payload
     },
+    clearCart(state){
+      state.cart = [];
+      state.checkout = true;
+    }
     //   localStorage.clear();
     //   state.cart = [];
     //   state.checkout = false

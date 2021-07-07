@@ -211,14 +211,6 @@ export default {
     userAddress(event) {
       this.v$.$touch()
     },
-    firebaseTest(event) {
-      this.$refs['name'].value = ''
-      this.$refs['number'].value = ''
-      this.$refs['gpsAddress'].value = ''
-      this.$refs['plusInfor'].value = ''
-      this.$refs['local'].value = ''
-      console.log('shot fired');      
-    },
     runPaystack() {
       console.log('Start');
 
@@ -254,10 +246,18 @@ export default {
             }
             };
 
+
             axios(config)
-            .then(function (response) {
-              console.log(JSON.stringify(response.data));
-            })
+            .then(function(response) {
+              // let vuedata = this;
+              // console.log(JSON.stringify(response.data));
+              // this.test3()
+              this.$refs['name'].value = ''
+              this.$refs['number'].value = ''
+              this.$refs['gpsAddress'].value = ''
+              this.$refs['plusInfor'].value = ''
+              this.$refs['local'].value = ''
+            }.bind(this))
             .catch(function (error) {
               console.log(error);
             });
@@ -274,7 +274,18 @@ export default {
 
         handler.openIframe();
       }
-    }
+    },
+    test3() {
+      // this.$refs['name'].value = ''
+      // this.$refs['number'].value = ''
+      // this.$refs['gpsAddress'].value = ''
+      // this.$refs['plusInfor'].value = ''
+      // this.$refs['local'].value = ''
+      // localStorage.clear();
+      // this.$store.commit('clearCart');
+      // this.$router.go(-1)
+      console.log('shot fired');      
+    },
   },
 }
 </script>

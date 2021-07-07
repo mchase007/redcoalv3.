@@ -9,7 +9,7 @@
         <span>Back to Shop</span>
         </div>
       </div>
-
+ 
       <div>
         Basket items: {{cartItemLength}}
       </div> 

@@ -1,6 +1,6 @@
 <template> 
   <section class="hero is-fullheight is-medium">
-    <div class="hero-head">
+    <div class="hero-head"> 
       <Header></Header>
     </div>
     <div class="hero-body content contact-page">
@@ -115,7 +115,7 @@ export default {
 
         let userRequest = {
           request: this.contactForm, 
-        }
+        } 
 
         console.log(userRequest);
         
@@ -128,14 +128,24 @@ export default {
         data : userRequest
         };
 
+        const self = this;
+
         axios(config)
         .then(function (response) {
               console.log(JSON.stringify(response.data));
+              self.test2()
             })
         .catch(function (error) {
               console.log(error);
             });
       }
+    },
+    test2() {
+      console.log("God is good");
+      this.$refs['name'].value = ''
+      this.$refs['email'].value = ''
+      this.$refs['message'].value = ''
+      console.log('shot fired'); 
     },
     // firebaseTestTwo(event) {
     //   // this.$store.commit('firebaseTestTwo')
