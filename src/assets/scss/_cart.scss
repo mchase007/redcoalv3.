@@ -1,7 +1,7 @@
 .map {
   max-width: 300px;
   margin: 0 auto; 
-}
+} 
 
 .labels {
   max-width: 400px;
@@ -12,18 +12,25 @@
   }
 }
 
-
+ 
 .indicators { 
   margin-bottom: 10px;
 
   .lat {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid #731739;
     background-color: #731739;
+    color: #ffffff;
+    border-radius: 100%;
+    margin: 0 auto;
   }
    
   .lng {
-    width: 0.7rem;
-    height: 0.7rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border: 1px solid #731739;
+    color: #731739;
     border-radius: 100%;
     margin: 0 auto;
   }
@@ -66,7 +73,7 @@
   margin-top: 20px;
   width: 150px;
   margin-bottom: 40px;
-}
+} 
 
 .cartProduct {
   max-width: 750px;
@@ -102,11 +109,29 @@
 }
 
 .total {
-  text-align: left;
+  // text-align: left;
   margin-left: 1.5em;
   margin-right: 1.5em;
   margin-bottom: 40px;
   margin-top: 40px;
+  display: flex;
+}
+
+.group1{
+  text-align: left;
+  // border: 1px solid #731739;
+  width: 50%;
+}
+
+.group2{
+  text-align: right;
+  // border: 1px solid #731739;
+  width: 50%;
+}
+
+.free {
+  color: #731739;
+
 }
 
 .totalContainer {

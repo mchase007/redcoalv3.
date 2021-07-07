@@ -17,10 +17,10 @@
 
       <div class="map flex flex-fd-c">
         <div class="indicators flex flex-jc-sb">
-          <div class="lng lat"></div>
-          <div class="lng"></div>
-        <div class="lng"></div>
-        </div>
+          <div class="lat">1</div>
+          <div class="lng">2</div>
+        <div class="lng">3</div> 
+        </div> 
         <div class="labels flex flex-jc-sb">
         <span>Shopping Cart</span>
         <span class="">Delivery Address</span>
@@ -34,24 +34,24 @@
             <div class="flex flex-jc-sb orderRow">
                 <!-- <p>Image</p> -->
                 <div class="flex flex-jc-sb">
-                  <div>
-                  <p>{{product.quantity}} {{ product.meal }}s</p>
+                  <div class="item">
+                  <p>{{product.quantity}} {{ product.meal }} kebabs</p>
+                  <p>GHS {{ product.price }}.00</p>
                 </div>
                 
-                <div>
-                  <p>GHS {{ product.price }}.00</p>
-                </div> 
                 <div>
                   <i class="gg-close-r" @click="removeItem(product)"></i>
                 </div>
                 </div>
+
+                <div v-if="product.addOnQuantity > 0 || product.addOnQuantity2 > 0" class="extraset3"></div>
                 
                 <div class="addOnRow flex flex-jc-sb" v-if="product.addOnQuantity > 0">
-                  <div>
+                  <div class="item">
                     <p>{{product.addOnQuantity}} Banku Pack</p>
+                    <p>GHS {{product.addOnPrice}}.00</p>
                   </div>
                   
-                  <p>GHS {{product.addOnPrice}}.00</p>
 
                   <div>
                     <i class="gg-close-r" @click="removeAddOn(product)"></i>
@@ -59,11 +59,11 @@
                 </div>
 
                 <div class="addOnRow flex flex-jc-sb" v-if="product.addOnQuantity2 > 0">
-                  <div>
+                  <div class="item">
                     <p>{{product.addOnQuantity2}} Lemon flavored sobolo</p>
+                    <p>GHS {{product.addOnPrice2}}.00</p>
                   </div>
                   
-                  <p>GHS {{product.addOnPrice2}}.00</p>
 
                   <div>
                     <i class="gg-close-r" @click="removeAddOn2(product)"></i>
@@ -94,17 +94,17 @@
     </div>
 
     <div class="totalContainer">     
-      <div v-if="cart.length > 0" class="box flex total flex-jc-sb">
-        <div>
+      <div v-if="cart.length > 0" class="total">
+        <div class="group1">
           <p>Number of Items:</p>
           <p>Total Price:</p>
           <p>Delivery:</p>
           <p>Total:</p>
         </div>
-        <div>
+        <div class="group2">
           <p>{{cartItemLength}}</p>
           <p> GHS {{cartTotal}}</p>
-          <p> Free</p>
+          <h5 class="free"> FREE!</h5>
           <strong>
             <p> GHS {{cartTotal}}</p>
           </strong>

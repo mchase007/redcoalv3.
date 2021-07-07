@@ -82,7 +82,7 @@
         <ol type="1">
           <li> 
             Grilled {{userMeal.productID}} kebab: {{userMeal.productQuantity}} 
-          </li>
+          </li> 
           <li>
             Bottled water.
           </li>

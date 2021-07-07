@@ -40,25 +40,26 @@
 
        <div class="field">
     <div class="control">
-      <button class="theButton4 is-medium" @click="test">Submit Message</button>
+      <button class="button is-primary" @click="test">Submit Message</button>
     </div>
       </div>
       </div>
+
 
       <div class="contact-links">
       <div class="infor">
         <!-- <p>redcoal.com</p> -->
         <div class="flex">
           <i class="gg-pin"></i>
-          <p>KNUST</p> 
+          <p class="is-size-5">KNUST</p> 
         </div>
         <div class="flex">
           <i class="gg-phone"></i>
-          <p>0201234578</p>
+          <p class="is-size-5">0201234578</p>
         </div>
         <div class="flex">
           <i class="gg-mail"></i>
-          <p class="flex">redcoal@redcoal.com</p>
+          <p class="flex is-size-5">redcoal@redcoal.com</p>
         </div>
       </div>
 

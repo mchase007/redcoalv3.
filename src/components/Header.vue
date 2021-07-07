@@ -15,7 +15,7 @@
       </div>
 
       <div class="header_logo is-size-5 is-size-4-desktop">
-        <a><router-link to="/">redcoal</router-link></a>
+        <a><router-link to="/">morekebab.</router-link></a>
       </div>  
 
       <div class="header_cart">

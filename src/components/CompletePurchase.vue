@@ -11,14 +11,14 @@
         </div>
       </div>
     </div>
-    
+     
     <div class="map flex flex-fd-c">
       <div class="indicators flex flex-jc-sb">
-        <div class="lng"></div>
-        <div class="lng lat"></div>
-        <div class="lng"></div>
+        <div class="lng">1</div>
+        <div class="lat">2</div>
+        <div class="lng">3</div>
       </div>
-      <div class="labels flex flex-jc-sb">
+      <div class="flex flex-jc-sb">
         <span>Shopping Cart</span>
         <span class="">Delivery Address</span>
         <span class="">Secure Payment</span>
@@ -30,7 +30,7 @@
         <div class="control">
           <input v-model="form.userName" @blur="userFullName" ref="name" class="input" type="text" placeholder="Kofi Grills Chills">
         </div>
-        <span class="help" v-if="v$.form.userName.$error">
+        <span class="help is-info" v-if="v$.form.userName.$error">
         Kindly enter full name correctly
         </span>
     </div>
@@ -40,7 +40,7 @@
       <div class="control">
         <input v-model="form.userContact" @blur="userMobile" ref="number" class="input" type="tel" placeholder="0211231234">
       </div>
-      <span class="help" v-if="v$.form.userContact.$error">
+      <span class="help is-info" v-if="v$.form.userContact.$error">
         Kindly enter your contact correctly
       </span>
     </div>
@@ -103,7 +103,7 @@
         <div class="control">
           <input v-model="form.userGPS" @blur="userMobile" ref="gpsAddress" class="input" type="text" placeholder="ABC1234567">
         </div>
-        <span class="help" v-if="v$.form.userGPS.$error">
+        <span class="help is-info" v-if="v$.form.userGPS.$error">
           Kindly enter your GPS code correctly
         </span> 
         <p class="help">ABC1234567</p>
@@ -121,17 +121,17 @@
       </div>
 
       <div class="totalContainer2">     
-      <div class="box flex total flex-jc-sb">
-        <div>
+      <div class="flex total flex-jc-sb">
+        <div class="group1">
           <p>Number of Items:</p>
           <p>Total Price:</p>
           <p>Delivery:</p>
           <p>Total:</p>
         </div>
-        <div>
+        <div class="group2">
           <p>{{cartItemLength}}</p>
           <p> GHS {{cartTotal}}</p>
-          <p> Free</p>
+          <h5 class="free">FREE!</h5>
           <strong>
             <p> GHS {{cartTotal}}</p>
           </strong>
