@@ -226,11 +226,13 @@ export default {
 
         console.log('userPack initialised')
 
+        let self = this;
+
         var handler = PaystackPop.setup({
 
-          key: this.key,
-          email: this.email,
-          amount: this.cartTotal * 100,
+          key: self.key,
+          email: self.email,
+          amount: self.cartTotal * 100,
           currency: 'GHS',
 
           callback: function(response) {
@@ -246,18 +248,11 @@ export default {
             }
             };
 
-
             axios(config)
             .then(function(response) {
-              // let vuedata = this;
               // console.log(JSON.stringify(response.data));
-              // this.test3()
-              this.$refs['name'].value = ''
-              this.$refs['number'].value = ''
-              this.$refs['gpsAddress'].value = ''
-              this.$refs['plusInfor'].value = ''
-              this.$refs['local'].value = ''
-            }.bind(this))
+              self.test3()
+            })
             .catch(function (error) {
               console.log(error);
             });
@@ -276,15 +271,15 @@ export default {
       }
     },
     test3() {
-      // this.$refs['name'].value = ''
-      // this.$refs['number'].value = ''
-      // this.$refs['gpsAddress'].value = ''
-      // this.$refs['plusInfor'].value = ''
-      // this.$refs['local'].value = ''
-      // localStorage.clear();
-      // this.$store.commit('clearCart');
-      // this.$router.go(-1)
-      console.log('shot fired');      
+      this.$refs['name'].value = ''
+      this.$refs['number'].value = ''
+      this.$refs['gpsAddress'].value = ''
+      this.$refs['plusInfor'].value = ''
+      this.$refs['local'].value = ''
+      localStorage.clear();
+      this.$store.commit('clearCart');
+      this.$router.go(-1)
+      // console.log('shot fired');      
     },
   },
 }
