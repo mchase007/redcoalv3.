@@ -54,7 +54,8 @@ const items = [
     addOnPrice: 0,
     addOnQuantity2: 0,
     addOnPrice2: 0,
-  }
+  },
+  
 ]
 
 export default items 
