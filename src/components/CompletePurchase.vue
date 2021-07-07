@@ -67,14 +67,11 @@
           </label>
           <label class="radio">
               <div class="flex inside">
-                <input type="radio" ref="local" v-model="form.userLocale" value="KNUST Campus" name="location">
+                <input type="radio" ref="local" v-model="form.userLocale" value="KNUST" name="location">
                 <div class="side">
                 <span>Asokore Mampong,</span>
-                <span>Ayeduase,</span>
-                <span>Bomso,</span>
-                <span>KNUST Campus,</span>
-                <span>Kotei,</span>
-                <span>New Site</span> 
+                <span>KNUST Campus and Off-Campus</span>
+                <!-- <span>KNUST Off-campus,</span> -->
                 <span>and surroundings.</span>
                 </div>
               </div>
