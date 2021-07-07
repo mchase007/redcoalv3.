@@ -40,7 +40,7 @@
 
        <div class="field">
     <div class="control">
-      <button class="theButton4 is-link" @click="test">Submit Message</button>
+      <button class="theButton4 is-medium" @click="test">Submit Message</button>
     </div>
       </div>
       </div>
@@ -108,7 +108,7 @@ export default {
     }
   },
   methods: {
-    test() {
+    test() { 
       this.v$.$validate()
       if (!this.v$.$error) {
 
@@ -142,13 +142,6 @@ export default {
       this.$refs['message'].value = ''
       // console.log('shot fired'); 
     },
-    // firebaseTestTwo(event) {
-    //   // this.$store.commit('firebaseTestTwo')
-    //   this.$refs['name'].value = ''
-    //   this.$refs['email'].value = ''
-    //   this.$refs['message'].value = ''
-    //   console.log('shot fired');      
-    // },
     userFullname(event) {
       this.v$.$touch()
     },

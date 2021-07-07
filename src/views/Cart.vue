@@ -142,7 +142,7 @@ export default {
     },
     cartItemLength() {
       return this.$store.getters.cartLength
-    }
+    } 
   },
   methods: {
     openCheckout() {
