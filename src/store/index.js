@@ -2,7 +2,7 @@ import { createStore } from 'vuex'
 import items from '@/data/items.js'
  
 function updateLocalStorage(cart) {
-  console.log("local updated");
+  // console.log("local updated");
   localStorage.setItem("cart", JSON.stringify(cart))
 }
 
@@ -15,7 +15,6 @@ export default createStore({
     checkout: false,
     meal: {},
     mobile: '',
-    extraList: [],
     total: null,
     key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d',
   },
@@ -27,7 +26,7 @@ export default createStore({
       return details
     },
     cartTotal: state => {
-      return state.cart.reduce((a, b) => a + b.price + b.addOnPrice, 0)
+      return state.cart.reduce((a, b) => a + b.price + b.addOnPrice + b.addOnPrice2, 0)
     },
     cartLength(state) {
       let itemNum = state.cart.length
@@ -42,7 +41,7 @@ export default createStore({
       state.isActive = !state.isActive;
       let item = state.cart.find( (e) => e.id === payload.id);
       if (item) {
-        console.log(item.id);
+        // console.log(item.id);
       } else {
         let y = {
           meal: payload.productName,
@@ -50,6 +49,8 @@ export default createStore({
           quantity: payload.productQuantity,
           addOnQuantity: payload.addOnQuantity,
           addOnPrice: payload.addOnPrice,
+          addOnQuantity2: payload.addOnQuantity2,
+          addOnPrice2: payload.addOnPrice2,
         }
         state.cart.push(y);
         console.log(y);
@@ -60,14 +61,22 @@ export default createStore({
       }, 300);
     },
     deleteFromCart(state, payload) {
-      console.log(state.cart.indexOf(payload));
+      // console.log(state.cart.indexOf(payload));
       state.cart.splice(state.cart.indexOf(payload), 1);
       updateLocalStorage(state.cart)
     },
     removeAddOn(state, payload) {
       let item = state.cart.indexOf(payload);
-      console.log(item);
+      // console.log(item);
       state.cart[item].addOnQuantity = 0;
+      state.cart[item].addOnPrice = 0
+      updateLocalStorage(state.cart)
+    },
+    removeAddOn2(state, payload) {
+      let item = state.cart.indexOf(payload);
+      // console.log(item);
+      state.cart[item].addOnQuantity2 = 0;
+      state.cart[item].addOnPrice2 = 0
       updateLocalStorage(state.cart)
     },
     increaseCartQuantity(state, payload) {
@@ -84,7 +93,6 @@ export default createStore({
       }
     },
     openCheckout(state) {
-      // state.open = false;
       state.checkout = true;
     },
     increaseQuantity(state) {
@@ -92,6 +100,9 @@ export default createStore({
     },
     increaseQuantity1(state) {
       state.meal.addOnQuantity++;
+    },
+    increaseQuantity2(state) {
+      state.meal.addOnQuantity2++;
     },
     increasePrice(state) {
       if (state.meal.productName === 'Sausage') {
@@ -106,19 +117,33 @@ export default createStore({
       let price = (state.meal.addOnPrice + 5);
       state.meal.addOnPrice = price; 
     },
+    increasePrice2(state) {
+      let price = (state.meal.addOnPrice2 + 2);
+      state.meal.addOnPrice2 = price; 
+    },
     decreaseQuantity(state) {
       if (state.meal.productQuantity > 2) {
         state.meal.productQuantity--;
-      } else {
-        console.log('Two or more');
-      }
+      } 
+      // else {
+        // console.log('Two or more');
+      // }
     },
     decreaseQuantity1(state) {
       if (state.meal.addOnQuantity > 0) {
         state.meal.addOnQuantity--;
-      } else {
-        console.log('Enough');
-      }
+      } 
+      // else {
+        // console.log('Enough');
+      // }
+    },
+    decreaseQuantity2(state) {
+      if (state.meal.addOnQuantity2 > 0) {
+        state.meal.addOnQuantity2--;
+      } 
+      // else {
+        // console.log('Enough');
+      // }
     },
     decreasePrice(state) {
       if (state.meal.productName === 'Sausage') {
@@ -145,6 +170,14 @@ export default createStore({
         state.meal.addOnPrice = 0;
       } 
     },
+    decreasePrice2(state) {
+      if (state.meal.addOnQuantity2 > 0) {
+        let price = (state.meal.addOnPrice - 2);
+        state.meal.addOnPrice2 = price;
+      } else if (state.meal.addOnQuantity2 === 0 ) {
+        state.meal.addOnPrice2 = 0;
+      } 
+    },
     returnToCart(state) {
       state.checkout = false;
       state.open = true;
@@ -156,13 +189,6 @@ export default createStore({
       state.cart = [];
       state.checkout = true;
     }
-    //   localStorage.clear();
-    //   state.cart = [];
-    //   state.checkout = false
-    //   state.open = false
-    //   state.fullName = '';
-    //   state.contactEmail = '';
-    //   state.contactMessage = '';
   },
   actions: {
   },

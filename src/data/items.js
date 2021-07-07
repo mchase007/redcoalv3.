@@ -10,6 +10,8 @@ const items = [
     noSpice: '',
     addOnQuantity: 0,
     addOnPrice: 0,
+    addOnQuantity2: 0,
+    addOnPrice2: 0,
   },
   {
     productName: "Chicken",
@@ -22,6 +24,8 @@ const items = [
     noSpice: '',
     addOnQuantity: 0,
     addOnPrice: 0,
+    addOnQuantity2: 0,
+    addOnPrice2: 0,
   },
   {
     productName: "Beef",
@@ -34,6 +38,8 @@ const items = [
     noSpice: '',
     addOnQuantity: 0,
     addOnPrice: 0,
+    addOnQuantity2: 0,
+    addOnPrice2: 0,
   },
   {
     productName: "Goat",
@@ -46,6 +52,8 @@ const items = [
     noSpice: '',
     addOnQuantity: 0,
     addOnPrice: 0,
+    addOnQuantity2: 0,
+    addOnPrice2: 0,
   }
 ]
 

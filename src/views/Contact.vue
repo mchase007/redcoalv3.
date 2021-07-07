@@ -111,29 +111,24 @@ export default {
     test() {
       this.v$.$validate()
       if (!this.v$.$error) {
-        console.log('No errors')
 
-        let userRequest = {
-          request: this.contactForm, 
-        } 
-
-        console.log(userRequest);
-        
         var config = {
         method: 'post',
         url: '../.netlify/functions/test2',
         headers: { 
           'Content-Type': 'application/json'
         },
-        data : userRequest
+        data : {
+          request: this.contactForm,
+        }
         };
 
         const self = this;
 
         axios(config)
         .then(function (response) {
-              console.log(JSON.stringify(response.data));
               self.test2()
+              console.log(response.data)
             })
         .catch(function (error) {
               console.log(error);
@@ -145,7 +140,7 @@ export default {
       this.$refs['name'].value = ''
       this.$refs['email'].value = ''
       this.$refs['message'].value = ''
-      console.log('shot fired'); 
+      // console.log('shot fired'); 
     },
     // firebaseTestTwo(event) {
     //   // this.$store.commit('firebaseTestTwo')

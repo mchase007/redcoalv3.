@@ -58,17 +58,16 @@
         </div>
       </div>
 
-      
-
-      <!-- <div class="field">
-        <div class="control addOns flex">
-          <p>Add On:</p>
-          <label class="addOn">
-            <input @click="addOn1" value="Sobolo" class="" type="checkbox">
-            redcoal Sobolo 500ml - GHS 2.00
-          </label>
+      <div v-if="extras" class="extraSet">
+        <p v-if="!userMeal.addOnQuantity2 > 0">Lemon flavored Sobolo 500ml:  GHS 2.00</p>
+        <p v-if="userMeal.addOnQuantity2 > 0">Lemon flavored Sobolo 500ml:  GHS {{userMeal.addOnPrice2}}.00</p>
+        <div class="controlSet">
+          <div class="button btn2" @click="decreaseQuantity2">-</div>
+          <p class="quantity">{{userMeal.addOnQuantity2}}</p>
+          <div class="button btn2" @click="increaseQuantity2">+</div>
         </div>
-      </div> -->
+      </div>
+      
       <div class="is-size-5 packList" >
         <p>What you get</p>
         <ol type="1">
@@ -83,6 +82,9 @@
           </li>
           <li v-if="userMeal.addOnQuantity > 0">
             Banku with pepper pack: {{userMeal.addOnQuantity}}
+          </li>
+          <li v-if="userMeal.addOnQuantity2 > 0">
+            Lemon flavored Sobolo: {{userMeal.addOnQuantity2}}
           </li>
         </ol>
       </div>
@@ -138,7 +140,6 @@ export default {
     increaseQuantity() {
       this.$store.commit('increaseQuantity');
       this.$store.commit('increasePrice');
-
     },
     increaseQuantity1() {
       this.$store.commit('increaseQuantity1');
@@ -147,6 +148,14 @@ export default {
     decreaseQuantity1() {
       this.$store.commit('decreaseQuantity1');
       this.$store.commit('decreasePrice1');
+    },
+    increaseQuantity2() {
+      this.$store.commit('increaseQuantity2');
+      this.$store.commit('increasePrice2');
+    },
+    decreaseQuantity2() {
+      this.$store.commit('decreaseQuantity2');
+      this.$store.commit('decreasePrice2');
     },  
     viewPack() {
       console.log('View Pack')

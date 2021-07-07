@@ -57,6 +57,18 @@
                     <i class="gg-close-r" @click="removeAddOn(product)"></i>
                   </div>
                 </div>
+
+                <div class="addOnRow flex flex-jc-sb" v-if="product.addOnQuantity2 > 0">
+                  <div>
+                    <p>{{product.addOnQuantity2}} Lemon flavored sobolo</p>
+                  </div>
+                  
+                  <p>GHS {{product.addOnPrice2}}.00</p>
+
+                  <div>
+                    <i class="gg-close-r" @click="removeAddOn2(product)"></i>
+                  </div>
+                </div>
             </div>
           </div>
         </div> 
@@ -141,6 +153,9 @@ export default {
     },
     removeAddOn(product) {
       this.$store.commit('removeAddOn',product);
+    },
+    removeAddOn2(product) {
+      this.$store.commit('removeAddOn2',product);
     },
     toShop() {
       this.$router.go(-1)

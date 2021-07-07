@@ -212,7 +212,7 @@ export default {
       this.v$.$touch()
     },
     runPaystack() {
-      console.log('Start');
+      console.log('God Is Good');
 
       this.v$.$validate();
 
@@ -224,7 +224,7 @@ export default {
           meal: this.userCart, 
         }
 
-        console.log('userPack initialised')
+        // console.log('userPack initialised')
 
         let self = this;
 
@@ -234,7 +234,7 @@ export default {
           email: self.email,
           amount: self.cartTotal * 100,
           currency: 'GHS',
-
+ 
           callback: function(response) {
             var config = { 
             method: 'post',
@@ -250,8 +250,8 @@ export default {
 
             axios(config)
             .then(function(response) {
-              // console.log(JSON.stringify(response.data));
               self.test3()
+              console.log("God Is Good");
             })
             .catch(function (error) {
               console.log(error);

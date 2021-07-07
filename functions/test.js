@@ -17,7 +17,7 @@ exports.handler = async (event, context, callback) => {
 
   const firestore = admin.firestore();
   let data = JSON.parse(event.body);
-  let collection = await firestore.collection("Orders").doc("Incoming")
+  let collection = await firestore.collection("Orders").doc(data.reference)
   collection.set(data)
   // let collection = await firestore.collection("Orders");
   // let doc = collection.docs[0].ref;
@@ -27,6 +27,6 @@ exports.handler = async (event, context, callback) => {
 
   return callback(null, {
   statusCode: 200,
-  body: JSON.stringify(data)
+  // body: JSON.stringify(data)
   }) 
 }

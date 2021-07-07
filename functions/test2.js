@@ -1,4 +1,4 @@
-var admin = require("firebase-admin");  
+var admin = require("firebase-admin");
 
 if (admin.apps.length === 0) {
   admin.initializeApp({
@@ -16,12 +16,12 @@ exports.handler = async (event, context, callback) => {
   
   const firestore = admin.firestore();
   let data = JSON.parse(event.body);
-  let collection = await firestore.collection("Contact Form").doc("Incoming2")
-  collection.set(data)
+  let collection = await firestore.collection("Contact Form")
+  collection.add(data)
 
   return callback(null, {
   statusCode: 200,
-  body: JSON.stringify(data)
+  body: JSON.stringify(data.num)
   }) 
   }
 
