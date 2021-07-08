@@ -115,7 +115,7 @@ export default {
 
         var config = {
         method: 'post',
-        url: '../.netlify/functions/test2',
+        url: '../.netlify/functions/sendRequest',
         headers: { 
           'Content-Type': 'application/json'
         },

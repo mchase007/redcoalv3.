@@ -235,7 +235,7 @@ export default {
           callback: function(response) {
             var config = { 
             method: 'post',
-            url: '../.netlify/functions/test',
+            url: '../.netlify/functions/sendOrder',
             headers: { 
               'Content-Type': 'application/json'
             },
