@@ -41,7 +41,7 @@
       <div v-if="extras" class="extraSet flex flex-jc-sb">
         <span v-if="!userMeal.addOnQuantity > 0" class="item">
           <p class="is-size-6 is-size-5-tablet">Banku with Pepper:</p>
-          <p class="is-size-6 is-size-5-tablet price" >GHS 5.00</p>
+          <p class="is-size-6 is-size-5-tablet price" >GHS 1.00</p>
         </span>
 
         <span v-if="userMeal.addOnQuantity > 0" class="item">
@@ -62,7 +62,7 @@
 
         <span v-if="!userMeal.addOnQuantity2 > 0" class="item">
           <p class="is-size-6 is-size-5-tablet">Lemon flavored Sobolo</p>
-          <p class="is-size-6 is-size-5-tablet price" >GHS 2.00</p>
+          <p class="is-size-6 is-size-5-tablet price" >GHS 1.00</p>
         </span>
 
         <span v-if="userMeal.addOnQuantity2 > 0" class="item">
