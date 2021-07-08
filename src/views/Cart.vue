@@ -36,12 +36,10 @@
                 <div class="flex flex-jc-sb">
                   <div class="item">
                   <p>{{product.quantity}} {{ product.meal }} kebabs</p>
-                  <p>GHS {{ product.price }}.00</p>
+                  <p>GHS {{ product.price }}</p>
                 </div>
                 
                 <div>
-<<<<<<< HEAD
-=======
                   <!-- <p>GHS {{ product.price }}.00</p> -->
                   <p>GHS {{ product.price }}</p>
                   <!-- <div class="controlSet">
@@ -52,7 +50,6 @@
                 </div>  
                 <!-- <p>{{product.addOn}}</p> -->
                 <div>
->>>>>>> 0f21e5e8dfd0f5c2c65b2302b4547929c2e838ea
                   <i class="gg-close-r" @click="removeItem(product)"></i>
                 </div>
                 </div>
@@ -62,14 +59,11 @@
                 <div class="addOnRow flex flex-jc-sb" v-if="product.addOnQuantity > 0">
                   <div class="item">
                     <p>{{product.addOnQuantity}} Banku Pack</p>
-                    <p>GHS {{product.addOnPrice}}.00</p>
+                    <p>GHS {{product.addOnPrice}}</p>
                   </div>
                   
-<<<<<<< HEAD
-=======
                   <!-- <p>GHS {{product.addOnPrice}}.00</p> -->
                   <p>GHS {{product.addOnPrice}}</p>
->>>>>>> 0f21e5e8dfd0f5c2c65b2302b4547929c2e838ea
 
                   <div>
                     <i class="gg-close-r" @click="removeAddOn(product)"></i>
@@ -79,7 +73,7 @@
                 <div class="addOnRow flex flex-jc-sb" v-if="product.addOnQuantity2 > 0">
                   <div class="item">
                     <p>{{product.addOnQuantity2}} Lemon flavored sobolo</p>
-                    <p>GHS {{product.addOnPrice2}}.00</p>
+                    <p>GHS {{product.addOnPrice2}}</p>
                   </div>
                   
 

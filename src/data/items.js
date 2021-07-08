@@ -47,7 +47,8 @@ const items = [
   {
     productName: "Goat",
     productID: "goat",
-    productPrice: 8,
+    // productPrice: 8,
+    productPricw: 0.5,
     id: 3,
     productImage: "Image",
     productQuantity: 2,

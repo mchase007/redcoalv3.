@@ -1,26 +1,12 @@
 <template> 
   <div class="productView container" >
-<<<<<<< HEAD
     <div class="contents"> 
       <div class="flex flex-jc-sb">
           <span class="item">
           <p class="is-size-6 is-size-5-tablet">Charcoal Grilled {{userMeal.productName}}</p>
-          <p class="is-size-6 is-size-5-tablet price" >GHS {{userMeal.productPrice}}.00</p>
+          <p class="is-size-6 is-size-5-tablet price" >GHS {{userMeal.productPrice}}</p>
           </span>
 
-=======
-    <div class="content"> 
-      <h4 class="is-size-4 is-size-3-tablet">Charcoal Grilled {{userMeal.productName}}</h4>
-      <div class="bill">
-        <div>
-          <!-- <h5 class="is-size-5 is-size-4-tablet" >GHS {{userMeal.productPrice}}.00</h5> -->
-          <h5 class="is-size-5 is-size-4-tablet" >GHS {{userMeal.productPrice}}</h5>
-        </div>
-        <div class="promo">
-          <p class=" is-size-7 is-size-6-tablet">+ FREE Delivery</p>
-        </div>
-      </div>
->>>>>>> 0f21e5e8dfd0f5c2c65b2302b4547929c2e838ea
       <div class="controlSet">
         <button class="button is-small" @click="decreaseQuantity">-</button>
         <p class="quantity">{{userMeal.productQuantity}}</p>
@@ -44,11 +30,7 @@
 
       <div @click="superPack" class="theButtonz">
         <span>
-<<<<<<< HEAD
           Super Pack   
-=======
-          Super Saver Pack  
->>>>>>> 0f21e5e8dfd0f5c2c65b2302b4547929c2e838ea
         </span> 
         <div>
           <span><i v-if="!extras" class="gg-arrow-down-r"></i></span>
@@ -56,7 +38,6 @@
         </div>
       </div>
 
-<<<<<<< HEAD
       <div v-if="extras" class="extraSet flex flex-jc-sb">
         <span v-if="!userMeal.addOnQuantity > 0" class="item">
           <p class="is-size-6 is-size-5-tablet">Banku with Pepper:</p>
@@ -65,22 +46,15 @@
 
         <span v-if="userMeal.addOnQuantity > 0" class="item">
           <p class="is-size-6 is-size-5-tablet">Banku with Pepper:</p>
-          <p class="is-size-6 is-size-5-tablet price">GHS {{userMeal.addOnPrice}}.00</p>
+          <p class="is-size-6 is-size-5-tablet price">GHS {{userMeal.addOnPrice}}</p>
         </span>
         
-=======
-      <div v-if="extras" class="extraSet">
-        <!-- <p v-if="!userMeal.addOnQuantity > 0">Banku with Pepper:  GHS 5.00</p> -->
-        <p v-if="!userMeal.addOnQuantity > 0">Banku with Pepper:  GHS 0.50</p>
-        <!-- <p v-if="userMeal.addOnQuantity > 0">Banku with Pepper:  GHS {{userMeal.addOnPrice}}.00</p> -->
-        <p v-if="userMeal.addOnQuantity > 0">Banku with Pepper:  GHS {{userMeal.addOnPrice}}</p>
->>>>>>> 0f21e5e8dfd0f5c2c65b2302b4547929c2e838ea
         <div class="controlSet">
           <div class="button is-small" @click="decreaseQuantity1">-</div>
           <p class="quantity">{{userMeal.addOnQuantity}}</p>
           <div class="button is-small" @click="increaseQuantity1">+</div>
         </div>
-      </div>
+      </div> 
 
       <div v-if="extras" class="extraset3"></div>
 
@@ -93,7 +67,7 @@
 
         <span v-if="userMeal.addOnQuantity2 > 0" class="item">
           <p class="is-size-6 is-size-5-tablet">Lemon flavored Sobolo</p>
-          <p class="is-size-6 is-size-5-tablet price">GHS {{userMeal.addOnPrice2}}.00</p>
+          <p class="is-size-6 is-size-5-tablet price">GHS {{userMeal.addOnPrice2}}</p>
         </span>
 
         <div class="controlSet">
