@@ -196,6 +196,43 @@ export default {
     },
   },
   methods: {
+<<<<<<< HEAD
+=======
+    test() {
+      console.log('Run')
+      // this.v$.$validate()
+      // if (!this.v$.$error) {
+        // console.log('No errors')
+
+        // let userPack = {
+        //   infor: this.form,
+        //   meal: this.userCart, 
+        // }
+
+        // console.log(userPack);
+        
+        // var config = {
+        // method: 'post',
+        // url: '../.netlify/functions/test2',
+        // headers: { 
+        //   'Content-Type': 'application/json'
+        // },
+        // data : userPack
+        // };
+
+        // axios(config)
+        // .then(function (response) {
+        //       console.log(JSON.stringify(response.data.status));
+        //       console.log('Verified')
+        //     })
+        // .catch(function (error) {
+        //       console.log(error);
+        //     });
+
+
+      // }
+    },
+>>>>>>> 0f21e5e8dfd0f5c2c65b2302b4547929c2e838ea
     returnToCart() {
       this.$store.commit('returnToCart');
     },
