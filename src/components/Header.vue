@@ -14,7 +14,7 @@
         </div> 
       </div>
 
-      <div class="header_logo is-size-5 is-size-4-desktop">
+      <div class="header_logo is-size-3 is-size-4-mobile has-text-weight-semibold">
         <a><router-link to="/">redcoal.</router-link></a>
       </div>  
 

@@ -88,6 +88,7 @@
   span {
     margin-right: 5px;
   }
+
 }
 
 .addOns {
@@ -130,5 +131,13 @@
     max-width: 500px;
     justify-content: space-between;
     align-items: baseline;
+  }
+}
+
+@media only screen and (min-width: 770px) {
+  .hero-image2 {
+    max-width: 500px;
+    margin-top: -80px;
+    margin-bottom: 40px;
   }
 }

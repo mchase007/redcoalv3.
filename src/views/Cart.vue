@@ -10,7 +10,7 @@
         </div>
       </div>
  
-      <div>
+      <div class="is-size-5 is-size-6-mobile">
         Basket items: {{cartItemLength}}
       </div> 
       </div>
@@ -35,12 +35,12 @@
                 <!-- <p>Image</p> -->
                 <div class="flex flex-jc-sb">
                   <div class="item">
-                  <p>{{product.quantity}} {{ product.meal }} kebabs</p>
-                  <p>GHS {{ product.price }}.00</p>
+                  <p class="is-size-5 is-size-6-mobile">{{product.quantity}} {{ product.meal }} kebabs</p>
+                  <p class="is-size-6 price has-text-weight-semibold">GHS {{ product.price }}.00</p>
                 </div>
                 
                 <div>
-                  <i class="gg-close-r" @click="removeItem(product)"></i>
+                  <i class="gg-close-r " @click="removeItem(product)"></i>
                 </div>
                 </div>
 
@@ -48,8 +48,8 @@
                 
                 <div class="addOnRow flex flex-jc-sb" v-if="product.addOnQuantity > 0">
                   <div class="item">
-                    <p>{{product.addOnQuantity}} Banku Pack</p>
-                    <p>GHS {{product.addOnPrice}}.00</p>
+                    <p class="is-size-5 is-size-6-mobile">{{product.addOnQuantity}} Banku Pack</p>
+                    <p class="is-size-6 price has-text-weight-semibold">GHS {{product.addOnPrice}}.00</p>
                   </div>
                   
 
@@ -60,13 +60,13 @@
 
                 <div class="addOnRow flex flex-jc-sb" v-if="product.addOnQuantity2 > 0">
                   <div class="item">
-                    <p>{{product.addOnQuantity2}} Lemon flavored sobolo</p>
-                    <p>GHS {{product.addOnPrice2}}.00</p>
+                    <p class="is-size-5 is-size-6-mobile">{{product.addOnQuantity2}} Lemon flavored sobolo</p>
+                    <p class="is-size-6 price has-text-weight-semibold">GHS {{product.addOnPrice2}}.00</p>
                   </div>
                   
 
                   <div>
-                    <i class="gg-close-r" @click="removeAddOn2(product)"></i>
+                    <i class="gg-close-r " @click="removeAddOn2(product)"></i>
                   </div>
                 </div>
             </div>
@@ -85,34 +85,34 @@
         </div>
         </router-link>
       </div>
-      <div>
+      <div class="is-size-5 is-size-6-mobile">
         Basket items: {{cartItemLength}}
       </div>
     </div>
-      <p>There are no items in cart</p>
+      <p class="is-size-5 is-size-6-mobile">There are no items in cart</p>
       <div class="space"></div>
     </div>
 
     <div class="totalContainer">     
       <div v-if="cart.length > 0" class="total">
-        <div class="group1">
+        <div class="group1 is-size-5 is-size-6-mobile">
           <p>Number of Items:</p>
           <p>Total Price:</p>
           <p>Delivery:</p>
-          <p>Total:</p>
+          <p class="has-text-weight-semibold">Total:</p>
         </div>
-        <div class="group2">
+        <div class="group2 is-size-5 is-size-6-mobile">
           <p>{{cartItemLength}}</p>
           <p> GHS {{cartTotal}}</p>
-          <h5 class="free"> FREE!</h5>
-          <strong>
-            <p> GHS {{cartTotal}}</p>
-          </strong>
+          <h5 class="has-text-weight-semibold free"> FREE!</h5>
+          <!-- <strong> -->
+            <p class="has-text-weight-semibold"> GHS {{cartTotal}}</p>
+          <!-- </strong> -->
         </div>
       </div>
     </div>
     
-    <div v-if="cart.length > 0" class="next2" @click="openCheckout">
+    <div v-if="cart.length > 0" class="button is-primary is-medium next2" @click="openCheckout">
       Complete Address
     </div>
   </div>
