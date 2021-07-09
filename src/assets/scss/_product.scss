@@ -125,6 +125,10 @@
   margin-bottom: 10px;
 }
 
+.hero-image2 {
+  margin-bottom: 40px;
+}
+
 @media only screen and (min-width: 400px) {
   .extraSet {
     display: flex;
@@ -138,6 +142,5 @@
   .hero-image2 {
     max-width: 500px;
     margin-top: -80px;
-    margin-bottom: 40px;
   }
 }

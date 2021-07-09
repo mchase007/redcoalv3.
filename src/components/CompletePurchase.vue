@@ -110,7 +110,7 @@
         <div class="specialInstructions">
         <label class="label is-size-5-tablet">Special Instructions</label> 
         <span class="help">Optional</span>
-        </div>
+        </div> 
         
         <div class="control">
           <textarea v-model="form.plusInfor" ref="plusInfor" class="textarea" placeholder="Textarea"></textarea>
@@ -128,7 +128,7 @@
         <div class="group2">
           <p>{{cartItemLength}}</p>
           <p> GHS {{cartTotal}}</p>
-          <h5 class="free">FREE!</h5>
+          <h5 class="has-text-weight-semibold free">FREE!</h5>
           <strong>
             <p> GHS {{cartTotal}}</p>
           </strong>
