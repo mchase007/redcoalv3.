@@ -2,19 +2,46 @@
     <div class="heroOne">
   
     <div class="container has-text-centered">
-      <p class="title">
-        Control the vibe with more kebab!
-      </p>
-      <p class="subtitle flex flex-fd-c">
-        <span class="is-size-6">Working Hours:</span>
-        <span>Everyday</span>
-        <span>4pm - 11pm</span>
-      </p>
+      <div class="columns is-centered is-vcentered mobile-flex">
+        
+        <!-- <div class="columns is-centered is-vcentered mobile-flex"> -->
+          <div class="column is-half">
+            <figure class="image">
+              <img class="hero-image" src="../assets/images/kebab2.jpg" alt="">
+            </figure>
+          </div>
+
+          <div class="column item is-half">
+            <p class="is-size-4-mobile is-size-5-tablet has-text-weight-semibold is-capitalized">
+              You deserve better meat moments.
+            </p>
+            <br>
+            <p class="is-size-5">Enjoy kebab without the hassle.</p>
+            <p class="is-size-5">Get free water, mint and delivery.</p>
+            <br>
+            <br>
+            <p class="flex flex-fd-c is-size-6">
+              <span class="is-size-6">Working Hours:</span>
+              <span>Everyday</span>
+              <span>4pm - 11pm</span>
+            </p>
+
+            <br>
+
+            <div class="button is-fullwidth is-size-5 is-primary">
+              <router-link :to="{ name:'Product', params: { id: product.productID}}" @click="selectMeal(product)">Order Now</router-link>
+            </div>
+          </div>
+
+        <!-- </div> -->
+        
+        
+      </div>
+
+      
     </div>
  
-    <div class="button is-primary">
-      <router-link :to="{ name:'Product', params: { id: product.productID}}" @click="selectMeal(product)">Order Now</router-link>
-    </div>
+    
     </div>
 
 </template>

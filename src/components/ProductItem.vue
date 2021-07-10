@@ -1,10 +1,14 @@
 <template> 
   <div class="productView container" >
     <div class="contents"> 
+      <figure class="image">
+        <img class="hero-image hero-image2" src="../assets/images/kebab2.jpg" alt="">
+      </figure>
+
       <div class="flex flex-jc-sb">
           <span class="item">
-          <p class="is-size-6 is-size-5-tablet">Charcoal Grilled {{userMeal.productName}}</p>
-          <p class="is-size-6 is-size-5-tablet price" >GHS {{userMeal.productPrice}}.00</p>
+          <p class="is-size-5-tablet is-size-6-mobile">Charcoal Grilled {{userMeal.productName}}</p>
+          <p class="is-size-6 has-text-weight-semibold price" >GHS {{userMeal.productPrice}}.00</p>
           </span>
 
       <div class="controlSet">
@@ -17,36 +21,36 @@
       
  
       <div class="field pepper flex">
-        <span>Pepper Spice:</span>
+        <!-- <span class="is-size-5">Pepper Spice:</span> -->
         <div class="control">
           <label class="">
-            <input @click="spicey" value="" type="checkbox">
-            <span>
+            <span class="is-size-5">
               No Spice
+            <input class="spice" @click="spicey" value="" type="checkbox">
             </span>
           </label>
         </div>
       </div>
 
       <div @click="superPack" class="theButtonz">
-        <span>
+        <span class="is-size-6">
           Super Pack   
         </span> 
         <div>
-          <span><i v-if="!extras" class="gg-arrow-down-r"></i></span>
+          <span><i v-if="!extras" class="gg-add-r"></i></span>
           <span><i v-if="extras" class="gg-arrow-up-r"></i></span>
         </div>
       </div>
 
       <div v-if="extras" class="extraSet flex flex-jc-sb">
         <span v-if="!userMeal.addOnQuantity > 0" class="item">
-          <p class="is-size-6 is-size-5-tablet">Banku with Pepper:</p>
-          <p class="is-size-6 is-size-5-tablet price" >GHS 5.00</p>
+          <p class="is-size-5 is-size-6-mobile">Banku with Pepper:</p>
+          <p class="is-size-6 price has-text-weight-semibold" >GHS 1.00</p>
         </span>
 
         <span v-if="userMeal.addOnQuantity > 0" class="item">
-          <p class="is-size-6 is-size-5-tablet">Banku with Pepper:</p>
-          <p class="is-size-6 is-size-5-tablet price">GHS {{userMeal.addOnPrice}}.00</p>
+          <p class="is-size-5 is-size-6-mobile">Banku with Pepper:</p>
+          <p class="is-size-6 price has-text-weight-semibold">GHS {{userMeal.addOnPrice}}.00</p>
         </span>
         
         <div class="controlSet">
@@ -61,13 +65,13 @@
       <div v-if="extras" class="extraSet flex flex-jc-sb extraset2">
 
         <span v-if="!userMeal.addOnQuantity2 > 0" class="item">
-          <p class="is-size-6 is-size-5-tablet">Lemon flavored Sobolo</p>
-          <p class="is-size-6 is-size-5-tablet price" >GHS 2.00</p>
+          <p class="is-size-5 is-size-6-mobile">Lemon flavored Sobolo</p>
+          <p class="is-size-6 price has-text-weight-semibold" >GHS 1.00</p>
         </span>
 
         <span v-if="userMeal.addOnQuantity2 > 0" class="item">
-          <p class="is-size-6 is-size-5-tablet">Lemon flavored Sobolo</p>
-          <p class="is-size-6 is-size-5-tablet price">GHS {{userMeal.addOnPrice2}}.00</p>
+          <p class="is-size-5 is-size-6-mobile">Lemon flavored Sobolo</p>
+          <p class="is-size-6 price has-text-weight-semibold">GHS {{userMeal.addOnPrice2}}.00</p>
         </span>
 
         <div class="controlSet">

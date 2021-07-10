@@ -2,7 +2,8 @@ const items = [
   {
     productName: "Sausage",
     productID: "sausage",
-    productPrice: 10,
+    // productPrice: 10,
+    productPrice: 1,
     id: 0,
     productImage: "Image",
     productQuantity: 2,
@@ -16,7 +17,8 @@ const items = [
   {
     productName: "Chicken",
     productID: "chicken",
-    productPrice: 8,
+    // productPrice: 8,
+    productPrice: 1,
     id: 1,
     productImage: "Image",
     productQuantity: 2,
@@ -30,7 +32,8 @@ const items = [
   {
     productName: "Beef",
     productID: "beef",
-    productPrice: 8,
+    // productPrice: 8,
+    productPrice: 1,
     id: 2,
     productImage: "Image",
     productQuantity: 2,
@@ -44,7 +47,8 @@ const items = [
   {
     productName: "Goat",
     productID: "goat",
-    productPrice: 8,
+    // productPrice: 8,
+    productPrice: 1,
     id: 3,
     productImage: "Image",
     productQuantity: 2,
