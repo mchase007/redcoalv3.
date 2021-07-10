@@ -103,7 +103,7 @@
         <span class="help is-info" v-if="v$.form.userGPS.$error">
           Kindly enter your GPS code correctly
         </span> 
-        <p class="help">ABC1234567</p>
+        <p class="help">ABC1234567 (Kindly ignore dashes)</p>
       </div>
 
       <div class="field">
@@ -113,7 +113,7 @@
         </div> 
         
         <div class="control">
-          <textarea v-model="form.plusInfor" ref="plusInfor" class="textarea" placeholder="Should your delivery guy ..."></textarea>
+          <textarea v-model="form.plusInfor" ref="plusInfor" class="textarea" placeholder="Would you be kind enough to..."></textarea>
         </div>
       </div>
 

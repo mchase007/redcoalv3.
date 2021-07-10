@@ -71,6 +71,8 @@
         <i class="gg-facebook"></i>
       </div>
 
+      <div class="help">Copyright &copy; 2021 kebabstands. All Rights Reserved</div>
+
     </div> 
   </section>
 </template>
