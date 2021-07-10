@@ -1,13 +1,13 @@
 <template> 
 
   <div class="checkout-box" :class="{checkout : isCheckout}">
-      
+       
     <div class="orderForm">
     <div class="cartRoute">
     <div class="theButton3" @click="returnToCart">
       <div class="flex">
         <i class="gg-arrow-left"></i>
-        <span>Back to cart</span>
+        <span>Back to basket</span>
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="field one">
-      <label class="label">Full Name</label>
+      <label class="label is-size-5-tablet">Full Name</label>
         <div class="control">
           <input v-model="form.userName" @blur="userFullName" ref="name" class="input" type="text" placeholder="Kofi Grills Chills">
         </div>
@@ -36,7 +36,7 @@
     </div>
 
     <div class="field">
-      <label class="label">Contact Number</label>
+      <label class="label is-size-5-tablet">Contact Number</label>
       <div class="control">
         <input v-model="form.userContact" @blur="userMobile" ref="number" class="input" type="tel" placeholder="0211231234">
       </div>
@@ -48,7 +48,7 @@
     <div class="field locale">
       <div class="content">
         <div class="flex localeResponse">
-        <label class="label">Local Area: </label>
+        <label class="label is-size-5-tablet">Local Area: </label>
         <p> {{form.userLocale}} <span v-if="form.userLocale"> and surroundings</span></p> 
         </div>
         <div class="control local">
@@ -61,7 +61,7 @@
                 <span>Asokwa,</span>
                 <span>Adiemmbra,</span>
                 <span>Dakodwon,</span>
-                <span>and surroundings.</span>
+                <span> and surroundings.</span>
                 </div>
               </div>
           </label>
@@ -70,9 +70,9 @@
                 <input type="radio" ref="local" v-model="form.userLocale" value="KNUST" name="location">
                 <div class="side">
                 <span>Asokore Mampong,</span>
-                <span>KNUST Campus and Off-Campus</span>
+                <span>KNUST Campus, Off-Campus</span>
                 <!-- <span>KNUST Off-campus,</span> -->
-                <span>and surroundings.</span>
+                <span> and surroundings.</span>
                 </div>
               </div>
           </label>
@@ -83,9 +83,9 @@
                 <div class="side">
                 <span>Adum,</span>
                 <span>Bantama,</span>
-                <span>Bekwai,</span>
+                <span>Bekwai,</span> 
                 <span>Kwadaso,</span>
-                <span>and surroundings.</span>
+                <span> and surroundings.</span>
                 </div>
               </div>
           </label>
@@ -96,7 +96,7 @@
       </div>
 
       <div class="field">
-        <label class="label">GPS Number</label>
+        <label class="label is-size-5-tablet">GPS Number</label>
         <div class="control">
           <input v-model="form.userGPS" @blur="userMobile" ref="gpsAddress" class="input" type="text" placeholder="ABC1234567">
         </div>
@@ -107,18 +107,18 @@
       </div>
 
       <div class="field">
-        <div class="specialInstructions">
-        <label class="label">Special Instructions</label> 
-        <span class="help">Optional</span>
-        </div>
+        <div class="specialInstructions flex">
+        <label class="label is-size-5-tablet">Special Instructions</label> 
+        <span class="help optional">Optional</span>
+        </div> 
         
         <div class="control">
-          <textarea v-model="form.plusInfor" ref="plusInfor" class="textarea" placeholder="Textarea"></textarea>
+          <textarea v-model="form.plusInfor" ref="plusInfor" class="textarea" placeholder="Should your delivery guy ..."></textarea>
         </div>
       </div>
 
       <div class="totalContainer2">     
-      <div class="flex total flex-jc-sb">
+      <div class="flex total flex-jc-sb is-size-5 is-size-6-mobile">
         <div class="group1">
           <p>Number of Items:</p>
           <p>Total Price:</p>
@@ -128,7 +128,7 @@
         <div class="group2">
           <p>{{cartItemLength}}</p>
           <p> GHS {{cartTotal}}</p>
-          <h5 class="free">FREE!</h5>
+          <h5 class="has-text-weight-semibold free">FREE!</h5>
           <strong>
             <p> GHS {{cartTotal}}</p>
           </strong>
@@ -279,7 +279,7 @@ export default {
       // console.log('shot fired');      
     },
   },
-}
+} 
 </script>
 
 <style lang='scss'>

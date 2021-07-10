@@ -16,7 +16,8 @@ export default createStore({
     meal: {},
     mobile: '',
     total: null,
-    key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d',
+    key: 'pk_live_e786ac56bef30fbb72f76237347338c4176377a3',
+    // key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d',
   },
   getters: {
     userDetails(state) {
@@ -107,18 +108,22 @@ export default createStore({
     increasePrice(state) {
       if (state.meal.productName === 'Sausage') {
         let price = (state.meal.productPrice + 3);
+        // let price = (state.meal.productPrice + 1);
         state.meal.productPrice = price;  
       } else {
         let price = (state.meal.productPrice + 2);
+        // let price = (state.meal.productPrice + 1);
         state.meal.productPrice = price;      
       }
     },
     increasePrice1(state) {
       let price = (state.meal.addOnPrice + 5);
+      // let price = (state.meal.addOnPrice + 1);
       state.meal.addOnPrice = price; 
     },
     increasePrice2(state) {
       let price = (state.meal.addOnPrice2 + 2);
+      // let price = (state.meal.addOnPrice2 + 1);
       state.meal.addOnPrice2 = price; 
     },
     decreaseQuantity(state) {
@@ -149,22 +154,27 @@ export default createStore({
       if (state.meal.productName === 'Sausage') {
         if (state.meal.productQuantity > 2 ) {
           let price = (state.meal.productPrice - 3);
+          // let price = (state.meal.productPrice - 1);
           state.meal.productPrice = price;
         } else if (state.meal.productQuantity === 2 ) {
           state.meal.productPrice = 10;
+          // state.meal.productPrice = 1;
         }
-      } else if (state.meal.productName === 'Beef' || state.meal.productName === 'Chicken'){
+      } else if (state.meal.productName === 'Beef' || state.meal.productName === 'Chicken' || state.meal.productName === 'Goat'){
         if (state.meal.productQuantity > 2 ) {
           let price = (state.meal.productPrice - 2);
+          // let price = (state.meal.productPrice - 1);
           state.meal.productPrice = price;
         } else if (state.meal.productQuantity === 2 ) {
           state.meal.productPrice = 8;
+          // state.meal.productPrice = 1;
         }
       } 
     },
     decreasePrice1(state) {
       if (state.meal.addOnQuantity > 0) {
         let price = (state.meal.addOnPrice - 5);
+        // let price = (state.meal.addOnPrice - 1);
         state.meal.addOnPrice = price;
       } else if (state.meal.addOnQuantity === 0 ) {
         state.meal.addOnPrice = 0;
@@ -173,6 +183,7 @@ export default createStore({
     decreasePrice2(state) {
       if (state.meal.addOnQuantity2 > 0) {
         let price = (state.meal.addOnPrice - 2);
+        // let price = (state.meal.addOnPrice - 1);
         state.meal.addOnPrice2 = price;
       } else if (state.meal.addOnQuantity2 === 0 ) {
         state.meal.addOnPrice2 = 0;

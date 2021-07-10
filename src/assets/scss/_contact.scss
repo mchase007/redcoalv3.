@@ -4,7 +4,7 @@
   max-width: 500px;
   margin: 0 auto;
 }
-
+ 
 .gg-pin,
 .gg-phone,
 .gg-mail,
@@ -54,7 +54,10 @@
   background-color: #731739;
   color: whitesmoke;
   cursor: pointer;
+}
 
+.btnn {
+  margin-top: 40px;
 }
 
 @media only screen and (min-width: 1024px) {

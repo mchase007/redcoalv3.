@@ -14,16 +14,16 @@
         </div> 
       </div>
 
-      <div class="header_logo is-size-5 is-size-4-desktop">
-        <a><router-link to="/">morekebab.</router-link></a>
+      <div class="header_logo is-size-4 is-size-5-mobile has-text-weight-semibold">
+        <a><router-link to="/">kebabstands</router-link></a>
       </div>  
 
       <div class="header_cart">
         <router-link to="/cart">
-          <i class="gg-shopping-cart"></i>
+          <i class="gg-shopping-cart is-size-2"></i>
         </router-link>
         <router-link to="/cart">
-          <p>{{cartItemNum}}</p>
+          <p class="is-size-5-tablet">{{cartItemNum}}</p>
         </router-link>
       </div>
     </div>  

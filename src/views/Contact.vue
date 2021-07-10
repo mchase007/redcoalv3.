@@ -4,7 +4,7 @@
       <Header></Header>
     </div>
     <div class="hero-body content contact-page">
-
+ 
       <div class="contact-form">
       <h1>Talk to us</h1>
 
@@ -13,7 +13,7 @@
         <div class="control">
           <input v-model="contactForm.userName" @blur="userFullName" ref="name" class="input" type="text" placeholder="Kofi Grills Chills">
         </div>
-        <span class="help" v-if="v$.contactForm.userName.$error">
+        <span class="help is-info" v-if="v$.contactForm.userName.$error">
         Kindly enter full name correctly
         </span>
       </div>
@@ -23,7 +23,7 @@
         <div class="control">
           <input v-model="contactForm.userEmail" @blur="userEmail" ref="email" class="input" type="email" placeholder="kofi@redcoal.com">
         </div>
-        <span class="help" v-if="v$.contactForm.userEmail.$error">
+        <span class="help is-info" v-if="v$.contactForm.userEmail.$error">
         Kindly enter email correctly
         </span>
       </div>
@@ -33,14 +33,14 @@
         <div class="control">
           <textarea v-model="contactForm.userMessage" @blur="userMessage" ref="message" class="textarea" placeholder="Hi, I would like to"></textarea>
         </div>
-        <span class="help" v-if="v$.contactForm.userMessage.$error">
+        <span class="help is-info" v-if="v$.contactForm.userMessage.$error">
         Kindly fill message form
         </span>
       </div>
 
        <div class="field">
-    <div class="control">
-      <button class="button is-primary" @click="test">Submit Message</button>
+    <div class="control btnn">
+      <button class="button is-primary is-fullwidth" @click="test">Submit Message</button>
     </div>
       </div>
       </div>
@@ -51,15 +51,15 @@
         <!-- <p>redcoal.com</p> -->
         <div class="flex">
           <i class="gg-pin"></i>
-          <p class="is-size-5">KNUST</p> 
+          <p class="is-size-5 is-size-6-mobile">KNUST</p> 
         </div>
         <div class="flex">
           <i class="gg-phone"></i>
-          <p class="is-size-5">0201234578</p>
+          <p class="is-size-5 is-size-6-mobile">0201234578</p>
         </div>
         <div class="flex">
           <i class="gg-mail"></i>
-          <p class="flex is-size-5">redcoal@redcoal.com</p>
+          <p class="flex is-size-5 is-size-6-mobile">redcoal@redcoal.com</p>
         </div>
       </div>
 
