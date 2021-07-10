@@ -12,9 +12,10 @@
           </span>
 
       <div class="controlSet">
-        <button class="button is-small is-primary" @click="decreaseQuantity">-</button>
+        
+        <button class="button is-small is-primary" @click="decreaseQuantity"><span class="is-size-4 is-size-5-mobile">-</span></button>
         <p class="quantity">{{userMeal.productQuantity}}</p>
-        <button class="button is-small is-primary" @click="increaseQuantity">+</button>
+        <button class="button is-small is-primary" @click="increaseQuantity"><span class="is-size-4 is-size-5-mobile">+</span></button>
       </div>
       </div>
       
@@ -54,9 +55,9 @@
         </span>
         
         <div class="controlSet">
-          <div class="button is-small is-primary" @click="decreaseQuantity1">-</div>
+          <div class="button is-small is-primary" @click="decreaseQuantity1"><span class="is-size-4 is-size-5-mobile">-</span></div>
           <p class="quantity">{{userMeal.addOnQuantity}}</p>
-          <div class="button is-small is-primary" @click="increaseQuantity1">+</div>
+          <div class="button is-small is-primary" @click="increaseQuantity1"><span class="is-size-4 is-size-5-mobile">+</span></div>
         </div>
       </div>
 
@@ -75,9 +76,9 @@
         </span>
 
         <div class="controlSet">
-          <div class="button is-small is-primary" @click="decreaseQuantity2">-</div>
+          <div class="button is-small is-primary" @click="decreaseQuantity2"><span class="is-size-4 is-size-5-mobile">-</span></div>
           <p class="quantity">{{userMeal.addOnQuantity2}}</p>
-          <div class="button is-small is-primary" @click="increaseQuantity2">+</div>
+          <div class="button is-small is-primary" @click="increaseQuantity2"><span class="is-size-4 is-size-5-mobile">+</span></div>
         </div>
       </div>
       
