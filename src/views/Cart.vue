@@ -4,7 +4,7 @@
     <div v-if="cart.length > 0">
       <div class="cart-control">
       <div @click="toShop" class="theButton2">
-        <div class="flex">
+        <div class="flex flex-ai-c">
         <i class="gg-arrow-left"></i>
         <span>Back to Shop</span>
         </div>
@@ -32,8 +32,7 @@
         <div class="card-content cartProduct">
           <div class="box">
             <div class="flex flex-jc-sb orderRow">
-                <!-- <p>Image</p> -->
-                <div class="flex flex-jc-sb">
+                <div class="flex flex-ai-c flex-jc-sb">
                   <div class="item">
                   <p class="is-size-5 is-size-6-mobile">{{product.quantity}} {{ product.meal }} kebabs</p>
                   <p class="is-size-6 price has-text-weight-semibold">GHS {{ product.price }}.00</p>
@@ -46,7 +45,7 @@
 
                 <div v-if="product.addOnQuantity > 0 || product.addOnQuantity2 > 0" class="extraset3"></div>
                 
-                <div class="addOnRow flex flex-jc-sb" v-if="product.addOnQuantity > 0">
+                <div class="addOnRow flex flex-ai-c flex-jc-sb" v-if="product.addOnQuantity > 0">
                   <div class="item">
                     <p class="is-size-5 is-size-6-mobile">{{product.addOnQuantity}} Banku Pack</p>
                     <p class="is-size-6 price has-text-weight-semibold">GHS {{product.addOnPrice}}.00</p>
@@ -58,7 +57,7 @@
                   </div>
                 </div>
 
-                <div class="addOnRow flex flex-jc-sb" v-if="product.addOnQuantity2 > 0">
+                <div class="addOnRow flex flex-ai-c flex-jc-sb" v-if="product.addOnQuantity2 > 0">
                   <div class="item">
                     <p class="is-size-5 is-size-6-mobile">{{product.addOnQuantity2}} Lemon flavored sobolo</p>
                     <p class="is-size-6 price has-text-weight-semibold">GHS {{product.addOnPrice2}}.00</p>
@@ -79,7 +78,7 @@
       <div class="cart-control">
       <div class="theButton2">
         <router-link to="/">
-        <div class="flex">
+        <div class="flex flex-ai-c">
         <i class="gg-arrow-left"></i>
         <span>Back to Shop</span>
         </div>
@@ -89,7 +88,7 @@
         Basket items: {{cartItemLength}}
       </div>
     </div>
-      <p class="is-size-5 is-size-6-mobile">There are no items in cart</p>
+      <p class="is-size-5 is-size-6-mobile">There are no items in your basket</p>
       <div class="space"></div>
     </div>
 

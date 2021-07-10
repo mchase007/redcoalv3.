@@ -5,7 +5,7 @@
         <img class="hero-image hero-image2" src="../assets/images/kebab2.jpg" alt="">
       </figure>
 
-      <div class="flex flex-jc-sb">
+      <div class="flex flex-jc-sb flex-ai-c">
           <span class="item">
           <p class="is-size-5-tablet is-size-6-mobile">Charcoal Grilled {{userMeal.productName}}</p>
           <p class="is-size-6 has-text-weight-semibold price" >GHS {{userMeal.productPrice}}.00</p>
@@ -43,7 +43,7 @@
         </div>
       </div>
 
-      <div v-if="extras" class="extraSet flex flex-jc-sb">
+      <div v-if="extras" class="extraSet flex flex-jc-sb flex-ai-c">
         <span v-if="!userMeal.addOnQuantity > 0" class="item">
           <p class="is-size-5 is-size-6-mobile">Banku with Pepper:</p>
           <p class="is-size-6 price has-text-weight-semibold" >GHS 5.00</p>
@@ -63,7 +63,7 @@
 
       <div v-if="extras" class="extraset3"></div>
 
-      <div v-if="extras" class="extraSet flex flex-jc-sb extraset2">
+      <div v-if="extras" class="extraSet flex flex-jc-sb flex-ai-c extraset2">
 
         <span v-if="!userMeal.addOnQuantity2 > 0" class="item">
           <p class="is-size-5 is-size-6-mobile">Lemon flavored Sobolo</p>
@@ -100,7 +100,7 @@
           <li v-if="userMeal.addOnQuantity2 > 0">
             Lemon flavored Sobolo: {{userMeal.addOnQuantity2}}
           </li>
-        </ol>
+        </ol> 
       </div>
 
       <p class="is-size-5 more" :class="{pack: pack}">{{userMeal.productDescription}}</p>

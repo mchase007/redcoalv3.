@@ -7,7 +7,7 @@
     <div class="theButton3" @click="returnToCart">
       <div class="flex">
         <i class="gg-arrow-left"></i>
-        <span>Back to cart</span>
+        <span>Back to basket</span>
         </div>
       </div>
     </div>
@@ -83,7 +83,7 @@
                 <div class="side">
                 <span>Adum,</span>
                 <span>Bantama,</span>
-                <span>Bekwai,</span>
+                <span>Bekwai,</span> 
                 <span>Kwadaso,</span>
                 <span> and surroundings.</span>
                 </div>
@@ -107,13 +107,13 @@
       </div>
 
       <div class="field">
-        <div class="specialInstructions">
+        <div class="specialInstructions flex">
         <label class="label is-size-5-tablet">Special Instructions</label> 
-        <span class="help">Optional</span>
+        <span class="help optional">Optional</span>
         </div> 
         
         <div class="control">
-          <textarea v-model="form.plusInfor" ref="plusInfor" class="textarea" placeholder="Textarea"></textarea>
+          <textarea v-model="form.plusInfor" ref="plusInfor" class="textarea" placeholder="Should your delivery guy ..."></textarea>
         </div>
       </div>
 
@@ -279,7 +279,7 @@ export default {
       // console.log('shot fired');      
     },
   },
-}
+} 
 </script>
 
 <style lang='scss'>
