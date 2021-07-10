@@ -37,7 +37,7 @@
           Super Pack   
         </span> 
         <div>
-          <span><i v-if="!extras" class="gg-arrow-down-r"></i></span>
+          <span><i v-if="!extras" class="gg-add-r"></i></span>
           <span><i v-if="extras" class="gg-arrow-up-r"></i></span>
         </div>
       </div>
