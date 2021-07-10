@@ -12,9 +12,9 @@
           </span>
 
       <div class="controlSet">
-        <button class="button is-small" @click="decreaseQuantity">-</button>
+        <button class="button is-small is-primary" @click="decreaseQuantity">-</button>
         <p class="quantity">{{userMeal.productQuantity}}</p>
-        <button class="button is-small" @click="increaseQuantity">+</button>
+        <button class="button is-small is-primary" @click="increaseQuantity">+</button>
       </div>
       </div>
       
@@ -45,7 +45,7 @@
       <div v-if="extras" class="extraSet flex flex-jc-sb">
         <span v-if="!userMeal.addOnQuantity > 0" class="item">
           <p class="is-size-5 is-size-6-mobile">Banku with Pepper:</p>
-          <p class="is-size-6 price has-text-weight-semibold" >GHS 1.00</p>
+          <p class="is-size-6 price has-text-weight-semibold" >GHS 5.00</p>
         </span>
 
         <span v-if="userMeal.addOnQuantity > 0" class="item">
@@ -54,9 +54,9 @@
         </span>
         
         <div class="controlSet">
-          <div class="button is-small" @click="decreaseQuantity1">-</div>
+          <div class="button is-small is-primary" @click="decreaseQuantity1">-</div>
           <p class="quantity">{{userMeal.addOnQuantity}}</p>
-          <div class="button is-small" @click="increaseQuantity1">+</div>
+          <div class="button is-small is-primary" @click="increaseQuantity1">+</div>
         </div>
       </div>
 
@@ -66,7 +66,7 @@
 
         <span v-if="!userMeal.addOnQuantity2 > 0" class="item">
           <p class="is-size-5 is-size-6-mobile">Lemon flavored Sobolo</p>
-          <p class="is-size-6 price has-text-weight-semibold" >GHS 1.00</p>
+          <p class="is-size-6 price has-text-weight-semibold" >GHS 2.00</p>
         </span>
 
         <span v-if="userMeal.addOnQuantity2 > 0" class="item">
@@ -75,9 +75,9 @@
         </span>
 
         <div class="controlSet">
-          <div class="button is-small" @click="decreaseQuantity2">-</div>
+          <div class="button is-small is-primary" @click="decreaseQuantity2">-</div>
           <p class="quantity">{{userMeal.addOnQuantity2}}</p>
-          <div class="button is-small" @click="increaseQuantity2">+</div>
+          <div class="button is-small is-primary" @click="increaseQuantity2">+</div>
         </div>
       </div>
       

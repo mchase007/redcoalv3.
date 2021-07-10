@@ -15,7 +15,7 @@
       </div>
 
       <div class="header_logo is-size-3 is-size-4-mobile has-text-weight-semibold">
-        <a><router-link to="/">redcoal.</router-link></a>
+        <a><router-link to="/">kebabstands</router-link></a>
       </div>  
 
       <div class="header_cart">
