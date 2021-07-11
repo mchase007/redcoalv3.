@@ -16,8 +16,8 @@ export default createStore({
     meal: {},
     mobile: '',
     total: null,
-    key: 'pk_live_e786ac56bef30fbb72f76237347338c4176377a3',
-    // key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d',
+    // key: 'pk_live_e786ac56bef30fbb72f76237347338c4176377a3',
+    key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d',
   },
   getters: {
     userDetails(state) {
@@ -54,7 +54,7 @@ export default createStore({
           addOnPrice2: payload.addOnPrice2,
         }
         state.cart.push(y);
-        console.log(y);
+        // console.log(y);
       }
       updateLocalStorage(state.cart);
       setTimeout(() => {

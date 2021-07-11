@@ -35,7 +35,7 @@
 
       <div @click="superPack" class="theButtonz">
         <span class="is-size-6">
-          Super Pack   
+          Student Super Pack   
         </span> 
         <div>
           <span><i v-if="!extras" class="gg-add-r"></i></span>
@@ -109,8 +109,15 @@
       <span v-if="extras" @click="viewPack" class="clicker">Less Details</span>
 
     </div>
-      <div class="is-primary next" @click="updateCart(userMeal)">{{isActive ? 'Meal added to basket' : 'Add to Basket' }}</div>
+      <div class="next" @click="updateCart(userMeal)">{{isActive ? 'Meal added to basket' : 'Add to Basket' }}</div>
+      
+      <div v-if="cartItemNum > 0" class="next2">
+        <router-link to="/cart">
+          <span class="">Go to Basket</span>
+        </router-link>
+      </div>
     </div>
+
 </template>
 
 <script>
@@ -136,6 +143,9 @@ export default {
     isActive() {
       return this.$store.state.isActive
     },
+    cartItemNum() {
+      return this.$store.getters.cartLength
+    }
   }, 
   mounted() {
   },
@@ -172,7 +182,7 @@ export default {
       this.$store.commit('decreasePrice2');
     },  
     viewPack() {
-      console.log('View Pack')
+      // console.log('View Pack')
       this.pack = !this.pack 
     },
     superPack() {

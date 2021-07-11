@@ -12,13 +12,11 @@
           </div>
 
           <div class="column item is-half">
-            <p class="is-size-4-mobile is-size-5-tablet has-text-weight-semibold is-capitalized">
-              You deserve better meat moments.
+            <p class="is-size-4-mobile is-size-3-tablet has-text-weight-semibold is-capitalized title">
+              Say goodbye to boring hangouts
             </p>
-            <br>
-            <p class="is-size-5">Enjoy kebab without the hassle.</p>
-            <p class="is-size-5">Get free water, mint and delivery.</p>
-            <br>
+            <p class="is-size-5 subtitle">Spice every moment with kebab from the comfort of your couch, with the wallet of your choice.</p>
+            <p class="is-size-5">+ FREE water, mint and delivery.</p>
             <br>
             <p class="flex flex-fd-c is-size-6">
               <span class="is-size-6">Working Hours:</span>
