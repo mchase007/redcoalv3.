@@ -24,6 +24,18 @@
         <span class="">Secure Payment</span>
       </div>
     </div>
+    
+    <div v-if="orderSuccess">
+      <div class="notification is-success">
+        Order Placed
+      </div>
+    </div>
+    
+    <div v-if="formIncomplete">
+      <div class="notification is-warning">
+        Kindly fill form correctly
+      </div>
+    </div>
 
     <div class="field one">
       <label class="label is-size-5-tablet">Full Name</label>
@@ -103,7 +115,7 @@
         <span class="help is-info" v-if="v$.form.userGPS.$error">
           Kindly enter your GPS code correctly
         </span> 
-        <p class="help">ABC1234567</p>
+        <p class="help">ABC1234567 (Kindly ignore dashes)</p>
       </div>
 
       <div class="field">
@@ -113,7 +125,7 @@
         </div> 
         
         <div class="control">
-          <textarea v-model="form.plusInfor" ref="plusInfor" class="textarea" placeholder="Should your delivery guy ..."></textarea>
+          <textarea v-model="form.plusInfor" ref="plusInfor" class="textarea" placeholder="Would you be kind enough to..."></textarea>
         </div>
       </div>
 
@@ -132,12 +144,24 @@
           <strong>
             <p> GHS {{cartTotal}}</p>
           </strong>
-        </div>
+        </div> 
+      </div>
+    </div>
+
+    <div v-if="formIncomplete">
+      <div class="notification is-warning">
+        Kindly fill form correctly
+      </div>
+    </div>
+
+    <div v-if="orderSuccess">
+      <div class="notification is-success">
+        Order Placed
       </div>
     </div>
 
       <div class="btns">
-      <div class="theButton4 payBtn" @click="runPaystack">Pay Order</div>
+      <div class="theButton4 payBtn" @click="runPaystack">Pay Now</div>
       </div>
 
     </div>
@@ -162,7 +186,9 @@ export default {
         userGPS: '',
         userLocale: '',
         plusInfor: '',
-      }
+      },
+      formIncomplete: false,
+      orderSuccess: false,
     };
   },
   validations() {
@@ -188,7 +214,7 @@ export default {
       return this.$store.state.key
     },
     email() {
-      let email = this.form.userContact + '@redcoal.com'
+      let email = this.form.userContact + '@kebabstands.com'
       return email
     },
     cartItemLength() {
@@ -247,6 +273,7 @@ export default {
 
             axios(config)
             .then(function(response) {
+              setTimeout(() => this.orderSuccess = true, 1000)
               self.test3()
               console.log("God Is Good");
             })
@@ -265,6 +292,9 @@ export default {
           });
 
         handler.openIframe();
+      } else if (this.v$.$error) {
+          this.formIncomplete = true
+          setTimeout(() => this.formIncomplete = false, 3000)
       }
     },
     test3() {

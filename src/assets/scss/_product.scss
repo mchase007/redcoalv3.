@@ -64,6 +64,27 @@
   // bottom: 0;
 }
 
+.next2 {
+  background-color: $coalWhite;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding-bottom: calc(0.5em - 1px);
+  padding-top: calc(0.5em - 1px);
+  white-space: nowrap;
+  border: 2px solid $coalRed;
+  border-radius: 4px;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+  // position: absolute;
+  // bottom: 0;
+
+  a {
+    text-decoration: none;
+    color: #731739;
+  }
+}
+
 .clicker {
   cursor: pointer;
   color: gray;
@@ -131,7 +152,7 @@
 
 @media only screen and (min-width: 400px) {
   .extraSet {
-    display: flex;
+    display: flex; 
     max-width: 500px;
     justify-content: space-between;
     align-items: baseline;

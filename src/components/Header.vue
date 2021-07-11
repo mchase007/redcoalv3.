@@ -18,7 +18,7 @@
         <a><router-link to="/">kebabstands</router-link></a>
       </div>  
 
-      <div class="header_cart">
+      <div class="header_cart"> 
         <router-link to="/cart">
           <i class="gg-shopping-cart is-size-2"></i>
         </router-link>
