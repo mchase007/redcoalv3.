@@ -111,7 +111,7 @@
     </div>
       <div class="next" @click="updateCart(userMeal)">{{isActive ? 'Meal added to basket' : 'Add to Basket' }}</div>
       
-      <div v-if="cartItemNum > 0" class="next2">
+      <div v-if="cartItemNum > 0" class="next next2">
         <router-link to="/cart">
           <span class="">Go to Basket</span>
         </router-link>
