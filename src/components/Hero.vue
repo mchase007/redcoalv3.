@@ -1,5 +1,5 @@
 <template>
-    <div class="heroOne">
+    <div class="heroOne"> 
   
     <div class="container has-text-centered">
       <div class="columns is-centered is-vcentered mobile-flex">
@@ -7,7 +7,7 @@
         <!-- <div class="columns is-centered is-vcentered mobile-flex"> -->
           <div class="column is-half">
             <figure class="image">
-              <img class="hero-image" src="../assets/images/kebab2.jpg" alt="">
+              <img class="hero-image" src="../assets/images/kebabstandsausage.png" alt="">
             </figure>
           </div>
 

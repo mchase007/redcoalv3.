@@ -9,6 +9,12 @@
   // border: 1px solid gray;
 }
 
+.mealImage {
+  max-width: 50%;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
 .item {
   text-align: left;
 }
@@ -56,7 +62,7 @@
   padding-bottom: calc(0.8em - 1px);
   padding-top: calc(0.8em - 1px);
   white-space: nowrap;
-  border-radius: 4px;
+  border-radius: 4px; 
   max-width: 500px;
   margin: 0 auto;
   margin-top: 10px;
@@ -66,7 +72,7 @@
 
 .next2 {
   background-color: $coalWhite;
-  // font-size: 1.25rem;
+  font-size: 1.25rem;
   // cursor: pointer;
   padding-bottom: calc(0.5em - 1px);
   padding-top: calc(0.5em - 1px);

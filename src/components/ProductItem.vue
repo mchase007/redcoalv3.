@@ -1,8 +1,8 @@
 <template> 
   <div class="productView container" >
     <div class="contents"> 
-      <figure class="image">
-        <img class="hero-image hero-image2" src="../assets/images/kebab2.jpg" alt="">
+      <figure class="image mealImage">
+        <img :src="require( `../assets/images/${userMeal.productImage}`)"/>
       </figure>
 
       <div class="flex flex-jc-sb flex-ai-c">
@@ -52,7 +52,7 @@
         <span v-if="userMeal.addOnQuantity > 0" class="item">
           <p class="is-size-5 is-size-6-mobile">Banku with Pepper:</p>
           <p class="is-size-6 price has-text-weight-semibold">GHS {{userMeal.addOnPrice}}.00</p>
-        </span>
+        </span> 
         
         <div class="controlSet">
           <div class="button is-small is-primary" @click="decreaseQuantity1"><span class="is-size-4 is-size-5-mobile">-</span></div>
@@ -128,6 +128,7 @@ export default {
       pack: false,
       noSpice: false,
       extras: false,
+      image: null,
     }
   },
   components: {
@@ -145,11 +146,27 @@ export default {
     },
     cartItemNum() {
       return this.$store.getters.cartLength
-    }
+    },
+    // userMealImage() {
+    //   return this.userMeal.productImage
+    // },
   }, 
   mounted() {
+
   },
   methods: {
+    // getImage(img) {
+    //   // var images = require.context('../assets/images', false, /\.png$/)
+    //   // return images('../assets/images/' + img + ".png")
+    //   return '../assets/images/' + img + ".png"
+    // },
+    // getImages(img) {
+    //   var pic
+    //   pic = img
+    //   // this.image = img
+    //   // return this.image
+    //   return pic
+    // },
     updateCart(product) {
       this.$store.commit('addToCart', product);
     },
