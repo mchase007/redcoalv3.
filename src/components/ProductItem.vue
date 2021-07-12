@@ -4,7 +4,7 @@
       <figure class="image mealImage">
         <img :src="require( `../assets/images/${userMeal.productImage}`)"/>
       </figure>
-
+ 
       <div class="flex flex-jc-sb flex-ai-c">
           <span class="item">
           <p class="is-size-5-tablet is-size-6-mobile">Charcoal Grilled {{userMeal.productName}}</p>

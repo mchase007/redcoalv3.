@@ -7,7 +7,7 @@
             <router-link ref="link" :to="{ name:'Product', params: { id: product.productID}}" @click="selectMeal(product)">{{product.productName}}</router-link>
           </div>
         </div>
-      </div>
+      </div> 
     </div>
   </nav>  
 </template> 
