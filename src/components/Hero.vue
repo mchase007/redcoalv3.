@@ -1,5 +1,5 @@
 <template>
-    <div class="heroOne"> 
+    <div class="heroOne">
   
     <div class="container has-text-centered">
       <div class="columns is-centered is-vcentered mobile-flex">
@@ -27,7 +27,8 @@
             <br>
 
             <div class="button is-fullwidth is-size-5 is-primary">
-              <router-link :to="{ name:'Product', params: { id: product.productID}}" @click="selectMeal(product)">Order Now</router-link>
+              <!-- <router-link :to="{ name:'Product', params: { id: product.productID}}" @click="selectMeal(product)">Order Now</router-link> -->
+              Coming Soon
             </div>
           </div>
 
