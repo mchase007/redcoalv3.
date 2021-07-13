@@ -55,11 +55,11 @@
         </div>
         <div class="flex">
           <i class="gg-phone"></i>
-          <p class="is-size-5 is-size-6-mobile">0201234578</p>
+          <p class="is-size-5 is-size-6-mobile">0241027880</p>
         </div>
         <div class="flex">
           <i class="gg-mail"></i>
-          <p class="flex is-size-5 is-size-6-mobile">redcoal@redcoal.com</p>
+          <p class="flex is-size-5 is-size-6-mobile">kebabstands@gmail.com</p>
         </div>
       </div>
 
