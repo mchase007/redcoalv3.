@@ -49,7 +49,7 @@
 import axios from "axios"
 
 export default {
-
+  name: "Orders",
   data() {
     return {
       orders: null,
