@@ -34,7 +34,9 @@
             <div class="flex flex-jc-sb orderRow">
                 <div class="flex flex-ai-c flex-jc-sb">
                   <div class="item">
-                  <p class="is-size-5 is-size-6-mobile">{{product.quantity}} {{ product.meal }} kebabs</p>
+                  <p class="is-size-5 is-size-6-mobile">
+                    {{product.quantity}} {{ product.meal }} kebabs <span v-if="product.spice">(Spiced)</span> <span v-if="!product.spice">(Not Spiced)</span>
+                  </p>
                   <p class="is-size-6 price has-text-weight-semibold">GHS {{ product.price }}.00</p>
                 </div>
                 

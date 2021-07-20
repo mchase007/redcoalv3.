@@ -1,7 +1,5 @@
 <template>
-  <div data-netlify-identity-menu></div>
-  <div class="button is-primary" data-netlify-identity-button>Login</div>
-
+  
   <div v-if="isLoggedIn">
     <button @click="test">Load Orders</button>
 
@@ -40,6 +38,7 @@
 
   <div v-else>
     <h1>Authorised Access Only</h1>
+    <div data-netlify-identity-menu></div>
   </div>
   
 
@@ -57,8 +56,8 @@ export default {
       token: "",
     }
   },
-  async created() {
-    netlifyIdentity.on('init', async user => {
+  created() {
+    netlifyIdentity.on('init', user => {
       if(user) {
         self.token = user.token.access_token
         self.isLoggedIn = true

@@ -235,12 +235,12 @@ export default {
       this.v$.$touch()
     },
     runPaystack() {
-      console.log('God Is Good');
+      // console.log('God Is Good');
 
       this.v$.$validate();
 
       if (!this.v$.$error) {
-        console.log('No errors')
+        // console.log('No errors')
 
         let userPack = {
           infor: this.form,
@@ -273,9 +273,9 @@ export default {
 
             axios(config)
             .then(function(response) {
-              setTimeout(() => this.orderSuccess = true, 1000)
+              // setTimeout(() => this.orderSuccess = true, 1000)
               self.test3()
-              console.log("God Is Good");
+              // console.log("God Is Good");
             })
             .catch(function (error) {
               console.log(error);
