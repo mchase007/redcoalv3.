@@ -1,6 +1,9 @@
 .DS_Store
 node_modules
 keys
+getOrders.vue
+_ordered.scss
+favicon.ico
 
 # local env files
 .env

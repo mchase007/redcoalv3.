@@ -1,5 +1,5 @@
 <template>
-    <div class="heroOne">
+    <div class="heroOne" :class="{open: isOpen}">
   
     <div class="container has-text-centered">
       <div class="columns is-centered is-vcentered mobile-flex">
@@ -21,14 +21,14 @@
             <p class="flex flex-fd-c is-size-6">
               <span class="is-size-6">Working Hours:</span>
               <span>Everyday</span>
-              <span>4pm - 11pm</span>
+              <span>6pm - 11pm</span>
             </p>
 
             <br>
 
             <div class="button is-fullwidth is-size-5 is-primary">
-              <!-- <router-link :to="{ name:'Product', params: { id: product.productID}}" @click="selectMeal(product)">Order Now</router-link> -->
-              Coming Soon
+              <router-link :to="{ name:'Product', params: { id: product.productID}}" @click="selectMeal(product)">Order Now</router-link>
+              <!-- Coming Soon -->
             </div>
           </div>
 
@@ -52,6 +52,16 @@ export default {
     product() {
       return this.$store.state.products[0];
     }
+  },
+  data() {
+    return {
+      isOpen: false,
+    }
+  },
+  mounted() {
+    this.emitter.on("display", open => {
+      this.isOpen = open
+    })
   },
   methods: {
     selectMeal(usermeal) {

@@ -26,7 +26,7 @@
         <span class="">Delivery Address</span>
         <span class="">Secure Payment</span>
         </div>
-      </div>
+      </div> 
  
       <div v-for="product in cart">
         <div class="card-content cartProduct">

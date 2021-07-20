@@ -15,14 +15,10 @@ if (admin.apps.length === 0) {
 exports.handler = async (event, context, callback) => {
 
   const firestore = admin.firestore();
-  // let data = JSON.parse(event.body);
-  // let collection = await firestore.collection("Orders").doc(data.reference)
-  // collection.set(data)
-  let collection = await firestore.collection("Orders");
-  let doc = collection.docs;
-  doc = await doc.get();
-
-  // console.log(doc.data());
+  const orderList = firestore.collection('Orders');
+  const snapshot = await orderList.get();
+  
+  const data = snapshot.docs.map(doc => doc.data());
 
   return callback(null, {
   statusCode: 200,

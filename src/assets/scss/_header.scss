@@ -47,13 +47,9 @@ nav {
 
     transition: border-bottom 100ms ease-in-out;
     color: $coalRed;
-
     text-align: left;
     margin-bottom: 10px;
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
+    cursor: pointer;
 
     &:hover {
       border-bottom: 2px solid $coalRed;
@@ -64,6 +60,7 @@ nav {
   &.open {
     visibility: visible;
   }
+
 }
 
 @media only screen and (max-width: 1024px) {
