@@ -1,5 +1,9 @@
-<template> 
-  <button @click="test">Load Orders</button>
+<template>
+  <div data-netlify-identity-menu></div>
+  <div class="button is-primary" data-netlify-identity-button>Login</div>
+
+  <div v-if="isLoggedIn">
+    <button @click="test">Load Orders</button>
 
   <div class="">
     <div v-for="(order, index) in orders">
@@ -32,6 +36,12 @@
     </div>
     </div>
   </div>
+  </div>
+
+  <div v-else>
+    <h1>Authorised Access Only</h1>
+  </div>
+  
 
 </template>
 
@@ -43,7 +53,29 @@ export default {
   data() {
     return {
       orders: null,
+      isLoggedIn: false,
+      token: "",
     }
+  },
+  async created() {
+    netlifyIdentity.on('init', async user => {
+      if(user) {
+        self.token = user.token.access_token
+        self.isLoggedIn = true
+      }
+    })
+
+    netlifyIdentity.on('login', user => {
+      self.token = user.token.access_token
+      self.isLoggedIn = true
+    })
+
+    netlifyIdentity.on('logout', user => {
+      self.isLoggedIn = false
+      self.token = ""
+      self.orders = null
+    })
+
   },
   methods: {
     test() {
