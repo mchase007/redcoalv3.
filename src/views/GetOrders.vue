@@ -1,6 +1,6 @@
 <template>
   
-  <div v-if="isLoggedIn">
+  <div>
     <button @click="test">Load Orders</button>
 
   <div class="">
@@ -20,27 +20,21 @@
          <div class="split">
            	<p>Meal: {{mealItem.meal}}</p>
             <p>Quantity: {{mealItem.quantity}}</p>
-            <!-- <p>Price: {{mealItem.price}}</p> -->
+            <p>Price: {{mealItem.price}}</p>
             <div v-if="mealItem.addOnQuantity !== 0">
               Banku: {{mealItem.addOnQuantity}}
-              <!-- Price: {{mealItem.addOnQuantityPrice}} -->
+              Price: {{mealItem.addOnQuantityPrice}}
             </div> 
             <div v-if="mealItem.addOnQuantity2 !== 0">
               Sobolo: {{mealItem.addOnQuantity2}}
-              <!-- Price: {{mealItem.addOnQuantityPrice2}} -->
+              Price: {{mealItem.addOnQuantityPrice2}}
             </div>
-         </div>
-       </div>
+  </div>
+</div>
     </div>
     </div>
   </div>
   </div>
-
-  <div v-else>
-    <h1>Authorised Access Only</h1>
-    <div data-netlify-identity-menu></div>
-  </div>
-  
 
 </template>
 
@@ -52,29 +46,9 @@ export default {
   data() {
     return {
       orders: null,
-      isLoggedIn: false,
-      token: "",
+      // isLoggedIn: false,
+      // token: "",
     }
-  },
-  created() {
-    netlifyIdentity.on('init', user => {
-      if(user) {
-        self.token = user.token.access_token
-        self.isLoggedIn = true
-      }
-    })
-
-    netlifyIdentity.on('login', user => {
-      self.token = user.token.access_token
-      self.isLoggedIn = true
-    })
-
-    netlifyIdentity.on('logout', user => {
-      self.isLoggedIn = false
-      self.token = ""
-      self.orders = null
-    })
-
   },
   methods: {
     test() {

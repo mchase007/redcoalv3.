@@ -28,8 +28,8 @@
 
             <div class="button is-fullwidth is-size-5 is-primary">
               <!-- <router-link :to="{ name:'Product', params: { id: product.productID}}" @click="selectMeal(product)">Order Now</router-link> -->
-              Coming Soon
-              <!-- <router-link to="/orders">Orders</router-link> -->
+              <!-- Coming Soon -->
+              <router-link to="/orders">Orders</router-link>
             </div>
           </div>
 
