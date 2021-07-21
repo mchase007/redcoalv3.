@@ -7,7 +7,8 @@
  
       <div class="flex flex-jc-sb flex-ai-c">
           <span class="item">
-          <p class="is-size-5-tablet is-size-6-mobile">Charcoal Grilled {{userMeal.productName}}</p>
+          <p class="is-size-5-tablet is-size-6-mobile" v-if="userMeal.productName === 'Sausage'">Charcoal Grilled Santinos {{userMeal.productName}}</p>
+          <p class="is-size-5-tablet is-size-6-mobile" v-else>Charcoal Grilled {{userMeal.productName}}</p>
           <p class="is-size-6 has-text-weight-semibold price" >GHS {{userMeal.productPrice}}.00</p>
           </span>
 

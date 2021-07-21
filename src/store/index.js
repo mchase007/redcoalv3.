@@ -108,7 +108,7 @@ export default createStore({
     },
     increasePrice(state) {
       if (state.meal.productName === 'Sausage') {
-        let price = (state.meal.productPrice + 3);
+        let price = (state.meal.productPrice + 5);
         // let price = (state.meal.productPrice + 1);
         state.meal.productPrice = price;  
       } else {
@@ -145,11 +145,11 @@ export default createStore({
     decreasePrice(state) {
       if (state.meal.productName === 'Sausage') {
         if (state.meal.productQuantity > 2 ) {
-          let price = (state.meal.productPrice - 3);
+          let price = (state.meal.productPrice - 5);
           // let price = (state.meal.productPrice - 1);
           state.meal.productPrice = price;
         } else if (state.meal.productQuantity === 2 ) {
-          state.meal.productPrice = 10;
+          state.meal.productPrice = 14;
           // state.meal.productPrice = 1;
         }
       } else if (state.meal.productName === 'Beef' || state.meal.productName === 'Chicken' || state.meal.productName === 'Goat'){
@@ -194,7 +194,6 @@ export default createStore({
     },
     spicey(state) {
       state.meal.spiced = !state.meal.spiced;
-      // console.log(state.meal.spiced);
     },
   },
   actions: {
