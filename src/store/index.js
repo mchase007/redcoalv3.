@@ -52,7 +52,7 @@ export default createStore({
           addOnPrice: payload.addOnPrice,
           addOnQuantity2: payload.addOnQuantity2,
           addOnPrice2: payload.addOnPrice2,
-          spice: payload.noSpice,
+          spice: payload.spiced,
         }
         state.cart.push(y);
         // console.log(y);
@@ -193,7 +193,8 @@ export default createStore({
       state.checkout = true;
     },
     spicey(state) {
-      state.meal.noSpice = !state.meal.noSpice;
+      state.meal.spiced = !state.meal.spiced;
+      // console.log(state.meal.spiced);
     },
   },
   actions: {

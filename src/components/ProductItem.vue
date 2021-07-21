@@ -26,7 +26,7 @@
         <div class="control">
           <label class="">
             <span class="is-size-5">
-              No Spice
+              I do not want my kebab spiced
             <input class="spice" @click="spicey" value="" type="checkbox">
             </span>
           </label>
