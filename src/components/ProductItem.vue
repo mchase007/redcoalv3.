@@ -147,26 +147,11 @@ export default {
     cartItemNum() {
       return this.$store.getters.cartLength
     },
-    // userMealImage() {
-    //   return this.userMeal.productImage
-    // },
   }, 
   mounted() {
 
   },
   methods: {
-    // getImage(img) {
-    //   // var images = require.context('../assets/images', false, /\.png$/)
-    //   // return images('../assets/images/' + img + ".png")
-    //   return '../assets/images/' + img + ".png"
-    // },
-    // getImages(img) {
-    //   var pic
-    //   pic = img
-    //   // this.image = img
-    //   // return this.image
-    //   return pic
-    // },
     updateCart(product) {
       this.$store.commit('addToCart', product);
     },
@@ -199,12 +184,14 @@ export default {
       this.$store.commit('decreasePrice2');
     },  
     viewPack() {
-      // console.log('View Pack')
       this.pack = !this.pack 
     },
     superPack() {
       this.extras = !this.extras 
      },
+    spicey() {
+      this.$store.commit('spicey');
+    }
   },
 
 }

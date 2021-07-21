@@ -2,7 +2,7 @@ import { createStore } from 'vuex'
 import items from '@/data/items.js'
  
 function updateLocalStorage(cart) {
-  // console.log("local updated");
+  // console.log("local updated"); 
   localStorage.setItem("cart", JSON.stringify(cart))
 }
 
@@ -14,10 +14,10 @@ export default createStore({
     exists: null,
     checkout: false,
     meal: {},
-    mobile: '',
+    mobile: '', 
     total: null,
-    // key: 'pk_live_e786ac56bef30fbb72f76237347338c4176377a3',
-    key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d',
+    key: 'pk_live_e786ac56bef30fbb72f76237347338c4176377a3',
+    // key: 'pk_test_85d130e5dd2f8b77015b76f744537db49f76d87d',
   },
   getters: {
     userDetails(state) {
@@ -52,6 +52,7 @@ export default createStore({
           addOnPrice: payload.addOnPrice,
           addOnQuantity2: payload.addOnQuantity2,
           addOnPrice2: payload.addOnPrice2,
+          spice: payload.noSpice,
         }
         state.cart.push(y);
         // console.log(y);
@@ -130,25 +131,16 @@ export default createStore({
       if (state.meal.productQuantity > 2) {
         state.meal.productQuantity--;
       } 
-      // else {
-        // console.log('Two or more');
-      // }
     },
     decreaseQuantity1(state) {
       if (state.meal.addOnQuantity > 0) {
         state.meal.addOnQuantity--;
       } 
-      // else {
-        // console.log('Enough');
-      // }
     },
     decreaseQuantity2(state) {
       if (state.meal.addOnQuantity2 > 0) {
         state.meal.addOnQuantity2--;
       } 
-      // else {
-        // console.log('Enough');
-      // }
     },
     decreasePrice(state) {
       if (state.meal.productName === 'Sausage') {
@@ -199,7 +191,10 @@ export default createStore({
     clearCart(state){
       state.cart = [];
       state.checkout = true;
-    }
+    },
+    spicey(state) {
+      state.meal.noSpice = !state.meal.noSpice;
+    },
   },
   actions: {
   },

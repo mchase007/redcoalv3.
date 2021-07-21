@@ -1,7 +1,7 @@
 <template> 
   <section class="hero is-fullheight is-medium">
     <div class="hero-head"> 
-      <Header></Header>
+      <Header></Header>  
     </div>
     <div class="hero-body content contact-page">
  
@@ -25,7 +25,7 @@
         </div>
         <span class="help is-info" v-if="v$.contactForm.userEmail.$error">
         Kindly enter email correctly
-        </span>
+        </span> 
       </div>
       
       <div class="field">
@@ -61,15 +61,23 @@
           <i class="gg-mail"></i>
           <p class="flex is-size-5 is-size-6-mobile">kebabstands@gmail.com</p>
         </div>
+        <div class="flex">
+          <i class="gg-instagram"></i>
+          <p class="flex is-size-5 is-size-6-mobile">@kebabstands</p>
+        </div>
+        <!-- <div class="flex">
+          <i class="gg-facebook"></i>
+          <p class="flex is-size-5 is-size-6-mobile">@kebabstands</p>
+        </div> -->
       </div>
 
       </div>
 
-      <div class="social flex">
+      <!-- <div class="social flex">
         <span><i class="gg-instagram"></i></span>
         <i class="gg-twitter"></i>
         <i class="gg-facebook"></i>
-      </div>
+      </div> -->
 
       <div class="help">Copyright &copy; 2021 kebabstands. All Rights Reserved</div>
 

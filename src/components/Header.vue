@@ -1,7 +1,7 @@
 <template>  
   <nav>
     <div class="container flex flex-jc-sb flex-ai-c">
-      <div> 
+      <div>  
         <div @click="displayMenu" class="header-hamburger" :class="{open: open}">
           <i v-if="!open" class="gg-menu-boxed"></i>
           <i v-if="open" class="gg-close-r"></i>
@@ -9,8 +9,11 @@
 
         <div class="mobile-menu" :class="{open: open}">
           <span>
-          <router-link to="/contact-us">Contact Us</router-link>
+            <router-link to="/contact-us">Contact Us</router-link>
           </span>
+          <!-- <span class="bulk">
+            <router-link to="">Bulk Orders</router-link>
+          </span>   -->
         </div> 
       </div>
 
@@ -47,7 +50,8 @@ export default {
   methods: {
     displayMenu(event) {
       console.log('Menu' + this.open)
-      this.open = !this.open 
+      this.open = !this.open
+      this.emitter.emit("display",this.open)
      },
   },
 }

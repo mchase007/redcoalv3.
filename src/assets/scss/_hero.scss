@@ -1,7 +1,8 @@
 .heroOne{
   display: flex;
   flex-direction: column;
-  margin: 0 auto; 
+  margin: 0 auto;
+
 
   a {
     text-decoration: none;
@@ -13,3 +14,12 @@
   text-align: left;
 }
 
+@media only screen and (max-width: 750px) {
+
+  .heroOne {
+
+    &.open {
+      margin-top: 50px;
+    }
+  }
+}
