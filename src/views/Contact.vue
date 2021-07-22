@@ -6,7 +6,7 @@
     <div class="hero-body content contact-page">
  
       <div class="contact-form">
-      <h1>Talk to us</h1>
+      <h1>Talk to us</h1> 
 
       <div class="field one">
       <label class="label">Full Name</label>
