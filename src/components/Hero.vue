@@ -8,7 +8,7 @@
           <div class="column is-half">
             <figure class="image">
               <img class="hero-image" src="../assets/images/kebabstandsausage.png" alt="">
-            </figure>
+            </figure> 
           </div>
 
           <div class="column item is-half">
@@ -20,8 +20,8 @@
             <br>
             <p class="flex flex-fd-c is-size-6">
               <span class="is-size-6">Working Hours:</span>
-              <span>Everyday</span>
-              <span>6pm - 11pm</span>
+              <span>Monday - Saturday</span>
+              <span>5pm - 10pm</span>
             </p>
 
             <br>

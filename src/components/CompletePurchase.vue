@@ -67,37 +67,70 @@
         
         <label class="radio">
           <div class="flex inside">
-            <input type="radio" ref="local" v-model="form.userLocale" value="Ahodwo" name="location">
+            <input type="radio" ref="local" v-model="form.userLocale" value="Ahinsan" name="location">
               <div class="side">
-                <span>Ahodwo,</span>
-                <span>Asokwa,</span>
-                <span>Adiemmbra,</span>
-                <span>Dakodwon,</span>
-                <span> and surroundings.</span>
+                <span>Ahinsan</span>
+                <!-- <span> and surroundings.</span> -->
                 </div>
               </div>
           </label>
           <label class="radio">
               <div class="flex inside">
-                <input type="radio" ref="local" v-model="form.userLocale" value="KNUST" name="location">
+                <input type="radio" ref="local" v-model="form.userLocale" value="KNUST Campus" name="location">
                 <div class="side">
-                <span>Asokore Mampong,</span>
-                <span>KNUST Campus, Off-Campus</span>
-                <!-- <span>KNUST Off-campus,</span> -->
-                <span> and surroundings.</span>
+                <span>KNUST Campus</span>
+                <!-- <span> and surroundings.</span> -->
                 </div>
               </div>
           </label>
-
           <label class="radio">
             <div class="flex inside">
-                <input type="radio" ref="local" v-model="form.userLocale" value="Adum" name="location">
+                <input type="radio" ref="local" v-model="form.userLocale" value="Ayeduase" name="location">
                 <div class="side">
-                <span>Adum,</span>
-                <span>Bantama,</span>
-                <span>Bekwai,</span> 
-                <span>Kwadaso,</span>
-                <span> and surroundings.</span>
+                <span>Ayeduase </span>
+                <!-- <span> and surroundings.</span> -->
+                </div>
+              </div>
+          </label>
+          <label class="radio">
+            <div class="flex inside">
+                <input type="radio" ref="local" v-model="form.userLocale" value="Bomso" name="location">
+                <div class="side">
+                <span>Bomso </span>
+                <!-- <span> and surroundings.</span> -->
+                </div>
+              </div>
+          </label>
+          <label class="radio">
+            <div class="flex inside">
+                <input type="radio" ref="local" v-model="form.userLocale" value="Boadi" name="location">
+                <div class="side">
+                <span>Boadi </span>
+                <!-- <span> and surroundings.</span> -->
+                </div>
+              </div>
+          </label>
+          <label class="radio">
+            <div class="flex inside">
+                <input type="radio" ref="local" v-model="form.userLocale" value="Kentinkoronu" name="location">
+                <div class="side">
+                <span>Kentinkronu </span>
+                </div>
+              </div>
+          </label>
+          <label class="radio">
+            <div class="flex inside">
+                <input type="radio" ref="local" v-model="form.userLocale" value="Kotei" name="location">
+                <div class="side">
+                <span>Kotei </span>
+                </div>
+              </div>
+          </label>
+          <label class="radio">
+            <div class="flex inside">
+                <input type="radio" ref="local" v-model="form.userLocale" value="New Site" name="location">
+                <div class="side">
+                <span>New Site </span>
                 </div>
               </div>
           </label>
