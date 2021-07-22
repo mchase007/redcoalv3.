@@ -7,8 +7,7 @@
  
       <div class="flex flex-jc-sb flex-ai-c">
           <span class="item">
-          <p class="is-size-5-tablet is-size-6-mobile" v-if="userMeal.productName === 'Sausage'">Charcoal Grilled Santinos {{userMeal.productName}}</p>
-          <p class="is-size-5-tablet is-size-6-mobile" v-else>Charcoal Grilled {{userMeal.productName}}</p>
+          <p class="is-size-5-tablet is-size-6-mobile">Charcoal Grilled {{userMeal.productName}}</p>
           <p class="is-size-6 has-text-weight-semibold price" >GHS {{userMeal.productPrice}}.00</p>
           </span>
 
@@ -36,7 +35,7 @@
 
       <div @click="superPack" class="theButtonz">
         <span class="is-size-6">
-          Student Super Pack   
+          Drinks   
         </span> 
         <div>
           <span><i v-if="!extras" class="gg-add-r"></i></span>
@@ -46,12 +45,12 @@
 
       <div v-if="extras" class="extraSet flex flex-jc-sb flex-ai-c">
         <span v-if="!userMeal.addOnQuantity > 0" class="item">
-          <p class="is-size-5 is-size-6-mobile">Banku with Pepper:</p>
-          <p class="is-size-6 price has-text-weight-semibold" >GHS 5.00</p>
+          <p class="is-size-5 is-size-6-mobile">Coca-Cola 300mls:</p>
+          <p class="is-size-6 price has-text-weight-semibold" >GHS 3.00</p>
         </span>
 
         <span v-if="userMeal.addOnQuantity > 0" class="item">
-          <p class="is-size-5 is-size-6-mobile">Banku with Pepper:</p>
+          <p class="is-size-5 is-size-6-mobile">Coca-Cola 300mls:</p>
           <p class="is-size-6 price has-text-weight-semibold">GHS {{userMeal.addOnPrice}}.00</p>
         </span> 
         
@@ -68,7 +67,7 @@
 
         <span v-if="!userMeal.addOnQuantity2 > 0" class="item">
           <p class="is-size-5 is-size-6-mobile">Lemon flavored Sobolo</p>
-          <p class="is-size-6 price has-text-weight-semibold" >GHS 2.00</p>
+          <p class="is-size-6 price has-text-weight-semibold" >GHS 1.00</p>
         </span>
 
         <span v-if="userMeal.addOnQuantity2 > 0" class="item">
@@ -96,7 +95,7 @@
             Mint.
           </li>
           <li v-if="userMeal.addOnQuantity > 0">
-            Banku with pepper pack: {{userMeal.addOnQuantity}}
+            Coca-Cola 300mls: {{userMeal.addOnQuantity}}
           </li>
           <li v-if="userMeal.addOnQuantity2 > 0">
             Lemon flavored Sobolo: {{userMeal.addOnQuantity2}}

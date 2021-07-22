@@ -2,7 +2,7 @@ const items = [
   {
     productName: "Sausage",
     productID: "sausage",
-    productPrice: 14,
+    productPrice: 13,
     id: 0,
     productImage: "kebabstandsausage.png",
     productQuantity: 2,
@@ -30,7 +30,7 @@ const items = [
   {
     productName: "Beef",
     productID: "beef",
-    productPrice: 8,
+    productPrice: 11,
     id: 2,
     productImage: "kebabstandbeef.png",
     productQuantity: 2,
@@ -44,7 +44,7 @@ const items = [
   {
     productName: "Goat",
     productID: "goat",
-    productPrice: 8,
+    productPrice: 11,
     id: 3,
     productImage: "kebabstandgoat.png",
     productQuantity: 2,
